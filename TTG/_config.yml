@@ -1,3 +1,2 @@
-#remote_theme: "dracula/gh-pages"
-remote_theme: "theme: jekyll-dash"
+remote_theme: "dracula/gh-pages"
 title: "TTG - Scripts"
