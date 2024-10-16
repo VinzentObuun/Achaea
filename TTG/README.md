@@ -1,5 +1,5 @@
     These are pubicly available systems/scripts.
-    For the sake of posterity, some are locally stored in this repository.
+    For the sake of posterity, most are locally stored in this repository.
     Certain files open raw. RIGHT CLICK and SAVE LINK AS to download.
 
 ### Mudlet
@@ -49,7 +49,7 @@
 
 ##### Klendathu's Talisman Tracker
    Info: [Talisman Tracker](https://forums.achaea.com/discussion/2855)  
-   Download: [Dropbox](https://raw.githubusercontent.com/VinzentObuun/Achaea/refs/heads/main/TTG/archive/talitracker.xml)  
+   Download: [Github](https://raw.githubusercontent.com/VinzentObuun/Achaea/refs/heads/main/TTG/archive/talitracker.xml)  
 
 ##### Jonathin's Charge Counter
    Info: [Charge list total thingy](https://forums.achaea.com/discussion/6151)  
@@ -109,7 +109,7 @@
 
 ##### Bip's Core Reflex Package
    Info: [Bip-core reflex package](https://forums.achaea.com/discussion/5004)  
-   Download: [Github](https://raw.githubusercontent.com/VinzentObuun/Achaea/refs/heads/main/TTG/master/archive/Reflex_Package_Bip-core_2016-8-28.nxs)  
+   Download: [Github](https://raw.githubusercontent.com/VinzentObuun/Achaea/refs/heads/main/TTG/archive/Reflex_Package_Bip-core_2016-8-28.nxs)  
 
 ##### Extra
    Info: [Contest Submissions](https://forums.achaea.com/discussion/6062)
