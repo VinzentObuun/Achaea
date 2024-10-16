@@ -1,5 +1,5 @@
 remote_theme: "dracula/gh-pages"
-title: Scriptalicious!
-tagline: Test
-description: Test
-show_header: false
+title: "TTG - Scripts"
+tagline: "Test"
+description: "Test"
+show_header: "false"
