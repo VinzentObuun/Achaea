@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE MudletPackage>
+<MudletPackage version="1.000">
+    <TriggerPackage>
+        <TriggerGroup isActive="yes" isFolder="yes" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+            <name>furnishing samples</name>
+            <script></script>
+            <triggerType>0</triggerType>
+            <conditonLineDelta>0</conditonLineDelta>
+            <mStayOpen>0</mStayOpen>
+            <mCommand></mCommand>
+            <packageName></packageName>
+            <mFgColor>#ff0000</mFgColor>
+            <mBgColor>#ffff00</mBgColor>
+            <mSoundFile></mSoundFile>
+            <colorTriggerFgColor>#000000</colorTriggerFgColor>
+            <colorTriggerBgColor>#000000</colorTriggerBgColor>
+            <regexCodeList/>
+            <regexCodePropertyList/>
+            <Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+                <name>sampleStart</name>
+                <script>enableTrigger(&quot;sampleCapture&quot;)
+enableTrigger(&quot;sampleEnd&quot;)
+deleteLine()</script>
+                <triggerType>0</triggerType>
+                <conditonLineDelta>0</conditonLineDelta>
+                <mStayOpen>0</mStayOpen>
+                <mCommand></mCommand>
+                <packageName></packageName>
+                <mFgColor>#ff0000</mFgColor>
+                <mBgColor>#ffff00</mBgColor>
+                <mSoundFile></mSoundFile>
+                <colorTriggerFgColor>#000000</colorTriggerFgColor>
+                <colorTriggerBgColor>#000000</colorTriggerBgColor>
+                <regexCodeList>
+                    <string>You have collected the following samples for furniture frames:</string>
+                </regexCodeList>
+                <regexCodePropertyList>
+                    <integer>3</integer>
+                </regexCodePropertyList>
+            </Trigger>
+            <Trigger isActive="no" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+                <name>sampleCapture</name>
+                <script>samples_found[matches[2]:lower()] = tonumber(matches[3])
+deleteLine()</script>
+                <triggerType>0</triggerType>
+                <conditonLineDelta>0</conditonLineDelta>
+                <mStayOpen>0</mStayOpen>
+                <mCommand></mCommand>
+                <packageName></packageName>
+                <mFgColor>#ff0000</mFgColor>
+                <mBgColor>#ffff00</mBgColor>
+                <mSoundFile></mSoundFile>
+                <colorTriggerFgColor>#000000</colorTriggerFgColor>
+                <colorTriggerBgColor>#000000</colorTriggerBgColor>
+                <regexCodeList>
+                    <string>^(\w+): (\d+)$</string>
+                </regexCodeList>
+                <regexCodePropertyList>
+                    <integer>1</integer>
+                </regexCodePropertyList>
+            </Trigger>
+            <Trigger isActive="no" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+                <name>sampleEnd</name>
+                <script>disableTrigger(&quot;sampleCapture&quot;)
+disableTrigger(&quot;sampleEnd&quot;)
+deleteLine()
+displaySamples()</script>
+                <triggerType>0</triggerType>
+                <conditonLineDelta>0</conditonLineDelta>
+                <mStayOpen>0</mStayOpen>
+                <mCommand></mCommand>
+                <packageName></packageName>
+                <mFgColor>#ff0000</mFgColor>
+                <mBgColor>#ffff00</mBgColor>
+                <mSoundFile></mSoundFile>
+                <colorTriggerFgColor>#000000</colorTriggerFgColor>
+                <colorTriggerBgColor>#000000</colorTriggerBgColor>
+                <regexCodeList>
+                    <string>return isPrompt()</string>
+                </regexCodeList>
+                <regexCodePropertyList>
+                    <integer>4</integer>
+                </regexCodePropertyList>
+            </Trigger>
+        </TriggerGroup>
+    </TriggerPackage>
+    <TimerPackage/>
+    <AliasPackage/>
+    <ActionPackage/>
+    <ScriptPackage>
+        <Script isActive="yes" isFolder="no">
+            <name>samples</name>
+            <packageName></packageName>
+            <script>samples_found = {
+  [&quot;alder&quot;]      = 0, [&quot;amethyst&quot;]   = 0, [&quot;bamboo&quot;]   = 0, [&quot;beech&quot;]     = 0,
+  [&quot;birch&quot;]      = 0, [&quot;bone&quot;]       = 0, [&quot;bronze&quot;]   = 0, [&quot;cedar&quot;]     = 0,
+  [&quot;cherrywood&quot;] = 0, [&quot;cobweb&quot;]     = 0, [&quot;cocobolo&quot;] = 0, [&quot;copper&quot;]    = 0,
+  [&quot;coral&quot;]      = 0, [&quot;crystal&quot;]    = 0, [&quot;diamond&quot;]  = 0, [&quot;driftwood&quot;] = 0,
+  [&quot;emerald&quot;]    = 0, [&quot;eucalyptus&quot;] = 0, [&quot;glass&quot;]    = 0, [&quot;gold&quot;]      = 0,
+  [&quot;granite&quot;]    = 0, [&quot;hazlewood&quot;]  = 0, [&quot;iron&quot;]     = 0, [&quot;mahogany&quot;]  = 0,
+  [&quot;marble&quot;]     = 0, [&quot;oak&quot;]        = 0, [&quot;onyx&quot;]     = 0, [&quot;opal&quot;]      = 0,
+  [&quot;pearl&quot;]      = 0, [&quot;pine&quot;]       = 0, [&quot;platinum&quot;] = 0, [&quot;ruby&quot;]      = 0,
+  [&quot;sapphire&quot;]   = 0, [&quot;spiderweb&quot;]  = 0, [&quot;steel&quot;]    = 0, [&quot;toadstool&quot;] = 0,
+  [&quot;topaz&quot;]      = 0
+}
+
+function displaySamples_original()
+  local i = 0
+  cecho(&quot;\n&lt;a_brown&gt;Furnishing Samples:&lt;a_darkgreen&gt;\n&quot;..string.rep(&quot;-&quot;,81)..&quot;\n&quot;)
+  for k,v in pairs(samples_found) do
+    if i == 5 then echo(&quot;\n&quot;) i = 0  end
+    cecho(&quot;&lt;a_darkgreen&gt;[&lt;grey&gt;&quot;..string.rep(&quot; &quot;,3-string.len(v))..v..&quot;&lt;a_darkgreen&gt;]&lt;grey&gt; &quot;..k)
+    if i ~= 5 then echo(string.rep(&quot; &quot;,11-string.len(k))) end
+    i = i + 1
+  end
+  cecho(&quot;\n&lt;a_darkgreen&gt;&quot;..string.rep(&quot;-&quot;,81)..&quot;\n&quot;)
+  svo.showprompt()
+end--func
+
+
+
+function displaySamples()
+  local i = 0
+  cecho(&quot;\n&lt;a_brown&gt;Furnishing Samples:&lt;a_darkgreen&gt;\n&quot;..string.rep(&quot;-&quot;,81)..&quot;\n&quot;)
+
+  local v = 0
+
+  local a = {}
+  for n in pairs(samples_found) do table.insert(a,n) end
+  table.sort(a)
+  for _, n in ipairs(a) do
+    if i == 5 then echo(&quot;\n&quot;) i = 0 end
+    v = samples_found[n]
+    cecho(&quot;&lt;a_darkgreen&gt;[&lt;grey&gt;&quot;..string.rep(&quot; &quot;,3-string.len(v))..v..&quot;&lt;a_darkgreen&gt;]&lt;grey&gt; &quot;..n)
+    if not (i == 5) then echo(string.rep(&quot; &quot;,11-string.len(n))) end
+    i = i + 1
+  end
+  cecho(&quot;\n&lt;a_darkgreen&gt;&quot;..string.rep(&quot;-&quot;,81)..&quot;\n&quot;)
+  svo.showprompt()
+end--func
+
+</script>
+            <eventHandlerList>
+                <string>gmcp.Char.Items</string>
+            </eventHandlerList>
+        </Script>
+    </ScriptPackage>
+    <KeyPackage/>
+    <HelpPackage>
+        <helpURL/>
+    </HelpPackage>
+</MudletPackage>

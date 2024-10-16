@@ -1,0 +1,324 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE MudletPackage>
+<MudletPackage version="1.001">
+    <TriggerPackage>
+        <TriggerGroup isActive="yes" isFolder="yes" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+            <name>Guards</name>
+            <script></script>
+            <triggerType>0</triggerType>
+            <conditonLineDelta>0</conditonLineDelta>
+            <mStayOpen>0</mStayOpen>
+            <mCommand></mCommand>
+            <packageName></packageName>
+            <mFgColor>#ff0000</mFgColor>
+            <mBgColor>#ffff00</mBgColor>
+            <mSoundFile></mSoundFile>
+            <colorTriggerFgColor>#000000</colorTriggerFgColor>
+            <colorTriggerBgColor>#000000</colorTriggerBgColor>
+            <regexCodeList/>
+            <regexCodePropertyList/>
+            <Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+                <name>Constable</name>
+                <script>if string.find(matches[1], &quot;court constables&quot;) then selectString(matches[1], 1) fg(&quot;a_brown&quot;) 
+elseif string.find(matches[1], &quot;flail-wielding&quot;) then selectString(matches[1], 1) fg(&quot;a_red&quot;)
+elseif string.find(matches[1], &quot;runic knight&quot;) then selectString(matches[1], 1) fg(&quot;a_blue&quot;)
+end
+
+for i = 1, #matches, 2 do
+  local rune = matches[i+1]
+  local line = matches[i]
+
+  local pos = selectString(line, 1)
+  moveCursor(&quot;main&quot;, pos+#line, getLineNumber())
+
+    cinsertText(&quot;&lt;IndianRed&gt;[constable: &lt;white&gt;aoe, tracks&lt;IndianRed&gt;]&quot;)
+end
+
+deselect()
+resetFormat()
+moveCursorEnd()
+</script>
+                <triggerType>0</triggerType>
+                <conditonLineDelta>0</conditonLineDelta>
+                <mStayOpen>0</mStayOpen>
+                <mCommand></mCommand>
+                <packageName></packageName>
+                <mFgColor>#ff0000</mFgColor>
+                <mBgColor>#ffff00</mBgColor>
+                <mSoundFile></mSoundFile>
+                <colorTriggerFgColor>#000000</colorTriggerFgColor>
+                <colorTriggerBgColor>#000000</colorTriggerBgColor>
+                <regexCodeList>
+                    <string>There are (\d+) court constables here\.</string>
+                    <string>There are (\d+) flail-wielding knights here\.</string>
+                    <string>There are (\d+) runic knights here\.</string>
+                </regexCodeList>
+                <regexCodePropertyList>
+                    <integer>1</integer>
+                    <integer>1</integer>
+                    <integer>1</integer>
+                </regexCodePropertyList>
+            </Trigger>
+            <Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+                <name>Soldier</name>
+                <script>if string.find(matches[1], &quot;of the Shadow Court&quot;) then selectString(matches[1], 1) fg(&quot;a_brown&quot;) 
+elseif string.find(matches[1], &quot;troubadour&quot;) then selectString(matches[1], 1) fg(&quot;a_blue&quot;)
+end
+
+for i = 1, #matches, 2 do
+  local rune = matches[i+1]
+  local line = matches[i]
+
+  local pos = selectString(line, 1)
+  moveCursor(&quot;main&quot;, pos+#line, getLineNumber())
+
+    cinsertText(&quot;&lt;IndianRed&gt;[soldier: &lt;white&gt;prone damage&lt;IndianRed&gt;]&quot;)
+end
+
+deselect()
+resetFormat()
+moveCursorEnd()
+</script>
+                <triggerType>0</triggerType>
+                <conditonLineDelta>0</conditonLineDelta>
+                <mStayOpen>0</mStayOpen>
+                <mCommand></mCommand>
+                <packageName></packageName>
+                <mFgColor>#ff0000</mFgColor>
+                <mBgColor>#ffff00</mBgColor>
+                <mSoundFile></mSoundFile>
+                <colorTriggerFgColor>#000000</colorTriggerFgColor>
+                <colorTriggerBgColor>#000000</colorTriggerBgColor>
+                <regexCodeList>
+                    <string>Suspended betwixt the realm of life and death, a spectre of the Shadow Court keeps vigil over the location\.</string>
+                    <string>There are (\d+) spectres of the Shadow Court here\.</string>
+                    <string>Rapier glinting in the light, a dashing young troubadour fences with an imagined foe\.</string>
+                    <string>There are (\d+) dashing troubadours here\.</string>
+                </regexCodeList>
+                <regexCodePropertyList>
+                    <integer>1</integer>
+                    <integer>1</integer>
+                    <integer>1</integer>
+                    <integer>1</integer>
+                </regexCodePropertyList>
+            </Trigger>
+            <Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+                <name>Warrior</name>
+                <script>if string.find(matches[1], &quot;of the Atrament&quot;) then selectString(matches[1], 1) fg(&quot;a_brown&quot;) 
+elseif string.find(matches[1], &quot;imperial guard&quot;) then selectString(matches[1], 1) fg(&quot;a_blue&quot;)
+end
+
+for i = 1, #matches, 2 do
+  local rune = matches[i+1]
+  local line = matches[i]
+
+  local pos = selectString(line, 1)
+  moveCursor(&quot;main&quot;, pos+#line, getLineNumber())
+
+    cinsertText(&quot;&lt;IndianRed&gt;[warrior: &lt;white&gt;prones, breaks&lt;IndianRed&gt;]&quot;)
+end
+
+deselect()
+resetFormat()
+moveCursorEnd()
+</script>
+                <triggerType>0</triggerType>
+                <conditonLineDelta>0</conditonLineDelta>
+                <mStayOpen>0</mStayOpen>
+                <mCommand></mCommand>
+                <packageName></packageName>
+                <mFgColor>#ff0000</mFgColor>
+                <mBgColor>#ffff00</mBgColor>
+                <mSoundFile></mSoundFile>
+                <colorTriggerFgColor>#000000</colorTriggerFgColor>
+                <colorTriggerBgColor>#000000</colorTriggerBgColor>
+                <regexCodeList>
+                    <string>A knight of the Atrament guards the area, hands poised on the pommel of a broadsword\.</string>
+                    <string>There are (\d+) knights of the Atrament here\.</string>
+                    <string>Reserved and watchful, an imperial guardsman paces here, his expression impassive\.</string>
+                    <string>There are (\d+) imperial guardsmen here\.</string>
+                </regexCodeList>
+                <regexCodePropertyList>
+                    <integer>1</integer>
+                    <integer>1</integer>
+                    <integer>1</integer>
+                    <integer>1</integer>
+                </regexCodePropertyList>
+            </Trigger>
+            <Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+                <name>Captain</name>
+                <script>if string.find(matches[1], &quot;mounted tsalmaveth&quot;) then selectString(matches[1], 1) fg(&quot;a_brown&quot;) 
+elseif string.find(matches[1], &quot;Shornwall defender&quot;) then selectString(matches[1], 1) fg(&quot;a_white&quot;)
+end
+
+for i = 1, #matches, 2 do
+  local rune = matches[i+1]
+  local line = matches[i]
+
+  local pos = selectString(line, 1)
+  moveCursor(&quot;main&quot;, pos+#line, getLineNumber())
+
+    cinsertText(&quot;&lt;IndianRed&gt;[captain: &lt;white&gt;blackout, aoe&lt;IndianRed&gt;]&quot;)
+end
+
+deselect()
+resetFormat()
+moveCursorEnd()
+</script>
+                <triggerType>0</triggerType>
+                <conditonLineDelta>0</conditonLineDelta>
+                <mStayOpen>0</mStayOpen>
+                <mCommand></mCommand>
+                <packageName></packageName>
+                <mFgColor>#ff0000</mFgColor>
+                <mBgColor>#ffff00</mBgColor>
+                <mSoundFile></mSoundFile>
+                <colorTriggerFgColor>#000000</colorTriggerFgColor>
+                <colorTriggerBgColor>#000000</colorTriggerBgColor>
+                <regexCodeList>
+                    <string>A mounted tsalmaveth watches this area carefully\.</string>
+                    <string>There are (\d+) mounted tsalmaveths here\.</string>
+                    <string>Gripping a broadsword, a Shornwall defender crouches slightly in anticipation\.</string>
+                    <string>Ther eare (\d+) Shornwall defenders here\.</string>
+                </regexCodeList>
+                <regexCodePropertyList>
+                    <integer>1</integer>
+                    <integer>1</integer>
+                    <integer>1</integer>
+                    <integer>1</integer>
+                </regexCodePropertyList>
+            </Trigger>
+            <Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+                <name>Archer</name>
+                <script>if string.find(matches[1], &quot;fierce virago&quot;) then selectString(matches[1], 1) fg(&quot;a_brown&quot;)
+elseif string.find(matches[1], &quot;mountain archer&quot;) then selectString(matches[1], 1) fg(&quot;a_blue&quot;)
+end
+
+for i = 1, #matches, 2 do
+  local rune = matches[i+1]
+  local line = matches[i]
+
+  local pos = selectString(line, 1)
+  moveCursor(&quot;main&quot;, pos+#line, getLineNumber())
+
+    cinsertText(&quot;&lt;IndianRed&gt;[archer: &lt;white&gt;fliers&lt;IndianRed&gt;]&quot;)
+end
+
+deselect()
+resetFormat()
+moveCursorEnd()
+</script>
+                <triggerType>0</triggerType>
+                <conditonLineDelta>0</conditonLineDelta>
+                <mStayOpen>0</mStayOpen>
+                <mCommand></mCommand>
+                <packageName></packageName>
+                <mFgColor>#ff0000</mFgColor>
+                <mBgColor>#ffff00</mBgColor>
+                <mSoundFile></mSoundFile>
+                <colorTriggerFgColor>#000000</colorTriggerFgColor>
+                <colorTriggerBgColor>#000000</colorTriggerBgColor>
+                <regexCodeList>
+                    <string>A fierce virago carefully scans the area for signs of trouble\.</string>
+                    <string>There are (\d+) fierce viragos here\.</string>
+                    <string>Mounted atop a sleek snow panther, a mountain archer coolly scans the distant peaks\.</string>
+                    <string>There are (\d+) mountain archers here\.</string>
+                </regexCodeList>
+                <regexCodePropertyList>
+                    <integer>1</integer>
+                    <integer>1</integer>
+                    <integer>1</integer>
+                    <integer>1</integer>
+                </regexCodePropertyList>
+            </Trigger>
+            <Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+                <name>Istani</name>
+                <script>if string.find(matches[1], &quot;hooded nocturni&quot;) then selectString(matches[1], 1) fg(&quot;a_brown&quot;) 
+elseif string.find(matches[1], &quot;venerable monk&quot;) then selectString(matches[1], 1) fg(&quot;a_blue&quot;)
+elseif string.find(matches[1], &quot;baleful apostate&quot;) then selectString(matches[1], 1) fg(&quot;a_red&quot;)
+end
+
+for i = 1, #matches, 2 do
+  local rune = matches[i+1]
+  local line = matches[i]
+
+  local pos = selectString(line, 1)
+  moveCursor(&quot;main&quot;, pos+#line, getLineNumber())
+
+    cinsertText(&quot;&lt;IndianRed&gt;[istani: &lt;white&gt;web, aoe&lt;IndianRed&gt;]&quot;)
+end
+
+deselect()
+resetFormat()
+moveCursorEnd()</script>
+                <triggerType>0</triggerType>
+                <conditonLineDelta>0</conditonLineDelta>
+                <mStayOpen>0</mStayOpen>
+                <mCommand></mCommand>
+                <packageName></packageName>
+                <mFgColor>#ff0000</mFgColor>
+                <mBgColor>#ffff00</mBgColor>
+                <mSoundFile></mSoundFile>
+                <colorTriggerFgColor>#000000</colorTriggerFgColor>
+                <colorTriggerBgColor>#000000</colorTriggerBgColor>
+                <regexCodeList>
+                    <string>A hooded nocturni, crackling with blue streaks of electrical discharge, patrols this area\.</string>
+                    <string>There are (\d+) hooded nocturni here\.</string>
+                    <string>A baleful apostate looms here, her daemonic companion at one side, and unholy daegger hovering at the other\.</string>
+                    <string>There are (\d+) baleful apostates here\.</string>
+                    <string>Possessed of a preternatural stillness, a venerable monk exudes an aura of quiet tranquillity\.</string>
+                    <string>There are (\d+) venerable monks here\.</string>
+                </regexCodeList>
+                <regexCodePropertyList>
+                    <integer>1</integer>
+                    <integer>1</integer>
+                    <integer>1</integer>
+                    <integer>1</integer>
+                    <integer>1</integer>
+                    <integer>1</integer>
+                </regexCodePropertyList>
+            </Trigger>
+            <Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+                <name>Guardian</name>
+                <script>if string.find(matches[1], &quot;Ze'thya&quot;) then selectString(matches[1], 1) fg(&quot;a_brown&quot;)
+elseif string.find(matches[1], &quot;Guardian Dragon of Cyrene&quot;) then selectString(matches[1], 1) fg(&quot;a_blue&quot;) 
+elseif string.find(matches[1], &quot;two-headed hellhound&quot;) then selectString(matches[1], 1) fg(&quot;a_red&quot;) 
+end
+
+for i = 1, #matches, 2 do
+  local rune = matches[i+1]
+  local line = matches[i]
+
+  local pos = selectString(line, 1)
+  moveCursor(&quot;main&quot;, pos+#line, getLineNumber())
+
+    cinsertText(&quot;&lt;IndianRed&gt;[guardian: &lt;white&gt;guard strength&lt;IndianRed&gt;]&quot;)
+end
+
+deselect()
+resetFormat()
+moveCursorEnd()</script>
+                <triggerType>0</triggerType>
+                <conditonLineDelta>0</conditonLineDelta>
+                <mStayOpen>0</mStayOpen>
+                <mCommand></mCommand>
+                <packageName></packageName>
+                <mFgColor>#ff0000</mFgColor>
+                <mBgColor>#ffff00</mBgColor>
+                <mSoundFile></mSoundFile>
+                <colorTriggerFgColor>#000000</colorTriggerFgColor>
+                <colorTriggerBgColor>#000000</colorTriggerBgColor>
+                <regexCodeList>
+                    <string>Standing here regally is Ze'thya, the chimeric dragon\.</string>
+                    <string>A large, two-headed hellhound stands guard here, both his heads growling and snapping occasionally\.</string>
+                    <string>Wings folded majestically over his back, Blu, the Guardian Dragon of Cyrene breathes clouds of icy mist into the air\.</string>
+                </regexCodeList>
+                <regexCodePropertyList>
+                    <integer>1</integer>
+                    <integer>1</integer>
+                    <integer>1</integer>
+                </regexCodePropertyList>
+            </Trigger>
+        </TriggerGroup>
+    </TriggerPackage>
+</MudletPackage>

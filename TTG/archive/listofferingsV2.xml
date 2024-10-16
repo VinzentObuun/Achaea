@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE MudletPackage>
+<MudletPackage version="1.0">
+    <TriggerPackage>
+        <TriggerGroup isActive="yes" isFolder="yes" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+            <name>ListOfferings</name>
+            <script></script>
+            <triggerType>0</triggerType>
+            <conditonLineDelta>0</conditonLineDelta>
+            <mStayOpen>0</mStayOpen>
+            <mCommand></mCommand>
+            <packageName></packageName>
+            <mFgColor>#ff0000</mFgColor>
+            <mBgColor>#ffff00</mBgColor>
+            <mSoundFile></mSoundFile>
+            <colorTriggerFgColor>#000000</colorTriggerFgColor>
+            <colorTriggerBgColor>#000000</colorTriggerBgColor>
+            <regexCodeList/>
+            <regexCodePropertyList/>
+            <Trigger isActive="no" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+                <name>Summary Line</name>
+                <script>--if table.contains(offerings.tableOfferNames,matches[2]) then
+--offerings.findLocation = table.index_of(offerings.tableOfferNames,matches[2]) + 1
+--offerings.newEssenceNames = matches[4] + offerings.tableOfferNames[offerings.findLocation]
+--table.remove(offerings.tableOfferNames,offerings.findLocation)
+--table.insert(offerings.tableOfferNames,offerings.findLocation,offerings.newEssenceNames)
+--else
+
+--table.insert(offerings.tableOfferNames,matches[2])
+--table.insert(offerings.tableOfferNames,matches[4])
+
+--end
+
+if offerings.tableOfferNames[matches[2]] then
+offerings.tableOfferNames[matches[2]] = matches[4] + offerings.tableOfferNames[matches[2]]
+else
+offerings.tableOfferNames[matches[2]]=matches[4]
+end</script>
+                <triggerType>0</triggerType>
+                <conditonLineDelta>0</conditonLineDelta>
+                <mStayOpen>0</mStayOpen>
+                <mCommand></mCommand>
+                <packageName></packageName>
+                <mFgColor>#ff0000</mFgColor>
+                <mBgColor>#ffff00</mBgColor>
+                <mSoundFile></mSoundFile>
+                <colorTriggerFgColor>#000000</colorTriggerFgColor>
+                <colorTriggerBgColor>#000000</colorTriggerBgColor>
+                <regexCodeList>
+                    <string>^(\w+)(\s+)(-?\d+)\s+(.*)\s+(?:Yes|No)$</string>
+                </regexCodeList>
+                <regexCodePropertyList>
+                    <integer>1</integer>
+                </regexCodePropertyList>
+            </Trigger>
+            <Trigger isActive="no" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+                <name>Turn on/off summary Line</name>
+                <script>--Turns on and off the Summary Line trigger and display values when completed.
+if offerings.trackerStarted == false then
+offerings.trackerStarted = true
+enableTrigger(&quot;Summary Line&quot;)
+else
+disableTrigger(&quot;Summary Line&quot;)
+offerings.trackerStarted = false
+
+--Display the values
+cecho(&quot;\n&lt;purple&gt;Total Essence Count:&quot;)
+for i, k in pairs(offerings.tableOfferNames) do
+--for i = 1, #offerings.tableOfferNames, 2 do
+cecho(&quot;\n&lt;red&gt;&quot; ..i..&quot;: &lt;gold&gt;&quot;..k)
+--i = i + 1
+end
+disableTrigger(&quot;Turn on/off summary Line&quot;)
+end</script>
+                <triggerType>0</triggerType>
+                <conditonLineDelta>0</conditonLineDelta>
+                <mStayOpen>0</mStayOpen>
+                <mCommand></mCommand>
+                <packageName></packageName>
+                <mFgColor>#ff0000</mFgColor>
+                <mBgColor>#ffff00</mBgColor>
+                <mSoundFile></mSoundFile>
+                <colorTriggerFgColor>#000000</colorTriggerFgColor>
+                <colorTriggerBgColor>#000000</colorTriggerBgColor>
+                <regexCodeList>
+                    <string>-------------------------------------------------------------------------------</string>
+                </regexCodeList>
+                <regexCodePropertyList>
+                    <integer>3</integer>
+                </regexCodePropertyList>
+            </Trigger>
+        </TriggerGroup>
+    </TriggerPackage>
+    <TimerPackage/>
+    <AliasPackage>
+        <AliasGroup isActive="yes" isFolder="yes">
+            <name>ListOfferings</name>
+            <script></script>
+            <command></command>
+            <packageName></packageName>
+            <regex></regex>
+            <Alias isActive="yes" isFolder="no">
+                <name>listofferings</name>
+                <script>offerings.tableOfferNames = {}
+offerings.tableOfferValue = {}
+enableTrigger(&quot;Turn on/off summary Line&quot;)
+send(&quot;listofferings summary&quot;)</script>
+                <command></command>
+                <packageName></packageName>
+                <regex>^listofferings$</regex>
+            </Alias>
+            <Alias isActive="yes" isFolder="no">
+                <name>sort</name>
+                <script>cecho(&quot;\n&lt;purple&gt;Total Essence Count:\n&quot;)
+for _, v in ipairs(essenceSort(offerings.tableOfferNames)) do
+  cecho(&quot;&lt;red&gt;&quot; ..v.name .. &quot;: &lt;gold&gt;&quot; .. v.essence .. &quot;\n&quot;)  
+end</script>
+                <command></command>
+                <packageName></packageName>
+                <regex>^sort$</regex>
+            </Alias>
+        </AliasGroup>
+    </AliasPackage>
+    <ActionPackage/>
+    <ScriptPackage>
+        <ScriptGroup isActive="yes" isFolder="yes">
+            <name>ListOfferings</name>
+            <packageName></packageName>
+            <script>-------------------------------------------------
+--         Put your Lua functions here.        --
+--                                             --
+-- Note that you can also use external Scripts --
+-------------------------------------------------
+</script>
+            <eventHandlerList/>
+            <Script isActive="yes" isFolder="no">
+                <name>List Offerings</name>
+                <packageName></packageName>
+                <script>-------------------------------------------------
+--         Put your Lua functions here.        --
+--                                             --
+-- Note that you can also use external Scripts --
+-------------------------------------------------
+
+
+--Initialize The Tables
+
+offerings = offerings or {}
+
+offerings.tableOfferNames = offerings.tableOfferNames or {}
+--offerings.tableOfferValue = offerings.tableOfferValue or {}
+offerings.findLocation = offerings.findLocation or {}
+offerings.newEssenceValue = offerings.newEssenceValue or {}
+offerings.trackerStarted = offerings.trackerStarted or false
+
+
+--Functions
+
+function essenceSort(t)
+    local nt = {}
+   
+    for name, essence in pairs(t) do
+        table.insert(nt, {
+            name = name,
+            essence = tonumber(essence)
+        })
+    end
+   
+    table.sort(nt, function(a, b)
+        if a.essence &gt; b.essence then
+            return true
+        elseif a.essence &lt; b.essence then
+            return false
+        elseif a.name &lt; b.name then
+            return true
+        else
+            return false
+        end
+    end)
+   
+    return nt
+end
+</script>
+                <eventHandlerList/>
+            </Script>
+        </ScriptGroup>
+    </ScriptPackage>
+    <KeyPackage/>
+</MudletPackage>

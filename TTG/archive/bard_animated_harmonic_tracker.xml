@@ -1,0 +1,1826 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE MudletPackage>
+<MudletPackage version="1.0">
+    <TriggerPackage>
+        <TriggerGroup isActive="yes" isFolder="yes" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+            <name>Harmonics</name>
+            <script></script>
+            <triggerType>0</triggerType>
+            <conditonLineDelta>0</conditonLineDelta>
+            <mStayOpen>0</mStayOpen>
+            <mCommand></mCommand>
+            <packageName></packageName>
+            <mFgColor>#ff0000</mFgColor>
+            <mBgColor>#ffff00</mBgColor>
+            <mSoundFile></mSoundFile>
+            <colorTriggerFgColor>#000000</colorTriggerFgColor>
+            <colorTriggerBgColor>#000000</colorTriggerBgColor>
+            <regexCodeList/>
+            <regexCodePropertyList/>
+            <TriggerGroup isActive="yes" isFolder="yes" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+                <name>Anthem</name>
+                <script></script>
+                <triggerType>0</triggerType>
+                <conditonLineDelta>0</conditonLineDelta>
+                <mStayOpen>0</mStayOpen>
+                <mCommand></mCommand>
+                <packageName></packageName>
+                <mFgColor>#ff0000</mFgColor>
+                <mBgColor>#ffff00</mBgColor>
+                <mSoundFile></mSoundFile>
+                <colorTriggerFgColor>#000000</colorTriggerFgColor>
+                <colorTriggerBgColor>#000000</colorTriggerBgColor>
+                <regexCodeList/>
+                <regexCodePropertyList/>
+                <Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+                    <name>Anthem played</name>
+                    <script>addHarmonic(&quot;anthem&quot;, 5)</script>
+                    <triggerType>0</triggerType>
+                    <conditonLineDelta>0</conditonLineDelta>
+                    <mStayOpen>0</mStayOpen>
+                    <mCommand></mCommand>
+                    <packageName></packageName>
+                    <mFgColor>#ff0000</mFgColor>
+                    <mBgColor>#ffff00</mBgColor>
+                    <mSoundFile></mSoundFile>
+                    <colorTriggerFgColor>#000000</colorTriggerFgColor>
+                    <colorTriggerBgColor>#000000</colorTriggerBgColor>
+                    <regexCodeList>
+                        <string>An Anthem fills the air with its mighty fortress of protective influences as you take up its stately music.</string>
+                    </regexCodeList>
+                    <regexCodePropertyList>
+                        <integer>3</integer>
+                    </regexCodePropertyList>
+                </Trigger>
+                <Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+                    <name>Anthem faded</name>
+                    <script>removeHarmonic(&quot;anthem&quot;)
+</script>
+                    <triggerType>0</triggerType>
+                    <conditonLineDelta>0</conditonLineDelta>
+                    <mStayOpen>0</mStayOpen>
+                    <mCommand></mCommand>
+                    <packageName></packageName>
+                    <mFgColor>#ff0000</mFgColor>
+                    <mBgColor>#ffff00</mBgColor>
+                    <mSoundFile></mSoundFile>
+                    <colorTriggerFgColor>#000000</colorTriggerFgColor>
+                    <colorTriggerBgColor>#000000</colorTriggerBgColor>
+                    <regexCodeList>
+                        <string>The structure of protection afforded by the Anthem decays with the final notes of the composition.</string>
+                    </regexCodeList>
+                    <regexCodePropertyList>
+                        <integer>3</integer>
+                    </regexCodePropertyList>
+                </Trigger>
+            </TriggerGroup>
+            <TriggerGroup isActive="yes" isFolder="yes" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+                <name>Canticle</name>
+                <script></script>
+                <triggerType>0</triggerType>
+                <conditonLineDelta>0</conditonLineDelta>
+                <mStayOpen>0</mStayOpen>
+                <mCommand></mCommand>
+                <packageName></packageName>
+                <mFgColor>#ff0000</mFgColor>
+                <mBgColor>#ffff00</mBgColor>
+                <mSoundFile></mSoundFile>
+                <colorTriggerFgColor>#000000</colorTriggerFgColor>
+                <colorTriggerBgColor>#000000</colorTriggerBgColor>
+                <regexCodeList/>
+                <regexCodePropertyList/>
+                <Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+                    <name>Canticle played</name>
+                    <script>addHarmonic(&quot;canticle&quot;, 26)</script>
+                    <triggerType>0</triggerType>
+                    <conditonLineDelta>0</conditonLineDelta>
+                    <mStayOpen>0</mStayOpen>
+                    <mCommand></mCommand>
+                    <packageName></packageName>
+                    <mFgColor>#ff0000</mFgColor>
+                    <mBgColor>#ffff00</mBgColor>
+                    <mSoundFile></mSoundFile>
+                    <colorTriggerFgColor>#000000</colorTriggerFgColor>
+                    <colorTriggerBgColor>#000000</colorTriggerBgColor>
+                    <regexCodeList>
+                        <string>You enter into the realms of the divine as you play the opening strains of a sacred Canticle.</string>
+                    </regexCodeList>
+                    <regexCodePropertyList>
+                        <integer>3</integer>
+                    </regexCodePropertyList>
+                </Trigger>
+                <Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+                    <name>Canticle faded</name>
+                    <script>removeHarmonic(&quot;canticle&quot;)</script>
+                    <triggerType>0</triggerType>
+                    <conditonLineDelta>0</conditonLineDelta>
+                    <mStayOpen>0</mStayOpen>
+                    <mCommand></mCommand>
+                    <packageName></packageName>
+                    <mFgColor>#ff0000</mFgColor>
+                    <mBgColor>#ffff00</mBgColor>
+                    <mSoundFile></mSoundFile>
+                    <colorTriggerFgColor>#000000</colorTriggerFgColor>
+                    <colorTriggerBgColor>#000000</colorTriggerBgColor>
+                    <regexCodeList>
+                        <string>The instabilities of the world again impinge upon you as the Canticle draws to a close.</string>
+                    </regexCodeList>
+                    <regexCodePropertyList>
+                        <integer>3</integer>
+                    </regexCodePropertyList>
+                </Trigger>
+            </TriggerGroup>
+            <TriggerGroup isActive="yes" isFolder="yes" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+                <name>Continuo</name>
+                <script></script>
+                <triggerType>0</triggerType>
+                <conditonLineDelta>0</conditonLineDelta>
+                <mStayOpen>0</mStayOpen>
+                <mCommand></mCommand>
+                <packageName></packageName>
+                <mFgColor>#ff0000</mFgColor>
+                <mBgColor>#ffff00</mBgColor>
+                <mSoundFile></mSoundFile>
+                <colorTriggerFgColor>#000000</colorTriggerFgColor>
+                <colorTriggerBgColor>#000000</colorTriggerBgColor>
+                <regexCodeList/>
+                <regexCodePropertyList/>
+                <Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+                    <name>Continuo played</name>
+                    <script>addHarmonic(&quot;continuo&quot;, 47)</script>
+                    <triggerType>0</triggerType>
+                    <conditonLineDelta>0</conditonLineDelta>
+                    <mStayOpen>0</mStayOpen>
+                    <mCommand></mCommand>
+                    <packageName></packageName>
+                    <mFgColor>#ff0000</mFgColor>
+                    <mBgColor>#ffff00</mBgColor>
+                    <mSoundFile></mSoundFile>
+                    <colorTriggerFgColor>#000000</colorTriggerFgColor>
+                    <colorTriggerBgColor>#000000</colorTriggerBgColor>
+                    <regexCodeList>
+                        <string>Your feelings rise with a Continuo's opening movement.</string>
+                    </regexCodeList>
+                    <regexCodePropertyList>
+                        <integer>3</integer>
+                    </regexCodePropertyList>
+                </Trigger>
+                <Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+                    <name>Continuo faded</name>
+                    <script>removeHarmonic(&quot;continuo&quot;)
+</script>
+                    <triggerType>0</triggerType>
+                    <conditonLineDelta>0</conditonLineDelta>
+                    <mStayOpen>0</mStayOpen>
+                    <mCommand></mCommand>
+                    <packageName></packageName>
+                    <mFgColor>#ff0000</mFgColor>
+                    <mBgColor>#ffff00</mBgColor>
+                    <mSoundFile></mSoundFile>
+                    <colorTriggerFgColor>#000000</colorTriggerFgColor>
+                    <colorTriggerBgColor>#000000</colorTriggerBgColor>
+                    <regexCodeList>
+                        <string>The Continuo falters and dies and, along with it, the thrilling feeling it had brought.</string>
+                    </regexCodeList>
+                    <regexCodePropertyList>
+                        <integer>3</integer>
+                    </regexCodePropertyList>
+                </Trigger>
+            </TriggerGroup>
+            <TriggerGroup isActive="yes" isFolder="yes" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+                <name>Wassail</name>
+                <script></script>
+                <triggerType>0</triggerType>
+                <conditonLineDelta>0</conditonLineDelta>
+                <mStayOpen>0</mStayOpen>
+                <mCommand></mCommand>
+                <packageName></packageName>
+                <mFgColor>#ff0000</mFgColor>
+                <mBgColor>#ffff00</mBgColor>
+                <mSoundFile></mSoundFile>
+                <colorTriggerFgColor>#000000</colorTriggerFgColor>
+                <colorTriggerBgColor>#000000</colorTriggerBgColor>
+                <regexCodeList/>
+                <regexCodePropertyList/>
+                <Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+                    <name>Wassail active</name>
+                    <script>addHarmonic(&quot;wassail&quot;, 68)</script>
+                    <triggerType>0</triggerType>
+                    <conditonLineDelta>0</conditonLineDelta>
+                    <mStayOpen>0</mStayOpen>
+                    <mCommand></mCommand>
+                    <packageName></packageName>
+                    <mFgColor>#ff0000</mFgColor>
+                    <mBgColor>#ffff00</mBgColor>
+                    <mSoundFile></mSoundFile>
+                    <colorTriggerFgColor>#000000</colorTriggerFgColor>
+                    <colorTriggerBgColor>#000000</colorTriggerBgColor>
+                    <regexCodeList>
+                        <string>The Wassail's first notes stir and strengthen you.</string>
+                    </regexCodeList>
+                    <regexCodePropertyList>
+                        <integer>3</integer>
+                    </regexCodePropertyList>
+                </Trigger>
+                <Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+                    <name>Wassail faded</name>
+                    <script>removeHarmonic(&quot;wassail&quot;)</script>
+                    <triggerType>0</triggerType>
+                    <conditonLineDelta>0</conditonLineDelta>
+                    <mStayOpen>0</mStayOpen>
+                    <mCommand></mCommand>
+                    <packageName></packageName>
+                    <mFgColor>#ff0000</mFgColor>
+                    <mBgColor>#ffff00</mBgColor>
+                    <mSoundFile></mSoundFile>
+                    <colorTriggerFgColor>#000000</colorTriggerFgColor>
+                    <colorTriggerBgColor>#000000</colorTriggerBgColor>
+                    <regexCodeList>
+                        <string>The Wassail trails slowly off, coming to a melancholy conclusion.</string>
+                    </regexCodeList>
+                    <regexCodePropertyList>
+                        <integer>3</integer>
+                    </regexCodePropertyList>
+                </Trigger>
+            </TriggerGroup>
+            <TriggerGroup isActive="yes" isFolder="yes" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+                <name>Gigue</name>
+                <script></script>
+                <triggerType>0</triggerType>
+                <conditonLineDelta>0</conditonLineDelta>
+                <mStayOpen>0</mStayOpen>
+                <mCommand></mCommand>
+                <packageName></packageName>
+                <mFgColor>#ff0000</mFgColor>
+                <mBgColor>#ffff00</mBgColor>
+                <mSoundFile></mSoundFile>
+                <colorTriggerFgColor>#000000</colorTriggerFgColor>
+                <colorTriggerBgColor>#000000</colorTriggerBgColor>
+                <regexCodeList/>
+                <regexCodePropertyList/>
+                <Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+                    <name>Gigue played</name>
+                    <script>addHarmonic(&quot;gigue&quot;, 89)</script>
+                    <triggerType>0</triggerType>
+                    <conditonLineDelta>0</conditonLineDelta>
+                    <mStayOpen>0</mStayOpen>
+                    <mCommand></mCommand>
+                    <packageName></packageName>
+                    <mFgColor>#ff0000</mFgColor>
+                    <mBgColor>#ffff00</mBgColor>
+                    <mSoundFile></mSoundFile>
+                    <colorTriggerFgColor>#000000</colorTriggerFgColor>
+                    <colorTriggerBgColor>#000000</colorTriggerBgColor>
+                    <regexCodeList>
+                        <string>You dash off a few bars, launching into the detailed patterns of a Gigue.</string>
+                    </regexCodeList>
+                    <regexCodePropertyList>
+                        <integer>3</integer>
+                    </regexCodePropertyList>
+                </Trigger>
+                <Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+                    <name>Gigue faded</name>
+                    <script>removeHarmonic(&quot;gigue&quot;)
+</script>
+                    <triggerType>0</triggerType>
+                    <conditonLineDelta>0</conditonLineDelta>
+                    <mStayOpen>0</mStayOpen>
+                    <mCommand></mCommand>
+                    <packageName></packageName>
+                    <mFgColor>#ff0000</mFgColor>
+                    <mBgColor>#ffff00</mBgColor>
+                    <mSoundFile></mSoundFile>
+                    <colorTriggerFgColor>#000000</colorTriggerFgColor>
+                    <colorTriggerBgColor>#000000</colorTriggerBgColor>
+                    <regexCodeList>
+                        <string>Your thoughts return to their normal order as the Gigue's airs fade from the room.</string>
+                    </regexCodeList>
+                    <regexCodePropertyList>
+                        <integer>3</integer>
+                    </regexCodePropertyList>
+                </Trigger>
+            </TriggerGroup>
+            <TriggerGroup isActive="yes" isFolder="yes" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+                <name>Hallelujah</name>
+                <script></script>
+                <triggerType>0</triggerType>
+                <conditonLineDelta>0</conditonLineDelta>
+                <mStayOpen>0</mStayOpen>
+                <mCommand></mCommand>
+                <packageName></packageName>
+                <mFgColor>#ff0000</mFgColor>
+                <mBgColor>#ffff00</mBgColor>
+                <mSoundFile></mSoundFile>
+                <colorTriggerFgColor>#000000</colorTriggerFgColor>
+                <colorTriggerBgColor>#000000</colorTriggerBgColor>
+                <regexCodeList/>
+                <regexCodePropertyList/>
+                <Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+                    <name>Hallelujah played</name>
+                    <script>addHarmonic(&quot;hallelujah&quot;, 110)</script>
+                    <triggerType>0</triggerType>
+                    <conditonLineDelta>0</conditonLineDelta>
+                    <mStayOpen>0</mStayOpen>
+                    <mCommand></mCommand>
+                    <packageName></packageName>
+                    <mFgColor>#ff0000</mFgColor>
+                    <mBgColor>#ffff00</mBgColor>
+                    <mSoundFile></mSoundFile>
+                    <colorTriggerFgColor>#000000</colorTriggerFgColor>
+                    <colorTriggerBgColor>#000000</colorTriggerBgColor>
+                    <regexCodeList>
+                        <string>With a powerful fanfare, you begin a resounding Hallelujah.</string>
+                    </regexCodeList>
+                    <regexCodePropertyList>
+                        <integer>3</integer>
+                    </regexCodePropertyList>
+                </Trigger>
+                <Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+                    <name>Hallelujah faded</name>
+                    <script>removeHarmonic(&quot;hallelujah&quot;)
+</script>
+                    <triggerType>0</triggerType>
+                    <conditonLineDelta>0</conditonLineDelta>
+                    <mStayOpen>0</mStayOpen>
+                    <mCommand></mCommand>
+                    <packageName></packageName>
+                    <mFgColor>#ff0000</mFgColor>
+                    <mBgColor>#ffff00</mBgColor>
+                    <mSoundFile></mSoundFile>
+                    <colorTriggerFgColor>#000000</colorTriggerFgColor>
+                    <colorTriggerBgColor>#000000</colorTriggerBgColor>
+                    <regexCodeList>
+                        <string>The Hallelujah's final amen fills you with awe at its power, and sorrow for the ending of this uplifting piece.</string>
+                    </regexCodeList>
+                    <regexCodePropertyList>
+                        <integer>3</integer>
+                    </regexCodePropertyList>
+                </Trigger>
+            </TriggerGroup>
+            <TriggerGroup isActive="yes" isFolder="yes" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+                <name>Harmonius</name>
+                <script></script>
+                <triggerType>0</triggerType>
+                <conditonLineDelta>0</conditonLineDelta>
+                <mStayOpen>0</mStayOpen>
+                <mCommand></mCommand>
+                <packageName></packageName>
+                <mFgColor>#ff0000</mFgColor>
+                <mBgColor>#ffff00</mBgColor>
+                <mSoundFile></mSoundFile>
+                <colorTriggerFgColor>#000000</colorTriggerFgColor>
+                <colorTriggerBgColor>#000000</colorTriggerBgColor>
+                <regexCodeList/>
+                <regexCodePropertyList/>
+                <Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+                    <name>Harmonius played</name>
+                    <script>addHarmonic(&quot;harmonius&quot;, 131)</script>
+                    <triggerType>0</triggerType>
+                    <conditonLineDelta>0</conditonLineDelta>
+                    <mStayOpen>0</mStayOpen>
+                    <mCommand></mCommand>
+                    <packageName></packageName>
+                    <mFgColor>#ff0000</mFgColor>
+                    <mBgColor>#ffff00</mBgColor>
+                    <mSoundFile></mSoundFile>
+                    <colorTriggerFgColor>#000000</colorTriggerFgColor>
+                    <colorTriggerBgColor>#000000</colorTriggerBgColor>
+                    <regexCodeList>
+                        <string>Blending several seemingly distinct musical ideas into one majestic whole, you begin the Harmonius.</string>
+                    </regexCodeList>
+                    <regexCodePropertyList>
+                        <integer>3</integer>
+                    </regexCodePropertyList>
+                </Trigger>
+                <Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+                    <name>Harmonius faded</name>
+                    <script>removeHarmonic(&quot;harmonius&quot;)</script>
+                    <triggerType>0</triggerType>
+                    <conditonLineDelta>0</conditonLineDelta>
+                    <mStayOpen>0</mStayOpen>
+                    <mCommand></mCommand>
+                    <packageName></packageName>
+                    <mFgColor>#ff0000</mFgColor>
+                    <mBgColor>#ffff00</mBgColor>
+                    <mSoundFile></mSoundFile>
+                    <colorTriggerFgColor>#000000</colorTriggerFgColor>
+                    <colorTriggerBgColor>#000000</colorTriggerBgColor>
+                    <regexCodeList>
+                        <string>The individual strands blended by the Harmonius slowly disintegrate into cacophony as the song ends.</string>
+                    </regexCodeList>
+                    <regexCodePropertyList>
+                        <integer>3</integer>
+                    </regexCodePropertyList>
+                </Trigger>
+            </TriggerGroup>
+            <TriggerGroup isActive="yes" isFolder="yes" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+                <name>Contradanse</name>
+                <script></script>
+                <triggerType>0</triggerType>
+                <conditonLineDelta>0</conditonLineDelta>
+                <mStayOpen>0</mStayOpen>
+                <mCommand></mCommand>
+                <packageName></packageName>
+                <mFgColor>#ff0000</mFgColor>
+                <mBgColor>#ffff00</mBgColor>
+                <mSoundFile></mSoundFile>
+                <colorTriggerFgColor>#000000</colorTriggerFgColor>
+                <colorTriggerBgColor>#000000</colorTriggerBgColor>
+                <regexCodeList/>
+                <regexCodePropertyList/>
+                <Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+                    <name>Contradanse played</name>
+                    <script>addHarmonic(&quot;contradanse&quot;, 152)</script>
+                    <triggerType>0</triggerType>
+                    <conditonLineDelta>0</conditonLineDelta>
+                    <mStayOpen>0</mStayOpen>
+                    <mCommand></mCommand>
+                    <packageName></packageName>
+                    <mFgColor>#ff0000</mFgColor>
+                    <mBgColor>#ffff00</mBgColor>
+                    <mSoundFile></mSoundFile>
+                    <colorTriggerFgColor>#000000</colorTriggerFgColor>
+                    <colorTriggerBgColor>#000000</colorTriggerBgColor>
+                    <regexCodeList>
+                        <string>An elaborate Contradanse melody begins to pervade the room.</string>
+                    </regexCodeList>
+                    <regexCodePropertyList>
+                        <integer>3</integer>
+                    </regexCodePropertyList>
+                </Trigger>
+                <Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+                    <name>Contradanse faded</name>
+                    <script>removeHarmonic(&quot;contradanse&quot;)
+</script>
+                    <triggerType>0</triggerType>
+                    <conditonLineDelta>0</conditonLineDelta>
+                    <mStayOpen>0</mStayOpen>
+                    <mCommand></mCommand>
+                    <packageName></packageName>
+                    <mFgColor>#ff0000</mFgColor>
+                    <mBgColor>#ffff00</mBgColor>
+                    <mSoundFile></mSoundFile>
+                    <colorTriggerFgColor>#000000</colorTriggerFgColor>
+                    <colorTriggerBgColor>#000000</colorTriggerBgColor>
+                    <regexCodeList>
+                        <string>Melody slows, simplifies, and comes to an end, terminating the elaborate Contradanse.</string>
+                    </regexCodeList>
+                    <regexCodePropertyList>
+                        <integer>3</integer>
+                    </regexCodePropertyList>
+                </Trigger>
+            </TriggerGroup>
+            <TriggerGroup isActive="yes" isFolder="yes" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+                <name>Bagatelle</name>
+                <script></script>
+                <triggerType>0</triggerType>
+                <conditonLineDelta>0</conditonLineDelta>
+                <mStayOpen>0</mStayOpen>
+                <mCommand></mCommand>
+                <packageName></packageName>
+                <mFgColor>#ff0000</mFgColor>
+                <mBgColor>#ffff00</mBgColor>
+                <mSoundFile></mSoundFile>
+                <colorTriggerFgColor>#000000</colorTriggerFgColor>
+                <colorTriggerBgColor>#000000</colorTriggerBgColor>
+                <regexCodeList/>
+                <regexCodePropertyList/>
+                <Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+                    <name>Bagatelle played</name>
+                    <script>addHarmonic(&quot;bagatelle&quot;, 173)</script>
+                    <triggerType>0</triggerType>
+                    <conditonLineDelta>0</conditonLineDelta>
+                    <mStayOpen>0</mStayOpen>
+                    <mCommand></mCommand>
+                    <packageName></packageName>
+                    <mFgColor>#ff0000</mFgColor>
+                    <mBgColor>#ffff00</mBgColor>
+                    <mSoundFile></mSoundFile>
+                    <colorTriggerFgColor>#000000</colorTriggerFgColor>
+                    <colorTriggerBgColor>#000000</colorTriggerBgColor>
+                    <regexCodeList>
+                        <string>Through a series of musical twists and turns you begin the Bagatelle.</string>
+                    </regexCodeList>
+                    <regexCodePropertyList>
+                        <integer>3</integer>
+                    </regexCodePropertyList>
+                </Trigger>
+                <Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+                    <name>Bagatelle faded</name>
+                    <script>removeHarmonic(&quot;bagatelle&quot;)
+</script>
+                    <triggerType>0</triggerType>
+                    <conditonLineDelta>0</conditonLineDelta>
+                    <mStayOpen>0</mStayOpen>
+                    <mCommand></mCommand>
+                    <packageName></packageName>
+                    <mFgColor>#ff0000</mFgColor>
+                    <mBgColor>#ffff00</mBgColor>
+                    <mSoundFile></mSoundFile>
+                    <colorTriggerFgColor>#000000</colorTriggerFgColor>
+                    <colorTriggerBgColor>#000000</colorTriggerBgColor>
+                    <regexCodeList>
+                        <string>Twisting and turning no more, the Bagatelle ends suddenly.</string>
+                    </regexCodeList>
+                    <regexCodePropertyList>
+                        <integer>3</integer>
+                    </regexCodePropertyList>
+                </Trigger>
+            </TriggerGroup>
+            <TriggerGroup isActive="yes" isFolder="yes" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+                <name>Partita</name>
+                <script></script>
+                <triggerType>0</triggerType>
+                <conditonLineDelta>0</conditonLineDelta>
+                <mStayOpen>0</mStayOpen>
+                <mCommand></mCommand>
+                <packageName></packageName>
+                <mFgColor>#ff0000</mFgColor>
+                <mBgColor>#ffff00</mBgColor>
+                <mSoundFile></mSoundFile>
+                <colorTriggerFgColor>#000000</colorTriggerFgColor>
+                <colorTriggerBgColor>#000000</colorTriggerBgColor>
+                <regexCodeList/>
+                <regexCodePropertyList/>
+                <Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+                    <name>Partita played</name>
+                    <script>addHarmonic(&quot;partita&quot;, 194)</script>
+                    <triggerType>0</triggerType>
+                    <conditonLineDelta>0</conditonLineDelta>
+                    <mStayOpen>0</mStayOpen>
+                    <mCommand></mCommand>
+                    <packageName></packageName>
+                    <mFgColor>#ff0000</mFgColor>
+                    <mBgColor>#ffff00</mBgColor>
+                    <mSoundFile></mSoundFile>
+                    <colorTriggerFgColor>#000000</colorTriggerFgColor>
+                    <colorTriggerBgColor>#000000</colorTriggerBgColor>
+                    <regexCodeList>
+                        <string>Delicate and precise, you take up a Partita.</string>
+                    </regexCodeList>
+                    <regexCodePropertyList>
+                        <integer>3</integer>
+                    </regexCodePropertyList>
+                </Trigger>
+                <Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+                    <name>Partita faded</name>
+                    <script>removeHarmonic(&quot;partita&quot;)</script>
+                    <triggerType>0</triggerType>
+                    <conditonLineDelta>0</conditonLineDelta>
+                    <mStayOpen>0</mStayOpen>
+                    <mCommand></mCommand>
+                    <packageName></packageName>
+                    <mFgColor>#ff0000</mFgColor>
+                    <mBgColor>#ffff00</mBgColor>
+                    <mSoundFile></mSoundFile>
+                    <colorTriggerFgColor>#000000</colorTriggerFgColor>
+                    <colorTriggerBgColor>#000000</colorTriggerBgColor>
+                    <regexCodeList>
+                        <string>The Partita ends without fanfare, precisely as it began.</string>
+                    </regexCodeList>
+                    <regexCodePropertyList>
+                        <integer>3</integer>
+                    </regexCodePropertyList>
+                </Trigger>
+            </TriggerGroup>
+            <TriggerGroup isActive="yes" isFolder="yes" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+                <name>Berceuse</name>
+                <script></script>
+                <triggerType>0</triggerType>
+                <conditonLineDelta>0</conditonLineDelta>
+                <mStayOpen>0</mStayOpen>
+                <mCommand></mCommand>
+                <packageName></packageName>
+                <mFgColor>#ff0000</mFgColor>
+                <mBgColor>#ffff00</mBgColor>
+                <mSoundFile></mSoundFile>
+                <colorTriggerFgColor>#000000</colorTriggerFgColor>
+                <colorTriggerBgColor>#000000</colorTriggerBgColor>
+                <regexCodeList/>
+                <regexCodePropertyList/>
+                <Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+                    <name>Berceuse played</name>
+                    <script>addHarmonic(&quot;berceuse&quot;, 215)</script>
+                    <triggerType>0</triggerType>
+                    <conditonLineDelta>0</conditonLineDelta>
+                    <mStayOpen>0</mStayOpen>
+                    <mCommand></mCommand>
+                    <packageName></packageName>
+                    <mFgColor>#ff0000</mFgColor>
+                    <mBgColor>#ffff00</mBgColor>
+                    <mSoundFile></mSoundFile>
+                    <colorTriggerFgColor>#000000</colorTriggerFgColor>
+                    <colorTriggerBgColor>#000000</colorTriggerBgColor>
+                    <regexCodeList>
+                        <string>You begin a delicate Berceuse, playing with great tenderness.</string>
+                    </regexCodeList>
+                    <regexCodePropertyList>
+                        <integer>3</integer>
+                    </regexCodePropertyList>
+                </Trigger>
+                <Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+                    <name>Berceuse faded</name>
+                    <script>removeHarmonic(&quot;berceuse&quot;)</script>
+                    <triggerType>0</triggerType>
+                    <conditonLineDelta>0</conditonLineDelta>
+                    <mStayOpen>0</mStayOpen>
+                    <mCommand></mCommand>
+                    <packageName></packageName>
+                    <mFgColor>#ff0000</mFgColor>
+                    <mBgColor>#ffff00</mBgColor>
+                    <mSoundFile></mSoundFile>
+                    <colorTriggerFgColor>#000000</colorTriggerFgColor>
+                    <colorTriggerBgColor>#000000</colorTriggerBgColor>
+                    <regexCodeList>
+                        <string>The Berceuse drifts faintly away as its final notes float softly through the area.</string>
+                    </regexCodeList>
+                    <regexCodePropertyList>
+                        <integer>3</integer>
+                    </regexCodePropertyList>
+                </Trigger>
+            </TriggerGroup>
+            <TriggerGroup isActive="yes" isFolder="yes" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+                <name>Reel</name>
+                <script></script>
+                <triggerType>0</triggerType>
+                <conditonLineDelta>0</conditonLineDelta>
+                <mStayOpen>0</mStayOpen>
+                <mCommand></mCommand>
+                <packageName></packageName>
+                <mFgColor>#ff0000</mFgColor>
+                <mBgColor>#ffff00</mBgColor>
+                <mSoundFile></mSoundFile>
+                <colorTriggerFgColor>#000000</colorTriggerFgColor>
+                <colorTriggerBgColor>#000000</colorTriggerBgColor>
+                <regexCodeList/>
+                <regexCodePropertyList/>
+                <Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+                    <name>Reel played</name>
+                    <script>addHarmonic(&quot;reel&quot;, 236)</script>
+                    <triggerType>0</triggerType>
+                    <conditonLineDelta>0</conditonLineDelta>
+                    <mStayOpen>0</mStayOpen>
+                    <mCommand></mCommand>
+                    <packageName></packageName>
+                    <mFgColor>#ff0000</mFgColor>
+                    <mBgColor>#ffff00</mBgColor>
+                    <mSoundFile></mSoundFile>
+                    <colorTriggerFgColor>#000000</colorTriggerFgColor>
+                    <colorTriggerBgColor>#000000</colorTriggerBgColor>
+                    <regexCodeList>
+                        <string>With a hop you enter into the complex, up-tempo dance melody of a Reel.</string>
+                    </regexCodeList>
+                    <regexCodePropertyList>
+                        <integer>3</integer>
+                    </regexCodePropertyList>
+                </Trigger>
+                <Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+                    <name>Reel faded</name>
+                    <script>removeHarmonic(&quot;reel&quot;)</script>
+                    <triggerType>0</triggerType>
+                    <conditonLineDelta>0</conditonLineDelta>
+                    <mStayOpen>0</mStayOpen>
+                    <mCommand></mCommand>
+                    <packageName></packageName>
+                    <mFgColor>#ff0000</mFgColor>
+                    <mBgColor>#ffff00</mBgColor>
+                    <mSoundFile></mSoundFile>
+                    <colorTriggerFgColor>#000000</colorTriggerFgColor>
+                    <colorTriggerBgColor>#000000</colorTriggerBgColor>
+                    <regexCodeList>
+                        <string>The Reel comes around again, sounding as though ready to begin another step, and suddenly stops.</string>
+                    </regexCodeList>
+                    <regexCodePropertyList>
+                        <integer>3</integer>
+                    </regexCodePropertyList>
+                </Trigger>
+            </TriggerGroup>
+            <TriggerGroup isActive="yes" isFolder="yes" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+                <name>Minuet</name>
+                <script></script>
+                <triggerType>0</triggerType>
+                <conditonLineDelta>0</conditonLineDelta>
+                <mStayOpen>0</mStayOpen>
+                <mCommand></mCommand>
+                <packageName></packageName>
+                <mFgColor>#ff0000</mFgColor>
+                <mBgColor>#ffff00</mBgColor>
+                <mSoundFile></mSoundFile>
+                <colorTriggerFgColor>#000000</colorTriggerFgColor>
+                <colorTriggerBgColor>#000000</colorTriggerBgColor>
+                <regexCodeList/>
+                <regexCodePropertyList/>
+                <Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+                    <name>Minuet played</name>
+                    <script>if matches[2] then bard.harmonics.minuetTarget = matches[2]:title() end
+
+if not table.contains(anitimer.activeTimers,&quot;Minuet&quot;) then addHarmonic(&quot;minuet&quot;, 257) end</script>
+                    <triggerType>0</triggerType>
+                    <conditonLineDelta>0</conditonLineDelta>
+                    <mStayOpen>0</mStayOpen>
+                    <mCommand></mCommand>
+                    <packageName></packageName>
+                    <mFgColor>#ff0000</mFgColor>
+                    <mBgColor>#ffff00</mBgColor>
+                    <mSoundFile></mSoundFile>
+                    <colorTriggerFgColor>#000000</colorTriggerFgColor>
+                    <colorTriggerBgColor>#000000</colorTriggerBgColor>
+                    <regexCodeList>
+                        <string>^You begin a Minuet in measured\, precise tones\, aimed at (\w+)\.$</string>
+                    </regexCodeList>
+                    <regexCodePropertyList>
+                        <integer>1</integer>
+                    </regexCodePropertyList>
+                </Trigger>
+                <Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+                    <name>Minuet active</name>
+                    <script>otgEcho3(&quot;MINUET ACTIVE - ORDER &quot;..bard.harmonics.minuetTarget:upper()..&quot; NOW!&quot;)</script>
+                    <triggerType>0</triggerType>
+                    <conditonLineDelta>0</conditonLineDelta>
+                    <mStayOpen>0</mStayOpen>
+                    <mCommand></mCommand>
+                    <packageName></packageName>
+                    <mFgColor>#ff0000</mFgColor>
+                    <mBgColor>#ffff00</mBgColor>
+                    <mSoundFile></mSoundFile>
+                    <colorTriggerFgColor>#000000</colorTriggerFgColor>
+                    <colorTriggerBgColor>#000000</colorTriggerBgColor>
+                    <regexCodeList>
+                        <string>You have gained the complete trust of your victim.</string>
+                    </regexCodeList>
+                    <regexCodePropertyList>
+                        <integer>3</integer>
+                    </regexCodePropertyList>
+                </Trigger>
+                <Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+                    <name>Minuet faded</name>
+                    <script>removeHarmonic(&quot;minuet&quot;)
+bard.harmonics.minuetTarget = nil</script>
+                    <triggerType>0</triggerType>
+                    <conditonLineDelta>0</conditonLineDelta>
+                    <mStayOpen>0</mStayOpen>
+                    <mCommand></mCommand>
+                    <packageName></packageName>
+                    <mFgColor>#ff0000</mFgColor>
+                    <mBgColor>#ffff00</mBgColor>
+                    <mSoundFile></mSoundFile>
+                    <colorTriggerFgColor>#000000</colorTriggerFgColor>
+                    <colorTriggerBgColor>#000000</colorTriggerBgColor>
+                    <regexCodeList>
+                        <string>A final, stately processional brings the Minuet to a close.</string>
+                    </regexCodeList>
+                    <regexCodePropertyList>
+                        <integer>3</integer>
+                    </regexCodePropertyList>
+                </Trigger>
+                <Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+                    <name>Order failed</name>
+                    <script>otgEcho3(target:upper()..&quot; IS DEAF... AURALBLESS OR PESANTE!&quot;)</script>
+                    <triggerType>0</triggerType>
+                    <conditonLineDelta>0</conditonLineDelta>
+                    <mStayOpen>0</mStayOpen>
+                    <mCommand></mCommand>
+                    <packageName></packageName>
+                    <mFgColor>#ff0000</mFgColor>
+                    <mBgColor>#ffff00</mBgColor>
+                    <mSoundFile></mSoundFile>
+                    <colorTriggerFgColor>#000000</colorTriggerFgColor>
+                    <colorTriggerBgColor>#000000</colorTriggerBgColor>
+                    <regexCodeList>
+                        <string>^(\w+) is deaf to your commands\.$</string>
+                    </regexCodeList>
+                    <regexCodePropertyList>
+                        <integer>1</integer>
+                    </regexCodePropertyList>
+                </Trigger>
+            </TriggerGroup>
+            <TriggerGroup isActive="yes" isFolder="yes" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+                <name>Lament</name>
+                <script></script>
+                <triggerType>0</triggerType>
+                <conditonLineDelta>0</conditonLineDelta>
+                <mStayOpen>0</mStayOpen>
+                <mCommand></mCommand>
+                <packageName></packageName>
+                <mFgColor>#ff0000</mFgColor>
+                <mBgColor>#ffff00</mBgColor>
+                <mSoundFile></mSoundFile>
+                <colorTriggerFgColor>#000000</colorTriggerFgColor>
+                <colorTriggerBgColor>#000000</colorTriggerBgColor>
+                <regexCodeList/>
+                <regexCodePropertyList/>
+                <Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+                    <name>Lament played</name>
+                    <script>addHarmonic(&quot;lament&quot;, 278)</script>
+                    <triggerType>0</triggerType>
+                    <conditonLineDelta>0</conditonLineDelta>
+                    <mStayOpen>0</mStayOpen>
+                    <mCommand></mCommand>
+                    <packageName></packageName>
+                    <mFgColor>#ff0000</mFgColor>
+                    <mBgColor>#ffff00</mBgColor>
+                    <mSoundFile></mSoundFile>
+                    <colorTriggerFgColor>#000000</colorTriggerFgColor>
+                    <colorTriggerBgColor>#000000</colorTriggerBgColor>
+                    <regexCodeList>
+                        <string>Slowly you take up the dark and sombre tones of a Lament.</string>
+                    </regexCodeList>
+                    <regexCodePropertyList>
+                        <integer>3</integer>
+                    </regexCodePropertyList>
+                </Trigger>
+                <Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+                    <name>Lament faded</name>
+                    <script>removeHarmonic(&quot;lament&quot;)</script>
+                    <triggerType>0</triggerType>
+                    <conditonLineDelta>0</conditonLineDelta>
+                    <mStayOpen>0</mStayOpen>
+                    <mCommand></mCommand>
+                    <packageName></packageName>
+                    <mFgColor>#ff0000</mFgColor>
+                    <mBgColor>#ffff00</mBgColor>
+                    <mSoundFile></mSoundFile>
+                    <colorTriggerFgColor>#000000</colorTriggerFgColor>
+                    <colorTriggerBgColor>#000000</colorTriggerBgColor>
+                    <regexCodeList>
+                        <string>A burdensome sense of oppression lifts as the Lament arrives at its mournful conclusion.</string>
+                    </regexCodeList>
+                    <regexCodePropertyList>
+                        <integer>3</integer>
+                    </regexCodePropertyList>
+                </Trigger>
+            </TriggerGroup>
+            <TriggerGroup isActive="yes" isFolder="yes" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+                <name>POES</name>
+                <script></script>
+                <triggerType>0</triggerType>
+                <conditonLineDelta>0</conditonLineDelta>
+                <mStayOpen>0</mStayOpen>
+                <mCommand></mCommand>
+                <packageName></packageName>
+                <mFgColor>#ff0000</mFgColor>
+                <mBgColor>#ffff00</mBgColor>
+                <mSoundFile></mSoundFile>
+                <colorTriggerFgColor>#000000</colorTriggerFgColor>
+                <colorTriggerBgColor>#000000</colorTriggerBgColor>
+                <regexCodeList/>
+                <regexCodePropertyList/>
+                <Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+                    <name>POES Succeeded</name>
+                    <script>if bard.harmonics.poes.pending[1] == matches[2]:lower() then
+	table.remove(bard.harmonics.poes.pending, 1)
+end
+</script>
+                    <triggerType>0</triggerType>
+                    <conditonLineDelta>0</conditonLineDelta>
+                    <mStayOpen>0</mStayOpen>
+                    <mCommand></mCommand>
+                    <packageName></packageName>
+                    <mFgColor>#ff0000</mFgColor>
+                    <mBgColor>#ffff00</mBgColor>
+                    <mSoundFile></mSoundFile>
+                    <colorTriggerFgColor>#000000</colorTriggerFgColor>
+                    <colorTriggerBgColor>#000000</colorTriggerBgColor>
+                    <regexCodeList>
+                        <string>^As you enter into the beauties of a faraway place in the performance of the (\w+), you sense the completeness and fulfillment of the composition\.$</string>
+                    </regexCodeList>
+                    <regexCodePropertyList>
+                        <integer>1</integer>
+                    </regexCodePropertyList>
+                </Trigger>
+                <Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+                    <name>POES Failed</name>
+                    <script>--bardEcho(&quot;Failed to add &quot;..matches[2]..&quot; to POES&quot;)
+--if otg.queueing == true then
+--	send(&quot;play aeternam &quot;..matches[2])
+--else
+--	svo.doadd(&quot;play aeternam &quot;..matches[2])
+--end</script>
+                    <triggerType>0</triggerType>
+                    <conditonLineDelta>0</conditonLineDelta>
+                    <mStayOpen>0</mStayOpen>
+                    <mCommand></mCommand>
+                    <packageName></packageName>
+                    <mFgColor>#ff0000</mFgColor>
+                    <mBgColor>#ffff00</mBgColor>
+                    <mSoundFile></mSoundFile>
+                    <colorTriggerFgColor>#000000</colorTriggerFgColor>
+                    <colorTriggerBgColor>#000000</colorTriggerBgColor>
+                    <regexCodeList>
+                        <string>^You feel unable to enter into the performance of the (\w+).$</string>
+                    </regexCodeList>
+                    <regexCodePropertyList>
+                        <integer>1</integer>
+                    </regexCodePropertyList>
+                </Trigger>
+                <Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+                    <name>POES Limit</name>
+                    <script>--bardEcho(&quot;Already have 2 &quot;..matches[2]..&quot; in POES, move to next...&quot;)
+if bard.harmonics.poes.pending[2] == matches[2]:lower() then
+	table.remove(bard.harmonics.poes.pending, 2)
+end
+if bard.harmonics.poes.pending[1] == matches[2]:lower() then
+	table.remove(bard.harmonics.poes.pending, 1)
+end
+</script>
+                    <triggerType>0</triggerType>
+                    <conditonLineDelta>0</conditonLineDelta>
+                    <mStayOpen>0</mStayOpen>
+                    <mCommand></mCommand>
+                    <packageName></packageName>
+                    <mFgColor>#ff0000</mFgColor>
+                    <mBgColor>#ffff00</mBgColor>
+                    <mSoundFile></mSoundFile>
+                    <colorTriggerFgColor>#000000</colorTriggerFgColor>
+                    <colorTriggerBgColor>#000000</colorTriggerBgColor>
+                    <regexCodeList>
+                        <string>^As you begin the Aeternam\, you realise that it can hold no more (\w+) harmonics\.$</string>
+                    </regexCodeList>
+                    <regexCodePropertyList>
+                        <integer>1</integer>
+                    </regexCodePropertyList>
+                </Trigger>
+                <Trigger isActive="no" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="yes" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+                    <name>Check POES</name>
+                    <script>resetPOES()</script>
+                    <triggerType>0</triggerType>
+                    <conditonLineDelta>0</conditonLineDelta>
+                    <mStayOpen>49</mStayOpen>
+                    <mCommand></mCommand>
+                    <packageName></packageName>
+                    <mFgColor>#ff0000</mFgColor>
+                    <mBgColor>#ffff00</mBgColor>
+                    <mSoundFile></mSoundFile>
+                    <colorTriggerFgColor>#000000</colorTriggerFgColor>
+                    <colorTriggerBgColor>#000000</colorTriggerBgColor>
+                    <regexCodeList>
+                        <string>The following abide in the Place of Eternal Song:</string>
+                    </regexCodeList>
+                    <regexCodePropertyList>
+                        <integer>3</integer>
+                    </regexCodePropertyList>
+                    <Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+                        <name>POES Contents</name>
+                        <script>deleteLine()
+local harm = matches[2]
+if harm == &quot;Bagatell&quot; then harm = &quot;Bagatelle&quot; end
+
+if string.find(&quot;One&quot;, matches[1]) then h = 1 else h = 2 end
+
+bard.harmonics.poes[harm:lower()] = h
+harm = harm..&quot;:&quot;
+while 22-string.len(harm) &gt; 0 do
+	harm = harm..&quot; &quot;
+end
+echo(&quot;\n&quot;..harm..h..&quot;\n&quot;)</script>
+                        <triggerType>0</triggerType>
+                        <conditonLineDelta>0</conditonLineDelta>
+                        <mStayOpen>0</mStayOpen>
+                        <mCommand></mCommand>
+                        <packageName></packageName>
+                        <mFgColor>#ff0000</mFgColor>
+                        <mBgColor>#ffff00</mBgColor>
+                        <mSoundFile></mSoundFile>
+                        <colorTriggerFgColor>#000000</colorTriggerFgColor>
+                        <colorTriggerBgColor>#000000</colorTriggerBgColor>
+                        <regexCodeList>
+                            <string>^One (\w+)$</string>
+                            <string>^Two (\w+)es$</string>
+                            <string>^Two (\w+)s$</string>
+                        </regexCodeList>
+                        <regexCodePropertyList>
+                            <integer>1</integer>
+                            <integer>1</integer>
+                            <integer>1</integer>
+                        </regexCodePropertyList>
+                    </Trigger>
+                    <Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+                        <name>POES Prompt</name>
+                        <script>--if checkingPOES == false then return end
+--checkingPOES = false
+refillPOES()
+disableTrigger(&quot;Check POES&quot;)
+</script>
+                        <triggerType>0</triggerType>
+                        <conditonLineDelta>0</conditonLineDelta>
+                        <mStayOpen>0</mStayOpen>
+                        <mCommand></mCommand>
+                        <packageName></packageName>
+                        <mFgColor>#ff0000</mFgColor>
+                        <mBgColor>#ffff00</mBgColor>
+                        <mSoundFile></mSoundFile>
+                        <colorTriggerFgColor>#000000</colorTriggerFgColor>
+                        <colorTriggerBgColor>#000000</colorTriggerBgColor>
+                        <regexCodeList>
+                            <string>return isPrompt()</string>
+                        </regexCodeList>
+                        <regexCodePropertyList>
+                            <integer>4</integer>
+                        </regexCodePropertyList>
+                    </Trigger>
+                </Trigger>
+                <Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+                    <name>Checking POES</name>
+                    <script>enableTrigger(&quot;Check POES&quot;)</script>
+                    <triggerType>0</triggerType>
+                    <conditonLineDelta>0</conditonLineDelta>
+                    <mStayOpen>0</mStayOpen>
+                    <mCommand></mCommand>
+                    <packageName></packageName>
+                    <mFgColor>#ff0000</mFgColor>
+                    <mBgColor>#ffff00</mBgColor>
+                    <mSoundFile></mSoundFile>
+                    <colorTriggerFgColor>#000000</colorTriggerFgColor>
+                    <colorTriggerBgColor>#000000</colorTriggerBgColor>
+                    <regexCodeList>
+                        <string>Deep in your spirit you search for a link with the Place of Eternal Song.</string>
+                    </regexCodeList>
+                    <regexCodePropertyList>
+                        <integer>3</integer>
+                    </regexCodePropertyList>
+                </Trigger>
+            </TriggerGroup>
+            <Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+                <name>Harmonic not found</name>
+                <script>anitimer:destroy(matches[2])
+
+local h = table.index_of(bard.harmonics.current, matches[2]:lower())
+table.remove(bard.harmonics.current, h)
+</script>
+                <triggerType>0</triggerType>
+                <conditonLineDelta>0</conditonLineDelta>
+                <mStayOpen>0</mStayOpen>
+                <mCommand></mCommand>
+                <packageName></packageName>
+                <mFgColor>#ff0000</mFgColor>
+                <mBgColor>#ffff00</mBgColor>
+                <mSoundFile></mSoundFile>
+                <colorTriggerFgColor>#000000</colorTriggerFgColor>
+                <colorTriggerBgColor>#000000</colorTriggerBgColor>
+                <regexCodeList>
+                    <string>^No (\w+) harmonic found\.$</string>
+                </regexCodeList>
+                <regexCodePropertyList>
+                    <integer>1</integer>
+                </regexCodePropertyList>
+            </Trigger>
+            <Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="yes" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+                <name>Dismissing harmonic</name>
+                <script>bard.harmonics.dismiss = matches[2]:lower()
+removeHarmonic(matches[2]:lower())</script>
+                <triggerType>0</triggerType>
+                <conditonLineDelta>0</conditonLineDelta>
+                <mStayOpen>3</mStayOpen>
+                <mCommand></mCommand>
+                <packageName></packageName>
+                <mFgColor>#ff0000</mFgColor>
+                <mBgColor>#ffff00</mBgColor>
+                <mSoundFile></mSoundFile>
+                <colorTriggerFgColor>#000000</colorTriggerFgColor>
+                <colorTriggerBgColor>#000000</colorTriggerBgColor>
+                <regexCodeList>
+                    <string>^You dismiss your (\w+) harmonic\.$</string>
+                </regexCodeList>
+                <regexCodePropertyList>
+                    <integer>1</integer>
+                </regexCodePropertyList>
+                <Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+                    <name>Prompt</name>
+                    <script>bard.harmonics.dismiss = nil</script>
+                    <triggerType>0</triggerType>
+                    <conditonLineDelta>0</conditonLineDelta>
+                    <mStayOpen>0</mStayOpen>
+                    <mCommand></mCommand>
+                    <packageName></packageName>
+                    <mFgColor>#ff0000</mFgColor>
+                    <mBgColor>#ffff00</mBgColor>
+                    <mSoundFile></mSoundFile>
+                    <colorTriggerFgColor>#000000</colorTriggerFgColor>
+                    <colorTriggerBgColor>#000000</colorTriggerBgColor>
+                    <regexCodeList>
+                        <string>return isPrompt()</string>
+                    </regexCodeList>
+                    <regexCodePropertyList>
+                        <integer>4</integer>
+                    </regexCodePropertyList>
+                </Trigger>
+            </Trigger>
+        </TriggerGroup>
+    </TriggerPackage>
+    <TimerPackage>
+        <Timer isActive="yes" isFolder="no" isTempTimer="no" isOffsetTimer="no">
+            <name>Animate</name>
+            <script>anitimer:animate()</script>
+            <command></command>
+            <packageName></packageName>
+            <time>00:00:00.005</time>
+        </Timer>
+    </TimerPackage>
+    <AliasPackage>
+        <Alias isActive="yes" isFolder="no">
+            <name>Harmonics</name>
+            <script>	local arg = matches[2]
+
+	if string.find(matches[2],&quot;r&quot;) then --reset
+		bard.harmonics.current = {}
+		bardEcho(&quot;Harmonics reset&quot;)
+		return
+	end
+
+	if gmcp.Char.Status.race == &quot;Dragon&quot; or gmcp.Char.Status.class ~= &quot;Bard&quot; then
+		otgEcho(&quot;Not bard, cannot play harmonics&quot;)
+		return
+	end
+
+	resetHarmonicKeepUp()
+
+	if arg == &quot;f&quot; then arg = &quot;full&quot; else arg = &quot;basic&quot; end
+
+	bard.harmonics.mode = arg
+
+	playHarmonics(arg)</script>
+            <command></command>
+            <packageName></packageName>
+            <regex>^harms(|f|full|\sf|\sfullr|\sr|\sreset)$</regex>
+        </Alias>
+        <Alias isActive="yes" isFolder="no">
+            <name>Dismiss harmonic</name>
+            <script>
+	if matches[2] == &quot;all&quot; then
+		dismissAllCurrentHarmonics()
+
+	else
+		send(&quot;harmonic dismiss &quot;..matches[2])
+
+		local h = table.index_of(bard.harmonics.keepup, harmonic)
+		if h then
+			table.remove(bard.harmonics.keepup, h)
+			bardEcho(harmonic:title()..&quot; removed from keep-up&quot;)
+		end
+
+	end</script>
+            <command></command>
+            <packageName></packageName>
+            <regex>^hd (\w+)$</regex>
+        </Alias>
+    </AliasPackage>
+    <ActionPackage/>
+    <ScriptPackage>
+        <Script isActive="yes" isFolder="no">
+            <name>Bard Echo</name>
+            <packageName></packageName>
+            <script>function bardEcho(line)
+	--custom echo
+
+	line = &quot;&lt;IndianRed&gt;[Bard]: &lt;reset&gt;&quot;..line
+	moveCursorEnd(&quot;main&quot;)
+	if getCurrentLine() ~= &quot;&quot; then line = &quot;\n&quot;..line end
+	cecho(line)
+
+end</script>
+            <eventHandlerList/>
+        </Script>
+        <Script isActive="yes" isFolder="no">
+            <name>AniTimer base code</name>
+            <packageName></packageName>
+            <script>anitimer = anitimer or {}
+anitimer.timers = anitimer.timers or {}
+anitimer.activeTimers = anitimer.activeTimers or {}
+
+css_fg = [[
+	border-width: 4px;
+	border-radius: 7;
+	border-color: maroon;
+	background-color: green;
+]]
+
+css_bg = [[
+	border-width: 4px;
+	border-radius: 7;
+	border-color: green;
+	background-color: maroon;
+]]
+
+function anitimer:new(name, cons, time, options)
+	if options and type(options) ~= &quot;table&quot; then
+		error(&quot;anitimer:new() -- if you provide a fourth parameter, it must be a table. Please see http://github.com/demonnic/animatedtimers for detailed usage information&quot;)
+	end
+	if not options then
+		options = {}
+	end
+
+	if options.showTime == nil then options.showTime = true end 
+	options.timerCaption = options.timerCaption or &quot;&quot;
+
+	if not anitimer.timers[name] then
+		anitimer.timers[name] = {}
+		anitimer.timers[name].gauge = Geyser.Gauge:new(cons, options.container)
+		anitimer.timers[name].watch = createStopWatch()
+	else
+		for k,v in pairs(cons) do
+			anitimer.timers[name].gauge[k] = v
+		end
+		if options.container then
+			options.container:add(anitimer.timers[name].gauge)
+    	else
+			Geyser:add(anitimer.timers[name].gauge)
+		end
+	end
+
+	anitimer.timers[name].max = time
+	anitimer.timers[name].current = time
+	anitimer.timers[name].showTime = options.showTime
+	anitimer.timers[name].timerCaption = options.timerCaption
+	if options.cssFront then
+		if not options.cssBack then
+			options.cssBack = options.cssFront .. &quot;background-color: black;&quot;
+		end
+		anitimer.timers[name].gauge:setStyleSheet(options.cssFront, options.cssBack)
+	end
+
+	if not table.contains(anitimer.activeTimers, name) then table.insert(anitimer.activeTimers, name) end
+	resetStopWatch(anitimer.timers[name].watch)
+	startStopWatch(anitimer.timers[name].watch)
+	anitimer:update(name)
+end
+
+function anitimer:getTime(name)
+	if not anitimer.timers[name] then return 0 end
+	local max = anitimer.timers[name].max
+	local current = getStopWatchTime(anitimer.timers[name].watch)
+	local newValue = max - current
+	return newValue
+end
+
+function anitimer:update(name)
+	if not anitimer.timers[name] then return nil end
+	anitimer.timers[name].current = anitimer:getTime(name)
+	local time = anitimer.timers[name].current
+	anitimer.timers[name].text = (anitimer.timers[name].showTime and string.format(&quot;%.1f %s&quot;, time, anitimer.timers[name].timerCaption or &quot;&quot;)) or (anitimer.timers[name].timerCaption or &quot;&quot;)
+	anitimer.timers[name].gauge:setValue(anitimer.timers[name].current, anitimer.timers[name].max, anitimer.timers[name].text)
+end
+
+function anitimer:stop(name)
+	if not anitimer.timers[name] then return nil end
+	stopStopWatch(anitimer.timers[name].watch)
+	anitimer.timers[name].gauge:hide()
+	for i,v in pairs(anitimer.activeTimers) do
+		if anitimer.timers[v] == anitimer.timers[name] then
+			table.remove(anitimer.activeTimers, i)
+			return
+		end
+	end
+end
+
+function anitimer:stopAll()
+	for _,name in pairs(anitimer.activeTimers) do
+		anitimer:stop(name)
+	end
+end
+
+function anitimer:pause(name)
+	if not anitimer.timers[name] then return nil end
+	stopStopWatch(anitimer.timers[name].watch)
+	for i,v in pairs(anitimer.activeTimers) do
+		if v == name then
+			table.remove(anitimer.activeTimers, i)
+			raiseEvent(&quot;timer stopped&quot;,name)
+			return
+		end
+	end
+end
+
+function anitimer:pauseAll()
+	for name,_ in pairs(anitimer.timers) do
+		anitimer:pause(name)
+	end
+end
+
+function anitimer:destroy(name)
+	if not anitimer.timers[name] then return nil end
+	anitimer:stop(name)
+	anitimer.timers[name] = nil
+	raiseEvent(&quot;timer stopped&quot;,name)
+	return true
+end
+
+function anitimer:destroyAll()
+	for name,_ in pairs(anitimer.timers) do
+		anitimer:destroy(name)
+	end
+end
+
+function anitimer:start(name)
+	if not anitimer.timers[name] then return nil end
+	local current = anitimer.timers[name].current
+	if current == 0 then return nil end
+	anitimer.timers[name].max = current
+	resetStopWatch(anitimer.timers[name].watch)
+	startStopWatch(anitimer.timers[name].watch)
+	if not table.contains(anitimer.activeTimers, name) then table.insert(anitimer.activeTimers, name) end
+	anitimer.timers[name].gauge:show()
+	anitimer:update(name)
+end
+
+function anitimer:startAll()
+	for name,_ in pairs(anitimer.timers) do
+		if not table.contains(anitimer.activeTimers, name) then
+			anitimer:start(name)
+		end
+	end
+end
+
+function anitimer:animate()
+	for i,v in pairs(anitimer.activeTimers) do
+		name = v
+		anitimer:update(name)
+		if anitimer:getTime(name) &lt;= 0 then
+			anitimer.timers[name].gauge:hide()
+			table.remove(anitimer.activeTimers, i)
+			stopStopWatch(anitimer.timers[name].watch)
+			anitimer.timers[name].max = 0
+			anitimer.timers[name].current = 0
+			raiseEvent(&quot;timer stopped&quot;,name)
+		end
+	end
+end</script>
+            <eventHandlerList/>
+        </Script>
+        <Script isActive="yes" isFolder="no">
+            <name>Harmonic tracker</name>
+            <packageName></packageName>
+            <script>bard = otg or {}
+bard.harmonics = bard.harmonics or {}
+bard.harmonics.current = bard.harmonics.current or {}
+bard.harmonics.keepup = bard.harmonics.keepup or {}
+bard.harmonics.pending = bard.harmonics.pending or {}
+bard.harmonics.poes = bard.harmonics.poes or {}
+bard.harmonics.keep = bard.harmonics.keep or false
+bard.harmonics.mode = bard.harmonics.mode or &quot;basic&quot;
+
+
+
+
+-------------------------------------------
+-- change to 1 if you have a tuning fork --
+
+local haveTuningFork = 0
+-------------------------------------------
+
+function clearCurrentHarmonics()
+
+	for k,v in pairs(bard.harmonics.current) do
+		anitimer:destroy(v:title())
+	end
+	bard.harmonics.current = {}
+
+end
+
+
+function addHarmonic(harmonic, y)
+
+	if not table.contains(bard.harmonics.current, harmonic) then
+		table.insert(bard.harmonics.current, #bard.harmonics.current+1,harmonic)
+	end
+
+	if table.contains(bard.harmonics.pending,harmonic) then
+		local h = table.index_of(bard.harmonics.pending, harmonic)
+		table.remove(bard.harmonics.pending, h)
+	end
+
+	if y then harmonicTimer(harmonic:title(), y) end
+
+end
+
+
+function removeHarmonic(harmonic)
+
+	anitimer:destroy(harmonic:title())
+
+	if table.contains(bard.harmonics.current,harmonic) then
+		local h = table.index_of(bard.harmonics.current, harmonic)
+		table.remove(bard.harmonics.current,h)
+	end
+
+	if bard.harmonics.keep == true and table.contains(bard.harmonics.keepup, harmonic) and bard.harmonics.dismiss == harmonic then
+		if not table.contains(svo.me.doqueue, &quot;play &quot;..harmonic) and not table.contains(svo.me.doqueue, &quot;play &quot;..harmonic..&quot; at &quot;..target) then
+			svo.doadd(playHarmonic(harmonic,&quot;none&quot;))
+		end
+	end
+
+end
+
+
+function keepUpHarmonic(harmonic)
+
+	if table.contains(bard.harmonics,harmonic) then
+		if not table.contains(bard.harmonics.keepup, harmonic) then
+			table.insert(bard.harmonics.keepup, #bard.harmonics.keepup+1, harmonic)
+			bardEcho(harmonic:title()..&quot; added to keep-up&quot;)
+
+		else
+			local h = table.index_of(bard.harmonics.keepup, harmonic)
+			if h then
+				table.remove(bard.harmonics.keepup, h)
+				bardEcho(harmonic:title()..&quot; removed from keep-up&quot;)
+			end
+		end
+	end
+
+end
+
+function resetHarmonicKeepUp(hideEcho)
+	bard.harmonics.keepup = {&quot;anthem&quot;,&quot;canticle&quot;,&quot;continuo&quot;,&quot;wassail&quot;,&quot;gigue&quot;,&quot;hallelujah&quot;,&quot;harmonius&quot;}
+	if not hideEcho then bardEcho(&quot;Harmonic keep-up table reset&quot;) end
+end
+
+
+function dismissAllCurrentHarmonics()
+
+	for k,v in pairs(bard.harmonics.current) do
+		svo.doadd(&quot;harmonics dismiss &quot;..v)
+	end
+
+end
+
+
+function pendingHarmonics(harmonic)
+	if not table.contains(bard.harmonics.pending, harmonic) then
+		table.insert(bard.harmonics.pending, #bard.harmonics.pending + 1, harmonic)
+	end
+end
+
+
+
+function nextHarmonic()
+	if #bard.harmonics.pending &gt; 0 then
+		bard.harmonics.next = bard.harmonics.pending[1]
+	end
+end
+
+
+
+
+function harmonicTimer(L, Y)
+
+	local w = tonumber(HarmsPane.width:match(&quot;%d+&quot;)) - 10
+	
+	if L == &quot;Minuet&quot; then -- include name of victim
+		anitimer:new(L, {x = 5, y = Y, height = 20, width = w}, 900*(tonumber(haveTuningFork)+1), {container = HarmsPane, showTime = true, timerCaption = L..&quot;:&quot;..bard.harmonics.minuetTarget, cssFront = css_fg, cssBack = css_bg})
+	else
+		anitimer:new(L, {x = 5, y = Y, height = 20, width = w}, 900*(tonumber(haveTuningFork)+1), {container = HarmsPane, showTime = true, timerCaption = L, cssFront = css_fg, cssBack = css_bg})
+	end
+
+end
+
+function harmonicTimeOut(event, harmonic)
+
+	if event == &quot;timer stopped&quot; then
+		if table.contains(bard.harmonics.current,harmonic) then
+			local h = table.index_of(bard.harmonics.current, harmonic)
+			table.remove(bard.harmonics.current,h)
+		end
+
+		bardEcho(harmonic:title()..&quot; harmonic faded&quot;)
+
+		if bard.harmonics.keep == true then
+			if not table.contains(bard.harmonics.pending, harmonic) and not table.contains(svo.me.doqueue, &quot;play &quot;..harmonic) then
+				table.insert(bard.harmonics.pending, #bard.harmonics.pending + 1, harmonic)
+			end
+			playHarmonics()
+		end
+
+	end
+
+end
+
+
+function playHarmonics(arg)
+
+	if svo.defs.mode == &quot;combat&quot; or bard.harmonics.mode == &quot;full&quot; then
+		local addHarms = {&quot;contradanse&quot;,&quot;bagatelle&quot;,&quot;partita&quot;,&quot;berceuse&quot;,&quot;reel&quot;}
+		for k, v in pairs(addHarms) do
+			if not table.contains(bard.harmonics.keepup,v) then
+				table.insert(bard.harmonics.keepup,#bard.harmonics.keepup + 1,v)
+			end
+		end
+		if ndb.isperson(target) then table.insert(bard.harmonics.keepup,#bard.harmonics.keepup + 1,&quot;minuet at &quot;..target) end
+
+	end
+
+	-- check animated timers to see if harmonics have faded when not in current room
+	for k, v in pairs(bard.harmonics.current) do
+		if not table.contains(anitimer.activeTimers, v:title()) then
+			local h = table.index_of(bard.harmonics.current, v)
+			table.remove(bard.harmonics.current, h)
+		end
+	end
+
+	-- add missing harmonics to do list
+	for k, v in pairs(bard.harmonics.keepup) do
+		if not table.contains(anitimer.activeTimers, v:title()) and not table.contains(svo.me.doqueue, &quot;play &quot;..v) and not table.contains(svo.me.doqueue, &quot;play &quot;..v..&quot; at &quot;..target:title()) then
+			svo.doadd(&quot;play &quot;..v)
+		end
+	end
+
+end
+
+
+registerAnonymousEventHandler(&quot;svo system loaded&quot;, &quot;resetHarmonicKeepUp&quot;)
+registerAnonymousEventHandler(&quot;svo died&quot;,&quot;clearCurrentHarmonics&quot;)
+registerAnonymousEventHandler(&quot;svo got dragonform&quot;, &quot;clearCurrentHarmonics&quot;)
+registerAnonymousEventHandler(&quot;svo lost dragonform&quot;, &quot;harmonicsGUI&quot;)
+registerAnonymousEventHandler(&quot;timer stopped&quot;, &quot;harmonicTimeOut&quot;)
+</script>
+            <eventHandlerList/>
+        </Script>
+        <Script isActive="yes" isFolder="no">
+            <name>Harmonics Pane</name>
+            <packageName></packageName>
+            <script>WindowWidth, WindowHeight = getMainWindowSize()
+
+css_border = [[
+	border-width: 2px;
+	border-color: #400020;
+	border-style: groove;
+	border-radius: 1;
+	]]
+
+harm_border = [[
+	border-width: 4px;
+	border-radius: 7;
+	border-color: #400020;
+	background-color: #002000;
+]]
+
+function createHarmonicsPane()
+
+-----------------------------------------
+--     User configurable variables     --
+
+	local w = 140								-- adjust this to make the harmonics pane narrower or wider
+	local xPos = WindowWidth - w - 20		-- adjust this to move the pane left or right
+	local yPos = WindowHeight - 303 - 20	-- adjust this to move the pane up or down
+-----------------------------------------
+
+
+-- DO NOT EDIT BELOW THIS LINE --
+
+	HarmsPane = Geyser.Label:new({
+		name = &quot;HarmsPane&quot;,
+		width = w, height = 303,
+		x = xPos, y = yPos, 
+	})
+	HarmsPane:setStyleSheet(css_border)
+
+-- Anthem
+	AnthemPane = Geyser.Label:new({
+		name = &quot;AnthemPane&quot;,
+		width = w - 10, height = 20,
+		x = 5, y = 5,
+		fontSize = 8,
+		message = [[&lt;center&gt;Anthem&lt;/center&gt;]]
+	}, HarmsPane)
+	AnthemPane:setStyleSheet(harm_border)
+	AnthemPane:setClickCallback(&quot;HarmClick('Anthem')&quot;)
+
+-- Canticle
+	CanticlePane = Geyser.Label:new({
+		name = &quot;CanticlePane&quot;,
+		width = w - 10, height = 20,
+		x = 5, y = 26,
+		message = [[&lt;center&gt;Canticle&lt;/center&gt;]]
+	}, HarmsPane)		
+	CanticlePane:setStyleSheet(harm_border)
+	CanticlePane:setClickCallback(&quot;HarmClick('Canticle')&quot;)
+
+-- Continuo
+	ContinuoPane = Geyser.Label:new({
+		name = &quot;ContinuoPane&quot;,
+		width = w - 10, height = 20,
+		x = 5, y = 47,
+		message = [[&lt;center&gt;Continuo&lt;/center&gt;]]
+	}, HarmsPane)		
+	ContinuoPane:setStyleSheet(harm_border)
+	ContinuoPane:setClickCallback(&quot;HarmClick('Continuo')&quot;)
+
+-- Wassail
+	WassailPane = Geyser.Label:new({
+		name = &quot;WassailPane&quot;,
+		width = w - 10, height = 20,
+		x = 5, y = 68,
+		message = [[&lt;center&gt;Wassail&lt;/center&gt;]]
+	}, HarmsPane)
+	WassailPane:setStyleSheet(harm_border)
+	WassailPane:setClickCallback(&quot;HarmClick('Wassail')&quot;)
+
+-- Gigue
+	GiguePane = Geyser.Label:new({
+		name = &quot;GiguePane&quot;,
+		width = w - 10, height = 20,
+		x = 5, y = 89,
+		message = [[&lt;center&gt;Gigue&lt;/center&gt;]]
+	}, HarmsPane)
+	GiguePane:setStyleSheet(harm_border)
+	GiguePane:setClickCallback(&quot;HarmClick('Gigue')&quot;)
+
+-- Hallelujah
+	HallelujahPane = Geyser.Label:new({
+		name = &quot;HallelujahPane&quot;,
+		width = w - 10, height = 20,
+		x = 5, y = 110,
+		message = [[&lt;center&gt;Hallelujah&lt;/center&gt;]]
+	}, HarmsPane)
+	HallelujahPane:setStyleSheet(harm_border)
+	HallelujahPane:setClickCallback(&quot;HarmClick('Hallelujah')&quot;)
+
+-- Harmonious
+	HarmoniousPane = Geyser.Label:new({
+		name = &quot;HarmoniousPane&quot;,
+		width = w - 10, height = 20,
+		x = 5, y = 131,
+		message = [[&lt;center&gt;Harmonious&lt;/center&gt;]]
+	}, HarmsPane)
+	HarmoniousPane:setStyleSheet(harm_border)
+	HarmoniousPane:setClickCallback(&quot;HarmClick('Harmonius')&quot;)
+
+-- Contradanse
+	ContradansePane = Geyser.Label:new({
+		name = &quot;ContradansePane&quot;,
+		width = w - 10, height = 20,
+		x = 5, y = 152,
+		message = [[&lt;center&gt;Contradanse&lt;/center&gt;]]
+	}, HarmsPane)
+	ContradansePane:setStyleSheet(harm_border)
+	ContradansePane:setClickCallback(&quot;HarmClick('Contradanse')&quot;)
+
+-- Bagatelle
+	BagatellePane = Geyser.Label:new({
+		name = &quot;BagatellePane&quot;,
+		width = w - 10, height = 20,
+		x = 5, y = 173,
+		message = [[&lt;center&gt;Bagatelle&lt;/center&gt;]]
+	}, HarmsPane)
+	BagatellePane:setStyleSheet(harm_border)
+	BagatellePane:setClickCallback(&quot;HarmClick('Bagatelle')&quot;)
+
+-- Partita
+	PartitaPane = Geyser.Label:new({
+		name = &quot;PartitaPane&quot;,
+		width = w - 10, height = 20,
+		x = 5, y = 194,
+		message = [[&lt;center&gt;Partita&lt;/center&gt;]]
+	}, HarmsPane)
+	PartitaPane:setStyleSheet(harm_border)
+	PartitaPane:setClickCallback(&quot;HarmClick('Partita')&quot;)
+
+-- Berceuse
+	BerceusePane = Geyser.Label:new({
+		name = &quot;BerceusePane&quot;,
+		width = w - 10, height = 20,
+		x = 5, y = 215,
+		message = [[&lt;center&gt;Berceuse&lt;/center&gt;]]
+	}, HarmsPane)
+	BerceusePane:setStyleSheet(harm_border)
+	BerceusePane:setClickCallback(&quot;HarmClick('Berceuse')&quot;)
+
+-- Reel
+	ReelPane = Geyser.Label:new({
+		name = &quot;ReelPane&quot;,
+		width = w - 10, height = 20,
+		x = 5, y = 236,
+		message = [[&lt;center&gt;Reel&lt;/center&gt;]]
+	}, HarmsPane)
+	ReelPane:setStyleSheet(harm_border)
+	ReelPane:setClickCallback(&quot;HarmClick('Reel')&quot;)
+
+-- Minuet
+	MinuetPane = Geyser.Label:new({
+		name = &quot;MinuetPane&quot;,
+		width = w - 10, height = 20,
+		x = 5, y = 257,
+		message = [[&lt;center&gt;Minuet&lt;/center&gt;]]
+	}, HarmsPane)
+	MinuetPane:setStyleSheet(harm_border)
+	MinuetPane:setClickCallback(&quot;HarmClick('Minuet')&quot;)
+
+-- Lament
+	LamentPane = Geyser.Label:new({
+		name = &quot;LamentPane&quot;,
+		width = w - 10, height = 20,
+		x = 5, y = 278,
+		message = [[&lt;center&gt;Lament&lt;/center&gt;]]
+	}, HarmsPane)
+	LamentPane:setStyleSheet(harm_border)
+	LamentPane:setClickCallback(&quot;HarmClick('Lament')&quot;)
+
+end
+
+createHarmonicsPane()
+
+function HarmClick(harmonic) --click the harmonic name to play it!
+
+	harmonic = harmonic:lower()
+
+	playHarmonic(harmonic)
+
+end
+</script>
+            <eventHandlerList/>
+        </Script>
+        <Script isActive="yes" isFolder="no">
+            <name>Play Harmonics</name>
+            <packageName></packageName>
+            <script>bard = bard or {}
+bard.harmonics = bard.harmonics or {}
+
+bard.harmonics.room = bard.harmonics.room or {
+	&quot;lament&quot;,			-- causes fear
+	&quot;anthem&quot;,			-- damage mitigation
+	&quot;harmonius&quot;,		-- understand all languages
+	&quot;cacophony&quot;,		-- destroys reverb vibration
+	&quot;aeternam&quot;,		-- check what's in the POES
+	&quot;rondo&quot;,			-- call extra rats
+	&quot;contradanse&quot;,	-- gives non-deaf enemies random mental affliction
+	&quot;paxmusicalis&quot;,	-- periodically prevents violent acts
+	&quot;gigue&quot;,			-- improves EQ recovery of allies
+	&quot;percussia&quot;,		-- stuns (can be delayed)
+	&quot;bagatelle&quot;,		-- deals magic damage to undeaf, strips deafness
+	&quot;partita&quot;,		-- protects other harmonics
+	&quot;berceuse&quot;,		-- sleep
+	&quot;continuo&quot;,		-- health regen
+	&quot;wassail&quot;,		-- mana regen
+	&quot;chorale&quot;,		-- gives XP
+	&quot;canticle&quot;,		-- improves balance recovery of allies
+	&quot;reel&quot;,			-- forces enemy off balance
+	&quot;hallelujah&quot;		-- passive affliction curing
+}
+
+bard.harmonics.directed = bard.harmonics.directed or {
+	&quot;battaglia&quot;	-- send harmonics in direction	
+}
+
+bard.harmonics.targeted = bard.harmonics.targeted or {
+	&quot;minuet&quot;,			-- balanceless force
+	&quot;funeralmass&quot;	-- instakill
+}
+
+bard.dirs = {
+	&quot;n&quot;, 	&quot;north&quot;,
+	&quot;ne&quot;,	&quot;northeast&quot;,
+	&quot;e&quot;,	&quot;east&quot;,
+	&quot;se&quot;,	&quot;southeast&quot;,
+	&quot;s&quot;,	&quot;south&quot;,
+	&quot;sw&quot;,	&quot;southwest&quot;,
+	&quot;w&quot;,	&quot;west&quot;,
+	&quot;nw&quot;,	&quot;northwest&quot;,
+	&quot;in&quot;,
+	&quot;out&quot;,
+	&quot;u&quot;,	&quot;up&quot;,
+	&quot;d&quot;,	&quot;down&quot;
+}
+
+function playHarmonic(harmonic,dtn)
+
+	print(&quot;Play harmonic - &quot;..harmonic)
+	if gmcp.Char.Status.race == &quot;Dragon&quot; or gmcp.Char.Status.class ~= &quot;Bard&quot; then return end
+
+	local hstr
+
+	if not dtn or dtn == &quot;&quot; or dtn == &quot;none&quot; then
+		if table.contains(bard.harmonics.room, harmonic) then
+			if table.contains(bard.harmonics.current, harmonic) then
+				bardEcho(harmonic:title()..&quot; already present.\n&quot;)
+				return
+			end
+
+			if svo.me.doqueue.repeating then svo.dor(&quot;off&quot;, true) end
+
+			hstr = &quot;play &quot;..harmonic
+			svo.doadd(hstr)
+
+		end
+
+	else
+		if table.contains(bard.dirs,dtn) and table.contains(bard.harmonics.directed,harmonic) then
+			hstr = &quot;play &quot;..harmonic..&quot; &quot;..dtn
+			svo.doadd(hstr)
+
+		end
+
+	end
+end
+
+function harmonicKeepUp()
+
+	if bard.harmonics.keep == false or gmcp.Char.Status.race == &quot;Dragon&quot; or gmcp.Char.Status.class ~= &quot;Bard&quot; then
+		disableTimer(&quot;Harmonic KeepUp&quot;)
+		return
+	end
+
+end</script>
+            <eventHandlerList/>
+        </Script>
+    </ScriptPackage>
+    <KeyPackage/>
+</MudletPackage>

@@ -1,0 +1,645 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE MudletPackage>
+<MudletPackage version="1.001">
+	<TriggerPackage>
+		<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="yes" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="yes" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+			<name>ttrk.gate</name>
+			<script>deleteLine()
+ttrk.bordercount = 0</script>
+			<triggerType>0</triggerType>
+			<conditonLineDelta>0</conditonLineDelta>
+			<mStayOpen>0</mStayOpen>
+			<mCommand></mCommand>
+			<packageName></packageName>
+			<mFgColor>#ff0000</mFgColor>
+			<mBgColor>#ffff00</mBgColor>
+			<mSoundFile></mSoundFile>
+			<colorTriggerFgColor>#000000</colorTriggerFgColor>
+			<colorTriggerBgColor>#000000</colorTriggerBgColor>
+			<regexCodeList>
+				<string>^(?:\s*)Num(?:\s+)Name(?:\s+)Level(?:\s+)Set(?:\s+)Keyword(?:\s*)$</string>
+				<string>return ttrk.enabled and true or false</string>
+			</regexCodeList>
+			<regexCodePropertyList>
+				<integer>1</integer>
+				<integer>4</integer>
+			</regexCodePropertyList>
+		</Trigger>
+		<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="yes" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+			<name>ttrk.line</name>
+			<script>if multimatches[1][4] == "Dragon" or multimatches[1][4] == "Azatlan"
+ or (multimatches[1][4] == "Wonders" and multimatches[1][5]:find("horn")) then
+	if svo then
+		svo.deleteLineP()
+	else
+		deleteFull()
+	end
+end
+
+ttrk.addTalismanPiece(multimatches[1][4],multimatches[1][5],tonumber(multimatches[1][3]),tonumber(multimatches[1][2]))</script>
+			<triggerType>0</triggerType>
+			<conditonLineDelta>0</conditonLineDelta>
+			<mStayOpen>0</mStayOpen>
+			<mCommand></mCommand>
+			<packageName></packageName>
+			<mFgColor>#ff0000</mFgColor>
+			<mBgColor>#ffff00</mBgColor>
+			<mSoundFile></mSoundFile>
+			<colorTriggerFgColor>#000000</colorTriggerFgColor>
+			<colorTriggerBgColor>#000000</colorTriggerBgColor>
+			<regexCodeList>
+				<string>^\w(?:| +)(\d+)(?:.+)(\d+)(?: +)(\w+)(?: +)(\w+)$</string>
+				<string>return ttrk.enabled and true or false</string>
+			</regexCodeList>
+			<regexCodePropertyList>
+				<integer>1</integer>
+				<integer>4</integer>
+			</regexCodePropertyList>
+		</Trigger>
+		<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="yes" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+			<name>ttrk.border</name>
+			<script>ttrk.bordercount = ttrk.bordercount + 1
+if svo then svo.deleteLineP() else deleteFull() end
+if ttrk.bordercount &gt; 1 then --bottom border
+	ttrk.enabled = nil
+	ttrk.talismanSummary()
+end</script>
+			<triggerType>0</triggerType>
+			<conditonLineDelta>0</conditonLineDelta>
+			<mStayOpen>0</mStayOpen>
+			<mCommand></mCommand>
+			<packageName></packageName>
+			<mFgColor>#ff0000</mFgColor>
+			<mBgColor>#ffff00</mBgColor>
+			<mSoundFile></mSoundFile>
+			<colorTriggerFgColor>#000000</colorTriggerFgColor>
+			<colorTriggerBgColor>#000000</colorTriggerBgColor>
+			<regexCodeList>
+				<string>----------------------------------------------------------------------------------</string>
+				<string>return ttrk.enabled and true or false</string>
+			</regexCodeList>
+			<regexCodePropertyList>
+				<integer>3</integer>
+				<integer>4</integer>
+			</regexCodePropertyList>
+		</Trigger>
+		<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+			<name>ttrk.subheadings</name>
+			<script>if ttrk.enabled and true or false then
+	if svo then
+		svo.deleteLineP()
+	else
+		deleteFull()
+	end
+end</script>
+			<triggerType>0</triggerType>
+			<conditonLineDelta>0</conditonLineDelta>
+			<mStayOpen>0</mStayOpen>
+			<mCommand></mCommand>
+			<packageName></packageName>
+			<mFgColor>#ff0000</mFgColor>
+			<mBgColor>#ffff00</mBgColor>
+			<mSoundFile></mSoundFile>
+			<colorTriggerFgColor>#000000</colorTriggerFgColor>
+			<colorTriggerBgColor>#000000</colorTriggerBgColor>
+			<regexCodeList>
+				<string>      atlatlpieces</string>
+				<string>      azatlanknifepieces</string>
+				<string>      coatipieces</string>
+				<string>      eagleheaddresspieces</string>
+				<string>      kinkajoupieces</string>
+				<string>      quetzalpieces</string>
+				<string>      transoceanicpieces</string>
+				<string>      ramshornpieces</string>
+			</regexCodeList>
+			<regexCodePropertyList>
+				<integer>3</integer>
+				<integer>3</integer>
+				<integer>3</integer>
+				<integer>3</integer>
+				<integer>3</integer>
+				<integer>3</integer>
+				<integer>3</integer>
+				<integer>3</integer>
+			</regexCodePropertyList>
+		</Trigger>
+		<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="yes" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+			<name>ttrk.more</name>
+			<script>send("more",false)
+if svo then
+	svo.deleteLineP()
+else
+	deleteFull()
+end</script>
+			<triggerType>0</triggerType>
+			<conditonLineDelta>0</conditonLineDelta>
+			<mStayOpen>0</mStayOpen>
+			<mCommand></mCommand>
+			<packageName></packageName>
+			<mFgColor>#ff0000</mFgColor>
+			<mBgColor>#ffff00</mBgColor>
+			<mSoundFile></mSoundFile>
+			<colorTriggerFgColor>#000000</colorTriggerFgColor>
+			<colorTriggerBgColor>#000000</colorTriggerBgColor>
+			<regexCodeList>
+				<string>^\[Type (?:More|MORE) if you wish to continue reading\. \((?:\d+)\% shown\)\]$</string>
+				<string>return ttrk.enabled and true or false</string>
+			</regexCodeList>
+			<regexCodePropertyList>
+				<integer>1</integer>
+				<integer>4</integer>
+			</regexCodePropertyList>
+		</Trigger>
+		<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="yes" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+			<name>ttrk.continued</name>
+			<script>deleteLine()</script>
+			<triggerType>0</triggerType>
+			<conditonLineDelta>0</conditonLineDelta>
+			<mStayOpen>0</mStayOpen>
+			<mCommand></mCommand>
+			<packageName></packageName>
+			<mFgColor>#ff0000</mFgColor>
+			<mBgColor>#ffff00</mBgColor>
+			<mSoundFile></mSoundFile>
+			<colorTriggerFgColor>#000000</colorTriggerFgColor>
+			<colorTriggerBgColor>#000000</colorTriggerBgColor>
+			<regexCodeList>
+				<string>[File continued via MORE]</string>
+				<string>return ttrk.enabled and true or false</string>
+			</regexCodeList>
+			<regexCodePropertyList>
+				<integer>3</integer>
+				<integer>4</integer>
+			</regexCodePropertyList>
+		</Trigger>
+		<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="yes" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+			<name>ttrk.prompt</name>
+			<script>if svo then
+	svo.deleteLineP()
+else
+	deleteFull()
+end</script>
+			<triggerType>0</triggerType>
+			<conditonLineDelta>0</conditonLineDelta>
+			<mStayOpen>0</mStayOpen>
+			<mCommand></mCommand>
+			<packageName></packageName>
+			<mFgColor>#ff0000</mFgColor>
+			<mBgColor>#ffff00</mBgColor>
+			<mSoundFile></mSoundFile>
+			<colorTriggerFgColor>#000000</colorTriggerFgColor>
+			<colorTriggerBgColor>#000000</colorTriggerBgColor>
+			<regexCodeList>
+				<string>^(?:\s*)Num(?:\s+)Name(?:\s+)Level(?:\s+)Set(?:\s+)Keyword(?:\s*)$</string>
+				<string>return ttrk.enabled and true or false</string>
+			</regexCodeList>
+			<regexCodePropertyList>
+				<integer>7</integer>
+				<integer>4</integer>
+			</regexCodePropertyList>
+		</Trigger>
+	</TriggerPackage>
+	<TimerPackage />
+	<AliasPackage>
+		<Alias isActive="yes" isFolder="no">
+			<name>Combine Talismans</name>
+			<script>local talismanPart = matches[2]
+
+for i = 1, 32 do
+	send("talisman combine "..talismanPart.." 1")
+end
+for i = 1, 16 do
+	send("talisman combine "..talismanPart.." 2")
+end
+for i = 1, 8 do
+	send("talisman combine "..talismanPart.." 3")
+end
+for i = 1, 4 do
+	send("talisman combine "..talismanPart.." 4")
+end
+for i = 1, 2 do
+	send("talisman combine "..talismanPart.." 5")
+end
+send("talisman combine "..talismanPart.." 6")
+</script>
+			<command></command>
+			<packageName></packageName>
+			<regex>^talismanscombine (\w+)</regex>
+		</Alias>
+		<Alias isActive="yes" isFolder="no">
+			<name>Last Talisman</name>
+			<script>local line = ""
+if not lastTalisman then
+	line = "No dragon talismans found"
+else
+	line = lastTalisman.." (level "..lastTalismanLvl..")"
+end
+cecho("\n&lt;pink&gt;[OTG]:&lt;reset&gt; Last talisman: "..line.."\n")</script>
+			<command></command>
+			<packageName></packageName>
+			<regex>^lt$</regex>
+		</Alias>
+		<Alias isActive="yes" isFolder="no">
+			<name>Show talismans</name>
+			<script>ttrk.showTalismans(matches[2])</script>
+			<command></command>
+			<packageName></packageName>
+			<regex>^tshow (\w+)$</regex>
+		</Alias>
+		<Alias isActive="yes" isFolder="no">
+			<name>Talisman Pieces</name>
+			<script>ttrk.checking = ttrk.checking or true
+ttrk.resetTalismans()
+timeframe("ttrk.enabled",0,3)
+send("talisman pieces",false)</script>
+			<command></command>
+			<packageName></packageName>
+			<regex>^tlist$</regex>
+		</Alias>
+	</AliasPackage>
+	<ActionPackage />
+	<ScriptPackage>
+		<Script isActive="yes" isFolder="no">
+			<name>talitracker functions</name>
+			<packageName></packageName>
+			<script>-- TALISMAN TRACKER
+
+ttrk = ttrk or {}
+
+local tblTalismanLevels = {1,2,4,8,16,32,64}
+
+function ttrk.resetTalismans()
+
+	ttrk.talismans = {
+		["dragon"] = {
+			["black"] = {
+				["claw"] = 0,
+				["heart"] = 0,
+				["tooth"] = 0,
+				["scale"] = 0,
+				["leather"] = 0,
+				["bone"] = 0,
+				["eye"] = 0,
+				["sac"] = 0
+			},
+			["blue"] = {
+				["claw"] = 0,
+				["heart"] = 0,
+				["tooth"] = 0,
+				["scale"] = 0,
+				["leather"] = 0,
+				["bone"] = 0,
+				["eye"] = 0,
+				["lung"] = 0
+			},
+			["gold"] = {
+				["claw"] = 0,
+				["heart"] = 0,
+				["tooth"] = 0,
+				["scale"] = 0,
+				["leather"] = 0,
+				["bone"] = 0,
+				["eye"] = 0,
+				["stem"] = 0
+			},
+			["green"] = {
+				["claw"] = 0,
+				["heart"] = 0,
+				["tooth"] = 0,
+				["scale"] = 0,
+				["leather"] = 0,
+				["bone"] = 0,
+				["eye"] = 0,
+				["sac"] = 0
+			},
+			["red"] = {
+				["claw"] = 0,
+				["heart"] = 0,
+				["tooth"] = 0,
+				["scale"] = 0,
+				["leather"] = 0,
+				["bone"] = 0,
+				["eye"] = 0,
+				["belly"] = 0
+			},
+			["silver"] = {
+				["claw"] = 0,
+				["heart"] = 0,
+				["tooth"] = 0,
+				["scale"] = 0,
+				["leather"] = 0,
+				["bone"] = 0,
+				["eye"] = 0,
+				["larynx"] = 0
+			},
+		},--end of dragon
+
+		["azatlan"] = {
+			["eagleheaddress"] = {
+				["redfeather"] = 0,
+				["yellowfeather"] = 0,
+				["bluefeather"] = 0,
+				["greenfeather"] = 0,
+				["orangefeather"] = 0,
+				["purplefeather"] = 0,
+				["blackfeather"] = 0,
+			},
+			["orb"] = {
+				["left"] = 0,
+				["right"] = 0,
+				["center"] = 0
+			},
+			["knife"] = {
+				["bladetop"] = 0,
+				["bladebottom"] = 0,
+				["leather"] = 0
+			},
+			["atlatl"] = {
+				["shaft"] = 0,
+				["cup"] = 0,
+				["spear"] = 0,
+			},
+			["quetzal"] = {
+				["redfeather"] = 0,
+				["bluefeather"] = 0,
+				["greenfeather"] = 0,
+				["cage"] = 0,
+				["egg"] = 0,
+				["talon"] = 0
+			},
+			["kinkajou"] = {
+				["tooth"] = 0,
+				["collar"] = 0,
+				["bait"] = 0,
+				["tail"] = 0,
+				["claw"] = 0,
+				["paw"] = 0,
+			},
+			["coati"] = {
+				["tooth"] = 0,
+				["collar"] = 0,
+				["bait"] = 0,
+				["tail"] = 0,
+				["claw"] = 0,
+				["paw"] = 0,
+			},
+
+		}, --end of azatlan
+
+		["wonders"] = {
+			["ramshorn"] = {
+				["horn"] = 0,
+				["mouth"] = 0,
+				["leftstrap"] = 0,
+				["rightstrap"] = 0,
+				["fastener"] = 0,
+			},
+
+		}, --end of wonders
+
+		["required"] = { --only if not 64 (level 7)
+			["dragon"] = {
+				["lung"] = 4,
+				["sac"] = 4,
+				["stem"] = 4,
+				["belly"] = 4,
+				["larynx"] = 4,
+			},
+			["azatlan"] = {
+				["eagleheaddress"] = {
+					["orangefeather"] = 16,
+					["purplefeather"] = 16,
+					["blackfeather"] = 4,
+				},
+				["orb"] = {
+					["left"] = 4,
+					["right"] = 4,
+					["center"] = 2,
+				},
+				["knife"] = {
+					["bladetop"] = 1,
+					["bladebottom"] = 1,
+					["leather"] = 1,
+				},
+				["quetzal"] = {
+					["egg"] = 4,
+					["talon"] = 16,
+				},
+				["kinkajou"] = {
+					["tail"] = 4,
+					["claw"] = 32,
+					["paw"] = 16,
+				},
+				["coati"] = {
+					["tooth"] = 16,
+					["tail"] = 4,
+					["paw"] = 32,
+				},
+				["atlatl"] = {
+					["shaft"] = 1,
+					["cup"] = 1,
+					["spear"] = 1,
+				}
+			},
+			["wonders"] = {
+				["ramshorn"] = {
+					["horn"] = 1,
+					["mouth"] = 1,
+					["leftstrap"] = 1,
+					["rightstrap"] = 1,
+					["fastener"] = 1,
+				},
+			},
+		},
+		["colours"] = {
+			["black"] = "&lt;115,115,115&gt;",
+			["blue"] = "&lt;200,200,255&gt;",
+			["gold"] = "&lt;230,230,130&gt;",
+			["green"] = "&lt;170,230,170&gt;",
+			["red"] = "&lt;230,170,170&gt;",
+			["silver"] = "&lt;200,200,200&gt;"
+		}
+	}
+
+end --resetTalismans
+
+
+ttrk.addTalismanPiece = function(tSet,tType,tLvl,tCount)
+
+	local x = tblTalismanLevels[tLvl] * tCount
+	tSet = tSet:lower()
+
+	if tSet == "dragon" then
+
+		local tClr = string.sub(tType,1,tType:find("dragon")-1)
+		local tPrt = string.sub(tType,tType:find("dragon")+6,#tType)
+
+		ttrk.talismans[tSet][tClr][tPrt] = ttrk.talismans[tSet][tClr][tPrt] + x
+
+	elseif tSet == "azatlan" then
+
+		local tClr = string.sub(tType,1,3)
+		local tPrt = "xyz"
+
+		if table.contains(ttrk.talismans.azatlan.eagleheaddress,tType) then
+
+			tClr = "eagleheaddress"
+			tPrt = tType
+
+		else
+			
+			--default is orb
+			if tClr == "orb" then
+			--do nothing
+
+			elseif tClr == "kni" then --azatlan knife
+				tClr = "knife"
+
+			elseif tClr == "que" then --quetzal
+				tClr = "quetzal"
+
+			elseif tClr == "kin" then --kinkajou
+				tClr = "kinkajou"
+
+			elseif tClr == "coa" then --coati
+				tClr = "coati"
+
+			elseif tClr == "atl" then --atlatl
+				tClr = "atlatl"
+
+			end
+	
+			local l = #tClr + 1 or 1
+			tPrt = string.sub(tType,l,#tType)
+		
+		end
+
+		ttrk.talismans[tSet][tClr][tPrt] = ttrk.talismans[tSet][tClr][tPrt] + x
+
+	elseif tSet == "wonders" then
+
+		local tClr = string.sub(tType,1,3)
+		local tPrt = "xyz"
+
+		if tClr == "ram" then --ramshorn
+			tClr = "ramshorn"
+			tPrt = "horn"
+
+		elseif tClr == "hor" then
+			tClr = "ramshorn"
+			tPrt = tType:gsub("horn","")
+
+		end
+
+		ttrk.talismans[tSet][tClr][tPrt] = ttrk.talismans[tSet][tClr][tPrt] + x
+
+	end
+
+
+end --addTalismanPiece
+
+
+
+ttrk.talismanSummary = function()
+
+	ttrk.showTalismans('dragon')
+	ttrk.showTalismans('azatlan')
+	--ttrk.showTalismans('wonders')
+
+end --talismanSummary
+
+
+
+ttrk.showTalismans = function(tSet)
+
+	local v3 = 0
+	local v4 = 0
+
+	if ttrk.talismans[tSet] then
+		cecho("\n&lt;white&gt;Displaying "..tSet:title().." talisman summary:\n")
+
+		for k, v in pairs(ttrk.talismans[tSet]) do
+
+			local v1 = 0
+			local v2 = 0
+
+			local tColour = ttrk.talismans.colours[k] or "&lt;127,127,127&gt;" --default to grey if not specified
+		
+			for x,y in pairs(ttrk.talismans[tSet][k]) do
+	
+				local tReq = 64
+
+				if tSet == "dragon" then
+					tReq = ttrk.talismans.required[tSet][x] or 64
+				else
+					tReq = ttrk.talismans.required[tSet][k][x] or 64
+				end
+
+				local tPct = math.floor((y/tReq)*100)
+
+				local tStr = k.." "..x
+				if tSet == "dragon" then tStr = k.." "..tSet.." "..x end
+
+				while #tStr &lt; 40 do tStr = tStr.." " end
+
+				local tNum = tostring(y)
+				while #tNum &lt; 3 do tNum = " "..tNum end
+
+				local tDiv = tostring(tReq)
+				while #tDiv &lt; 3 do tDiv = " "..tDiv end
+
+				tPct = tostring(tPct)
+				while #tPct &lt; 3 do tPct = " "..tPct end
+
+				decho(tColour..tStr..tNum.." /"..tDiv.." ("..tPct.."%)\n")
+
+				v1 = v1 + math.min(y, tReq) --use smaller of count or number required
+				v2 = v2 + tReq
+
+			end
+
+			if tSet == "dragon" then
+				decho("\n"..tColour..k:title().." "..tSet:title().." Total: "..math.floor((v1/v2)*100).."%\n\n")
+
+			--elseif tSet == "azatlan" then
+			else
+				decho("\n"..tColour..k:title().." Total: "..math.floor((v1/v2)*100).."%\n\n")
+
+			end
+
+			v3 = v3 + v1
+			v4 = v4 + v2
+
+		end
+
+		cecho("&lt;white&gt;"..tSet:title().." Talismans Total: "..math.floor((v3/v4)*100).."%\n")
+
+	else
+		local tali = tSet
+		for k, v in pairs(ttrk.talismans) do
+			if ttrk.talismans[k][tSet] then
+				tSet = k
+				print("Showing ["..tSet.."]["..tali.."]")
+			end
+		end
+
+		if tSet == tali then
+			print("Unable to find talisman set to match "..tSet)
+			return
+		end
+
+--		for k, v in pairs(ttrk.talismans[tSet]) do
+--			tReq = ttrk.talismans.required[tSet][tali][x] or 64
+--		end
+
+	end --if
+	
+end --showTalismans</script>
+			<eventHandlerList />
+		</Script>
+	</ScriptPackage>
+	<KeyPackage />
+	<HelpPackage>
+		<helpURL></helpURL>
+	</HelpPackage>
+</MudletPackage>

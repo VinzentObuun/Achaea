@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE MudletPackage>
+<MudletPackage version="1.001">
+    <TriggerPackage>
+        <TriggerGroup isActive="yes" isFolder="yes" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+            <name>city charge list</name>
+            <script></script>
+            <triggerType>0</triggerType>
+            <conditonLineDelta>0</conditonLineDelta>
+            <mStayOpen>0</mStayOpen>
+            <mCommand></mCommand>
+            <packageName></packageName>
+            <mFgColor>#ff0000</mFgColor>
+            <mBgColor>#ffff00</mBgColor>
+            <mSoundFile></mSoundFile>
+            <colorTriggerFgColor>#000000</colorTriggerFgColor>
+            <colorTriggerBgColor>#000000</colorTriggerBgColor>
+            <regexCodeList/>
+            <regexCodePropertyList/>
+            <Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="yes" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+                <name>city charges start</name>
+                <script>enableTrigger(&quot;city charge capture&quot;)
+
+chargeFineTotal = 0
+chargeTermTotal = 0</script>
+                <triggerType>0</triggerType>
+                <conditonLineDelta>1</conditonLineDelta>
+                <mStayOpen>0</mStayOpen>
+                <mCommand></mCommand>
+                <packageName></packageName>
+                <mFgColor>#ff0000</mFgColor>
+                <mBgColor>#ffff00</mBgColor>
+                <mSoundFile></mSoundFile>
+                <colorTriggerFgColor>#000000</colorTriggerFgColor>
+                <colorTriggerBgColor>#000000</colorTriggerBgColor>
+                <regexCodeList>
+                    <string>[ID]      [Date]     [Enemy]         [Charge]             [Fine]     [Term]    </string>
+                    <string>-------------------------------------------------------------------------------</string>
+                </regexCodeList>
+                <regexCodePropertyList>
+                    <integer>3</integer>
+                    <integer>3</integer>
+                </regexCodePropertyList>
+            </Trigger>
+            <Trigger isActive="no" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+                <name>city charge capture</name>
+                <script>if matches[2] then chargeFineTotal = chargeFineTotal + tonumber(matches[2]) end
+if matches[3] then chargeTermTotal = chargeTermTotal + tonumber(matches[3]) end
+enableTrigger(&quot;city charge end&quot;)</script>
+                <triggerType>0</triggerType>
+                <conditonLineDelta>0</conditonLineDelta>
+                <mStayOpen>0</mStayOpen>
+                <mCommand></mCommand>
+                <packageName></packageName>
+                <mFgColor>#ff0000</mFgColor>
+                <mBgColor>#ffff00</mBgColor>
+                <mSoundFile></mSoundFile>
+                <colorTriggerFgColor>#000000</colorTriggerFgColor>
+                <colorTriggerBgColor>#000000</colorTriggerBgColor>
+                <regexCodeList>
+                    <string>^\d+\s+\d+ \w+ \d+\s+\w+\s+.+?\s+(\d+)(?:\s+)?(\d+)?$</string>
+                </regexCodeList>
+                <regexCodePropertyList>
+                    <integer>1</integer>
+                </regexCodePropertyList>
+            </Trigger>
+            <Trigger isActive="no" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+                <name>city charge end</name>
+                <script>echo(&quot;\n&quot;..string.rep(&quot; &quot;,51)..&quot;Total: &quot;..chargeFineTotal)
+echo(string.rep(&quot; &quot;,11-string.len(chargeFineTotal))..chargeTermTotal)
+disableTrigger(&quot;city charge capture&quot;)
+disableTrigger(&quot;city charge end&quot;)
+</script>
+                <triggerType>0</triggerType>
+                <conditonLineDelta>1</conditonLineDelta>
+                <mStayOpen>0</mStayOpen>
+                <mCommand></mCommand>
+                <packageName></packageName>
+                <mFgColor>#ff0000</mFgColor>
+                <mBgColor>#ffff00</mBgColor>
+                <mSoundFile></mSoundFile>
+                <colorTriggerFgColor>#000000</colorTriggerFgColor>
+                <colorTriggerBgColor>#000000</colorTriggerBgColor>
+                <regexCodeList>
+                    <string>-------------------------------------------------------------------------------</string>
+                </regexCodeList>
+                <regexCodePropertyList>
+                    <integer>3</integer>
+                </regexCodePropertyList>
+            </Trigger>
+        </TriggerGroup>
+    </TriggerPackage>
+    <TimerPackage/>
+    <AliasPackage/>
+    <ActionPackage/>
+    <ScriptPackage/>
+    <KeyPackage/>
+</MudletPackage>

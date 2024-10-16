@@ -1,0 +1,1058 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE MudletPackage>
+<MudletPackage version="1.001">
+	<TriggerPackage>
+		<TriggerGroup isActive="yes" isFolder="yes" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+			<name>Achaea NDB</name>
+			<script></script>
+			<triggerType>0</triggerType>
+			<conditonLineDelta>0</conditonLineDelta>
+			<mStayOpen>0</mStayOpen>
+			<mCommand></mCommand>
+			<packageName></packageName>
+			<mFgColor>#ff0000</mFgColor>
+			<mBgColor>#ffff00</mBgColor>
+			<mSoundFile></mSoundFile>
+			<colorTriggerFgColor>#000000</colorTriggerFgColor>
+			<colorTriggerBgColor>#000000</colorTriggerBgColor>
+			<regexCodeList />
+			<regexCodePropertyList />
+			<Trigger isActive="no" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+				<name>Check Player City</name>
+				<script>if not honoursPerson then return end
+andb.players[honoursPerson].city = matches[3]:title()
+
+selectString(matches[3], 1)
+fg(andb.highlighting[matches[3]])
+resetFormat()
+
+raiseEvent("andb Check Highlight", honoursPerson)</script>
+				<triggerType>0</triggerType>
+				<conditonLineDelta>0</conditonLineDelta>
+				<mStayOpen>0</mStayOpen>
+				<mCommand></mCommand>
+				<packageName></packageName>
+				<mFgColor>#ff0000</mFgColor>
+				<mBgColor>#ffff00</mBgColor>
+				<mSoundFile></mSoundFile>
+				<colorTriggerFgColor>#000000</colorTriggerFgColor>
+				<colorTriggerBgColor>#000000</colorTriggerBgColor>
+				<regexCodeList>
+					<string>^(He|She) is an? \w+ in (\w+).$</string>
+				</regexCodeList>
+				<regexCodePropertyList>
+					<integer>1</integer>
+				</regexCodePropertyList>
+			</Trigger>
+			<Trigger isActive="no" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+				<name>No city found</name>
+				<script>if honoursPerson and andb.players[honoursPerson] and andb.players[honoursPerson].city == "Unknown" then andb.players[honoursPerson].city = "None" end
+honoursPerson = nil
+disableTrigger("No city found", 0)
+disableTrigger("Get Player Information")</script>
+				<triggerType>0</triggerType>
+				<conditonLineDelta>0</conditonLineDelta>
+				<mStayOpen>0</mStayOpen>
+				<mCommand></mCommand>
+				<packageName></packageName>
+				<mFgColor>#ff0000</mFgColor>
+				<mBgColor>#ffff00</mBgColor>
+				<mSoundFile></mSoundFile>
+				<colorTriggerFgColor>#000000</colorTriggerFgColor>
+				<colorTriggerBgColor>#000000</colorTriggerBgColor>
+				<regexCodeList>
+					<string>return isPrompt()</string>
+				</regexCodeList>
+				<regexCodePropertyList>
+					<integer>4</integer>
+				</regexCodePropertyList>
+			</Trigger>
+			<Trigger isActive="no" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+				<name>Get Player Information</name>
+				<script>if honoursPerson and matches[2]:find(honoursPerson) then
+	enableTrigger("Check Player City")
+	enableTrigger("No city found")
+	selectString(line, 1)
+	fg("NavajoWhite")
+	deselect()
+end</script>
+				<triggerType>0</triggerType>
+				<conditonLineDelta>0</conditonLineDelta>
+				<mStayOpen>0</mStayOpen>
+				<mCommand></mCommand>
+				<packageName></packageName>
+				<mFgColor>#ff0000</mFgColor>
+				<mBgColor>#ffff00</mBgColor>
+				<mSoundFile></mSoundFile>
+				<colorTriggerFgColor>#000000</colorTriggerFgColor>
+				<colorTriggerBgColor>#000000</colorTriggerBgColor>
+				<regexCodeList>
+					<string>^(.+) \((male|female) (.+)\).</string>
+				</regexCodeList>
+				<regexCodePropertyList>
+					<integer>1</integer>
+				</regexCodePropertyList>
+			</Trigger>
+			<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+				<name>Login</name>
+				<script>sendGMCP('Core.Supports.Add ["Comm.Channel 1"]')</script>
+				<triggerType>0</triggerType>
+				<conditonLineDelta>0</conditonLineDelta>
+				<mStayOpen>0</mStayOpen>
+				<mCommand></mCommand>
+				<packageName></packageName>
+				<mFgColor>#ff0000</mFgColor>
+				<mBgColor>#ffff00</mBgColor>
+				<mSoundFile></mSoundFile>
+				<colorTriggerFgColor>#000000</colorTriggerFgColor>
+				<colorTriggerBgColor>#000000</colorTriggerBgColor>
+				<regexCodeList>
+					<string>Password correct. Welcome to Achaea.</string>
+				</regexCodeList>
+				<regexCodePropertyList>
+					<integer>0</integer>
+				</regexCodePropertyList>
+			</Trigger>
+		</TriggerGroup>
+	</TriggerPackage>
+	<TimerPackage />
+	<AliasPackage>
+		<AliasGroup isActive="yes" isFolder="yes">
+			<name>Achaea NDB</name>
+			<script></script>
+			<command></command>
+			<packageName></packageName>
+			<regex></regex>
+			<Alias isActive="yes" isFolder="no">
+				<name>Install NDB</name>
+				<script>andb_install()</script>
+				<command></command>
+				<packageName></packageName>
+				<regex>^aninstall$</regex>
+			</Alias>
+			<Alias isActive="yes" isFolder="no">
+				<name>Parse QWHO</name>
+				<script>if not andb then
+	andb_echo("Name database not currently loaded.")
+else
+	parsingQW = true
+	peopleOnline = {}
+	if matches[2] then
+		parsingCity = matches[2]
+	end
+	sendGMCP("Comm.Channel.Players")
+	send(" ")
+	andb_GetOnline()
+end</script>
+				<command></command>
+				<packageName></packageName>
+				<regex>^qwp(?: (\w+)|)$</regex>
+			</Alias>
+			<AliasGroup isActive="yes" isFolder="yes">
+				<name>Configs</name>
+				<script></script>
+				<command></command>
+				<packageName></packageName>
+				<regex></regex>
+				<Alias isActive="yes" isFolder="no">
+					<name>Highlight Toggle</name>
+					<script>if andb.highlightNames then
+	--Remove any highlights, and turn off the toggle.
+	andb.highlightNames = false
+	andb_Unhighlight()
+	andb_echo("Disabled name highlighting.")
+else
+	--Begin highlighting again, and enable them all.
+	andb.highlightNames = true
+	andb_loadHighlights()
+	andb_echo("Enabled name highlighting.")
+end</script>
+					<command></command>
+					<packageName></packageName>
+					<regex>^anhl$</regex>
+				</Alias>
+				<Alias isActive="yes" isFolder="no">
+					<name>Set Colours of Orgs</name>
+					<script>local cities = {"Ashtan", "Cyrene", "Eleusis", "Hashan", "Mhaldor", "Targossas", "Rogues", "Enemies"}
+
+local city, colour = "", ""
+
+if table.contains(cities, matches[2]:title()) then
+	city = matches[2]:title()
+	colour = matches[3]
+elseif table.contains(cities, matches[3]:title()) then
+	city = matches[3]:title()
+	colour = matches[2]
+else
+	andb_echo("That is not a valid option, please choose from: &lt;green&gt;Ashtan, Cyrene, Eleusis, Enemies, Hashan, Mhaldor, Rogues, or Targossas.")
+end
+
+if city ~= "" then
+	if table.contains(color_table, colour) then
+		andb_echo(city.." will now be highlighted in &lt;"..colour.."&gt;"..colour..".")
+		if city ~= "Enemies" then
+			andb_updateHighlights(city, colour)
+		else
+			andb_enemyHighlights()
+		end
+	else
+		andb_echo("That is not a valid colour to choose from.")
+	end
+end</script>
+					<command></command>
+					<packageName></packageName>
+					<regex>^anhl (\w+) (\w+)$</regex>
+				</Alias>
+				<Alias isActive="yes" isFolder="no">
+					<name>Show Settings</name>
+					<script>local count = 0
+for i,v in pairs(andb.players) do
+	count = count + 1
+end
+
+andb_echo("    Achaea Name Database Settings")
+echo("\n ")
+andb_echo((andb.highlightNames and "&lt;green&gt;We are" or "&lt;red&gt;We are not").."&lt;NavajoWhite&gt; currently highlighting names.")
+cecho("\n       &lt;NavajoWhite&gt;     Total of &lt;white&gt;"..count.."&lt;NavajoWhite&gt; names!\n\n")
+
+andb_echo("    Highlight settings:")
+for city, colour in pairs(andb.highlighting) do
+	cecho("\n &lt;"..colour.."&gt;"..city.."&lt;white&gt;"..string.rep(" ", 12-string.len(city)).."citizens will be highlighted in &lt;"..colour.."&gt;"..colour..".")
+end
+
+cecho("\n ")
+andb_cho("     Enemy settings:")
+cecho("\n "..(andb.highlightPriority == "enemies" and "&lt;green&gt;Prioritising" or "&lt;red&gt;Not prioritising").."&lt;NavajoWhite&gt; highlighting of enemies.")
+cecho("\n &lt;LightSkyBlue&gt;Enemies will be highlighted in &lt;"..andb.highlighting.Enemies.."&gt;"..andb.highlighting.Enemies..".")
+cecho("\n    &lt;LightSkyBlue&gt;-Special-")
+cecho("\n  "..(andb.enemySettings.bold and "&lt;green&gt;" or "&lt;red&gt;")..string.char(7).." &lt;NavajoWhite&gt;Bolded letters.")
+cecho("\n  "..(andb.enemySettings.underline and "&lt;green&gt;" or "&lt;red&gt;")..string.char(7).." &lt;NavajoWhite&gt;Underlined letters.")
+cecho("\n  "..(andb.enemySettings.italics and "&lt;green&gt;" or "&lt;red&gt;")..string.char(7).." &lt;NavajoWhite&gt;Italicized letters.")
+
+send(" ")</script>
+					<command></command>
+					<packageName></packageName>
+					<regex>^anss$</regex>
+				</Alias>
+				<Alias isActive="yes" isFolder="no">
+					<name>Set Highlight Prioritiy</name>
+					<script>local type, colour = matches[2], matches[3]
+
+if andb.highlightPriority ~= matches[2] then
+	andb.highlightPriority = matches[2]
+	andb_echo("Highlighting will give priority to "..andb.highlightPriority..".")
+	andb_enemyHighlights()
+else
+	andb_echo("Already prioritising highlighting of that.")
+end
+</script>
+					<command></command>
+					<packageName></packageName>
+					<regex>^an prio (enemies|city)$</regex>
+				</Alias>
+				<Alias isActive="yes" isFolder="no">
+					<name>Toggle Options For Enemy Highlighting</name>
+					<script>local x = { i = "italics", b = "bold", u = "underline" }
+local opt = x[matches[2]]
+if not andb.enemySettings[opt] then
+	andb.enemySettings[opt] = true
+	andb_echo("Enemies &lt;green&gt;will now have &lt;NavajoWhite&gt;"..opt.." applied to it.")
+else
+	andb.enemySettings[opt] = false
+	andb_echo("Enemies &lt;red&gt;will no longer have &lt;NavajoWhite&gt;"..opt.." applied to it.")
+end
+andb_enemyHighlights()</script>
+					<command></command>
+					<packageName></packageName>
+					<regex>^aneh (i|u|b)$</regex>
+				</Alias>
+			</AliasGroup>
+			<AliasGroup isActive="yes" isFolder="yes">
+				<name>Actions</name>
+				<script></script>
+				<command></command>
+				<packageName></packageName>
+				<regex></regex>
+				<Alias isActive="yes" isFolder="no">
+					<name>Honours Person</name>
+					<script>honoursPerson = matches[2]:title()
+enableTrigger("Get Player Information")
+checkingPlayerCity = tempTimer(2, [[disableTrigger("Check Player City"); checkingPlayerCity = nil;]])
+andb_Acquire(matches[2]:title(),false)</script>
+					<command></command>
+					<packageName></packageName>
+					<regex>^honou?rs? (\w+)$</regex>
+				</Alias>
+				<Alias isActive="yes" isFolder="no">
+					<name>Display Who</name>
+					<script>local name = matches[2]:title()
+local x, c
+if not andb_Exists(name) then
+	andb_echo(name.." is not yet tracked!")
+else
+	x = andb.players[name]
+	c = andb_getColour(name)
+
+	cecho("\n&lt;blue&gt;- &lt;NavajoWhite&gt;"..x.title.." &lt;blue&gt;"..string.rep("-", 70-(string.len(x.title)+3)).."\n")
+	cecho("\n&lt;DimGrey&gt; City :   &lt;"..c.."&gt;"..x.city..string.rep(" ", 31-string.len(x.city)).."  &lt;DimGrey&gt; Level:   &lt;white&gt;"..x.level)
+	cecho("\n&lt;DimGrey&gt; House:   &lt;white&gt;"..x.house..string.rep(" ", 31-string.len(x.house)).."  &lt;DimGrey&gt; Rank :   &lt;white&gt;"..x.xp_rank)
+	cecho("\n&lt;DimGrey&gt; Class:   &lt;white&gt;"..x.class.."\n")
+	cecho("\n&lt;blue&gt;"..string.rep("-", 70))
+	cecho("\n ")
+	send(" ",false)
+end	</script>
+					<command></command>
+					<packageName></packageName>
+					<regex>^whois (\w+)$</regex>
+				</Alias>
+				<Alias isActive="yes" isFolder="no">
+					<name>Remove Unranked/Retired</name>
+					<script>local remove = {}
+
+for i,v in pairs(andb.players) do
+	if v.xp_rank == nil or v.xp_rank &gt; 1600 or v.xp_rank == 0 then
+		table.insert(remove, v.name)
+		andb.players[v.name] = nil
+	end
+end
+table.sort(remove)
+
+andb_echo("Removed a total of &lt;green&gt;"..#remove.."&lt;NavajoWhite&gt; unranked people from the database:\n - "..
+	table.concat(remove, ", ")..".")
+send(" ")
+</script>
+					<command></command>
+					<packageName></packageName>
+					<regex>^an remove$</regex>
+				</Alias>
+				<Alias isActive="yes" isFolder="no">
+					<name>Re-honours everyone.</name>
+					<script>local count = 0
+andb_echo("Updating everyone who's currently in the database.")
+for i,v in pairs(andb.players) do
+	count = count + 1
+	andb_Acquire(v.name:title(),false)
+end
+andb_echo("Update complete. Total of "..count.." people have been re-checked.")</script>
+					<command></command>
+					<packageName></packageName>
+					<regex>^an recreate$</regex>
+				</Alias>
+				<Alias isActive="yes" isFolder="no">
+					<name>Show Class Count</name>
+					<script>local classList = {"Alchemist", "Apostate", "Bard", "Blademaster", "Depthswalker", "Dragon", "Druid", "Infernal", "Jester", "Magi", "Monk", "Occultist",
+	"Paladin", "Priest", "Runewarden", "Sentinel", "Serpent", "Shaman", "Sylvan"}
+local classes = {
+	Alchemist = {},
+	Apostate = {},
+	Bard = {},
+	Blademaster = {},
+	Depthswalker = {},
+	Dragon = {},
+	Druid = {},
+	Infernal = {},
+	Jester = {},
+	Magi = {},
+	Monk = {},
+	Occultist = {},
+	Paladin = {},
+	Priest = {},
+	Runewarden = {},
+	Sentinel = {},
+	Serpent = {},
+	Shaman = {},
+	Sylvan = {},
+}
+
+for player, tab in pairs(andb.players) do
+	if tab.class ~= "" then
+		table.insert(classes[tab.class], player)
+		if tab.level &gt;= 99 then
+			table.insert(classes.Dragon, player)
+		end	
+	end
+end
+
+andb_echo("Displaying class count of currently tracked players.")
+for _, class in ipairs(classList) do
+	cecho("\n &lt;DimGrey&gt;[&lt;NavajoWhite&gt;"..class:title().."&lt;DimGrey&gt;]"..string.rep(" ", 13-string.len(class)).."- &lt;NavajoWhite&gt;"..#classes[class].." tracked people are "..class..".")
+end
+send(" ")</script>
+					<command></command>
+					<packageName></packageName>
+					<regex>^an classes$</regex>
+				</Alias>
+				<Alias isActive="yes" isFolder="no">
+					<name>Show City Count</name>
+					<script>local classList = {"Alchemist", "Apostate", "Bard", "Blademaster", "Depthswalker", "Dragon", "Druid", "Infernal", "Jester", "Magi", "Monk", "Occultist",
+	"Paladin", "Priest", "Runewarden", "Sentinel", "Serpent", "Shaman", "Sylvan"}
+local classes = {
+	Alchemist = {},
+	Apostate = {},
+	Bard = {},
+	Blademaster = {},
+	Depthswalker = {},
+	Dragon = {},
+	Druid = {},
+	Infernal = {},
+	Jester = {},
+	Magi = {},
+	Monk = {},
+	Occultist = {},
+	Paladin = {},
+	Priest = {},
+	Runewarden = {},
+	Sentinel = {},
+	Serpent = {},
+	Shaman = {},
+	Sylvan = {},
+}
+
+for player, tab in pairs(andb.players) do
+	if tab.city == matches[2]:title() and tab.class ~= "" then
+		table.insert(classes[tab.class], player)
+		if tab.level &gt;= 99 then
+			table.insert(classes.Dragon, player)
+		end	
+	end
+end
+
+andb_echo("Displaying class count of currently tracked players in &lt;"..andb.highlighting[matches[2]:title()].."&gt;"..matches[2]:title()..".")
+for _, class in ipairs(classList) do
+	if #classes[class] &gt; 0 then
+		cecho("\n &lt;DimGrey&gt;[&lt;NavajoWhite&gt;"..class:title().."&lt;DimGrey&gt;]"..string.rep(" ", 13-string.len(class)).."- &lt;NavajoWhite&gt;"..#classes[class].." tracked people are "..class..".")
+	end
+end
+send(" ")</script>
+					<command></command>
+					<packageName></packageName>
+					<regex>^an cclasses (\w+)$</regex>
+				</Alias>
+				<Alias isActive="yes" isFolder="no">
+					<name>Show Player Count</name>
+					<script>local cities = {
+	Ashtan = {},
+	Cyrene = {},
+	Eleusis = {},
+	Hashan = {},
+	Mhaldor = {},
+	Targossas = {},
+	None = {},
+}
+
+for player, tab in pairs(andb.players) do
+	if cities[tab.city] then
+		table.insert(cities[tab.city], player)
+	else
+		table.insert(cities.None, player)
+	end
+end
+
+andb_echo("Displaying count of currently tracked players in each city.")
+for city, tab in pairs(cities) do
+	cecho("\n"..city..":"..string.rep(" ", 15-string.len(city))..#cities[city])
+end
+
+send(" ")</script>
+					<command></command>
+					<packageName></packageName>
+					<regex>^an citymembers$</regex>
+				</Alias>
+				<Alias isActive="yes" isFolder="no">
+					<name>Tracked from city</name>
+					<script>local cities = {"Ashtan", "Cyrene", "Eleusis", "Hashan", "Mhaldor", "Targossas",}
+
+if not table.contains(cities, matches[2]:title()) then
+	andb_echo("Invalid city. Please choose from either "..table.concat(cities, ", ").." or Rogues.")
+else
+	andb_echo("Displaying tracked people from &lt;"..andb.highlighting[matches[2]:title()].."&gt;"..matches[2]:title()..":")
+	local people = {}
+	for i,v in pairs(andb.players) do
+		if v.city == matches[2]:title() then
+			table.insert(people, v.name)
+		end
+	end
+	table.sort(people)
+	cecho("\n  &lt;"..andb.highlighting[matches[2]:title()].."&gt;"..table.concat(people, ", ")..".")
+end
+
+</script>
+					<command></command>
+					<packageName></packageName>
+					<regex>^adb show (\w+)$</regex>
+				</Alias>
+				<Alias isActive="yes" isFolder="no">
+					<name>Tracked of class</name>
+					<script>
+	andb_echo("Displaying tracked people as "..matches[2].." class:")
+	local people = {}
+	for i,v in pairs(andb.players) do
+		if v.class == matches[2]:title() then
+			table.insert(people, v.name)
+		end
+	end
+	table.sort(people)
+	cecho("\n  &lt;green&gt;"..table.concat(people, ", ")..".")
+
+
+</script>
+					<command></command>
+					<packageName></packageName>
+					<regex>^adb class (\w+)$</regex>
+				</Alias>
+			</AliasGroup>
+		</AliasGroup>
+	</AliasPackage>
+	<ActionPackage />
+	<ScriptPackage>
+		<ScriptGroup isActive="yes" isFolder="yes">
+			<name>Achaea NDB</name>
+			<packageName></packageName>
+			<script>function andb_echo(text)
+	cecho("\n&lt;cyan&gt;(&lt;magenta&gt;andb&lt;cyan&gt;): &lt;NavajoWhite&gt;"..text)
+end
+
+function andb_saveSettings(disp)
+	if alreadySaved then return end
+	alreadySaved = tempTimer(1, [[alreadySaved = nil]])
+	local separator = string.char(getMudletHomeDir():byte()) == "/" and "/" or "\\"
+	local ndb_loc = getMudletHomeDir()..separator.."andb"
+
+	if andb then
+		table.save(ndb_loc, andb)
+	end
+
+	if disp then
+		andb_echo("Nap time. Don't come back soon, "..(gmcp and gmcp.Char.Name.name or "thanks")..".")
+	end
+end
+
+function andb_loadSettings()
+
+	local separator = string.char(getMudletHomeDir():byte()) == "/" and "/" or "\\"
+	local ndb_loc = getMudletHomeDir()..separator.."andb"
+
+	if not io.exists(ndb_loc) then
+		andb_echo("Name database not initialised. Loading default settings.")
+		andb_install()
+	else
+		andb = {}
+		table.load(ndb_loc, andb)
+		andb_echo("Name database loaded in.")
+	end
+
+	andb_saveSettings(false)
+end
+
+
+registerAnonymousEventHandler("sysDisconnectionEvent", "andb_saveSettings", true)
+registerAnonymousEventHandler("sysLoadEvent", "andb_loadSettings")</script>
+			<eventHandlerList />
+			<Script isActive="yes" isFolder="no">
+				<name>andb Settings</name>
+				<packageName></packageName>
+				<script>function andb_install()
+	--Will only probably be used on initial loading of system.
+	andb = {}
+	andb = {
+		installed = true,
+		players = {},
+		highlightNames = true,
+		highlighting = {
+			Ashtan = "purple",
+			Cyrene = "CornflowerBlue",
+			Eleusis = "DarkGreen",
+			Hashan = "orange",
+			Mhaldor = "firebrick",
+			Targossas = "cyan",
+			Enemies = "red",
+			Rogues = "sienna",
+			
+		},
+		divine = {"Aegis", "Artemis", "Aurora", "Babel", "Deucalion", "Gaia", "Lorielan", "Lupus", "Neraeos",
+			"Ourania", "Pandora", "Phaestus", "Prospero", "Sartan", "Scarlatti", "Twilight", "Valnurana",
+			"Vastar", "Tlalaiad", "Romeo", "Juliet",},
+		cityEnemies = {},
+		highlightPriority = "city",
+		enemySettings = {bold = false, italics = false, underline = false},
+	}
+
+	local path = getMudletHomeDir().."/andbPeople"
+
+	if not lfs.attributes(path) then
+		--We'll need a folder to store downloaded data. Don't worry, it won't cause issues.
+		lfs.mkdir(path)
+		andb_echo("Created folder to store downloaded data at: "..path)
+	end
+
+	andb_echo("Systems have been loaded and are ready to go.")
+	andb_Unhighlight()
+	andb_saveSettings(false)
+	--Save on install, as a failsafe.
+end</script>
+				<eventHandlerList />
+			</Script>
+			<Script isActive="yes" isFolder="no">
+				<name>Get Information</name>
+				<packageName></packageName>
+				<script>function andb_GetOnline()
+	local path = getMudletHomeDir().."/andbPeople"
+	downloadFile(path .. "/Online.json", "http://api.achaea.com/characters.json")
+
+	andb_echo("One moment while I access the list...")
+
+	ndbWatcher = ndbWatcher or createStopWatch()
+	startStopWatch(ndbWatcher)
+end
+
+function andb_Acquire(person)
+
+	assert(person)
+	local person = person:title()
+	local path = getMudletHomeDir().."/andbPeople"
+
+	if not lfs.attributes(path) then
+		--We'll need a folder to store downloaded data. Don't worry, it won't cause issues.
+		lfs.mkdir(path)
+		andb_echo("Created folder to store downloaded data at: "..path)
+	end
+	
+	downloadFile(path .. "/"..person..".json", "http://api.achaea.com/characters/"..person..".json")
+
+end
+
+function andb_NameList(names)
+	--Parse list to see who isn't tracked.
+	for _, name in pairs(names) do
+		if not andb_Exists(name) and not table.contains(andb.divine, name) then
+			andb_Acquire(name)
+		end
+	end
+	andb_echo("Database has been fully updated, thank you.")
+end</script>
+				<eventHandlerList />
+				<Script isActive="yes" isFolder="no">
+					<name>andb_Failed</name>
+					<packageName></packageName>
+					<script>function andb_Failed(_, filepath)
+	andb_echo("Error downloading information.")
+	
+	if filepath:match("server replied: Not Found") then
+		echo("\n"..filepath)
+		local person = filepath:match("/(%w+).json")
+		local fpr = getMudletHomeDir().."/andb/"..person..".json"
+
+		andb_echo("This person does not exist: "..person)
+		andb_Remove(person)
+		os.remove(fpr)
+	else
+		andb_echo("Unknown error while downloading: " .. filepath)
+	end
+end</script>
+					<eventHandlerList>
+						<string>sysDownloadError</string>
+					</eventHandlerList>
+				</Script>
+				<Script isActive="yes" isFolder="no">
+					<name>andb_Success</name>
+					<packageName></packageName>
+					<script>function andb_Success(_, filepath)
+	--Do not mess with if it's not andb information.
+	if not filepath:find("andb", 1, true) then return end
+
+	if filepath:find("Online",1,true) then
+		andb_SortOnline(filepath)
+		return
+	end
+
+    local f, s = io.open(filepath)
+    if f then s = f:read("*l"); io.close(f) end
+
+	-- didn't get JSON data? 
+	if s:find("Internal error", 1, true) or s:find("DOCTYPE html PUBLIC", 1, true) then
+		cecho("\n&lt;red&gt;Data Acquisition Failed!") 
+		return 
+	end
+
+	local t = yajl.to_value(s)
+	local cities = {"Ashtan", "Cyrene", "Eleusis", "Hashan", "Mhaldor", "Targossas"}
+	local name = t.name
+	local title = t.fullname
+	local house = t.house:title()
+	local xp_rank = tonumber(t.xp_rank)
+	local city = t.city:title()
+	local class = t.class:title()
+	local level = tonumber(t.level)
+
+	local tmpCity = (andb_Exists(name) and andb_getCitizenship(name) or "Unknown")
+
+	andb.players[name] = {
+		name = name,
+		title = title,
+		house = house,
+		xp_rank = xp_rank,
+		city = city,
+		level = level,
+		class = class,
+	}
+	if house:find("hidden") then
+		andb.players[name].house = "Unknown"
+	elseif house:find("none") then
+		andb.players[name].house = "None"
+	else
+		andb.players[name].house = house:title()
+	end
+
+	if city:find("hidden") then
+		if not table.contains(cities, tmpCity) then
+			andb.players[name].city = "Unknown"
+			if honoursPerson == nil then andb_echo("&lt;red&gt;WARNING: "..name.."'s city is hidden; will require a manual honours/setting to update it.") end
+		else
+			andb.players[name].city = tmpCity
+		end
+	elseif city:find("none") or city == "" then
+		andb.players[name].city = "None"
+	else
+		andb.players[name].city = city:title()
+	end
+
+  	os.remove(filepath)
+	
+	if honoursPerson ~= nil then 
+		send("honours "..honoursPerson,false)
+		tempTimer(2, [[honoursPerson = nil]])
+	else
+		raiseEvent("andb Check Highlight", t.name)
+	end
+end</script>
+					<eventHandlerList>
+						<string>sysDownloadDone</string>
+					</eventHandlerList>
+				</Script>
+			</Script>
+			<Script isActive="yes" isFolder="no">
+				<name>andb API</name>
+				<packageName></packageName>
+				<script>function andb_getColour(name)
+	if not andb_Exists(name) then
+		return "white"
+	else
+		return andb.highlighting[andb_getCitizenship(name)]
+	end
+end
+function andb_getClass(name)
+	if andb.players[name] then
+		return andb.players[name:title()].class
+	else
+		return "Unknown"
+	end
+end
+
+function andb_Exists(name)
+	if not andb.players[name] then
+		return false
+	else
+		return true
+	end
+end
+
+function andb_isCitizenOf(city, name)
+	if andb_Exists(name) then
+		return (andb.players[name:title()].city == city:title() and true or false)
+	else
+		andb_echo("That person's information has not yet been gathered.")
+		return false
+	end
+end
+
+function andb_getCitizenship(name)
+	if andb_Exists(name) then
+		if andb.players[name].city:lower() == "none" or andb.players[name].city:lower() == "(hidden)" then
+			return "Rogues"
+		else
+			return andb.players[name].city
+		end
+	else
+		return "Unknown"
+	end
+end
+
+
+function andb_Remove(name)
+	local person = name:title()
+	if andb_Exists(person) then
+		andb.players[person] = nil
+		--If any highlight available, then clear it.
+		if andb.highlightTriggers and andb.highlightTriggers[person] then
+			killTrigger(andb.highlightTriggers[person])
+		end
+		andb_echo(person.." has been removed from the database.")
+	else
+		andb_echo(person.." is not in the database, anyway.")
+	end
+end
+
+function andb_SortOnline(filepath)
+	local f, s = io.open(filepath)
+    if f then s = f:read("*l"); io.close(f) end
+
+	-- didn't get JSON data? 
+	if s:find("Internal error", 1, true) or s:find("DOCTYPE html PUBLIC", 1, true) then
+		cecho("\n&lt;red&gt;Data Acquisition Failed!") 
+		return 
+	end
+
+	local t = yajl.to_value(s)
+
+	apiOnlineFound = {}
+	apiNeedUpdate = {}
+	for ind, tab in pairs(t.characters) do
+		if not tab.name:find("masked") and not table.contains(andb.divine, tab.name) then
+			table.insert(apiOnlineFound, tab.name)
+		end
+	end
+
+	for ind, tab in pairs(gmcp.Comm.Channel.Players) do
+		if not table.contains(apiOnlineFound, tab.name) and not tab.name:find("masked") and not table.contains(andb.divine, tab.name) then
+			table.insert(apiOnlineFound, tab.name)
+		end
+	end
+
+	os.remove(filepath)
+	table.sort(apiOnlineFound)
+
+	--Parse the list to see who needs to be added.
+	local count = 0
+	for index, name in pairs(apiOnlineFound) do
+		if not andb_Exists(name) and not table.contains(andb.divine, name) then
+			count = count + 1
+			table.insert(apiNeedUpdate, name)
+		end
+	end
+
+	if count &gt; 0 then
+		andb_echo(count.." new names identified, grabbing their info.")
+		cecho("\n&lt;DimGrey&gt; - "..table.concat(apiNeedUpdate, ", ")..".")
+		andb_NameList(apiNeedUpdate)
+	else
+		if parsingCity then
+			if parsingCity:lower() == "classes" then
+				andb_displayOnlineClass(apiOnlineFound)
+			else
+				andb_displayOnlineCity(apiOnlineFound)
+			end
+		else
+			andb_displayOnline(apiOnlineFound)
+		end
+	end
+end</script>
+				<eventHandlerList />
+			</Script>
+			<Script isActive="yes" isFolder="no">
+				<name>andb Highlighting</name>
+				<packageName></packageName>
+				<script>function andb_Unhighlight()
+	if not andb.highlightTriggers or not next(andb.highlightTriggers) then return end
+
+  	local killTrigger = killTrigger
+  	for k,v in pairs(andb.highlightTriggers) do
+    		killTrigger(v)
+  	end
+
+  	andb.highlightTriggers = {}
+end
+
+function andb_enemyHighlights()
+	andb_echo("Clearing all highlights to prevent errors. One moment, please.")
+	andb_Unhighlight()
+	tempTimer(2, [[ andb_echo("Loading new highlights now."); andb_loadHighlights() ]])	
+end
+
+function andb_loadHighlights()
+	andb.highlightTriggers = andb.highlightTriggers or {}
+	collectgarbage("stop")
+
+	andb_Unhighlight()
+
+	if andb.highlightNames then
+		for index, person in pairs(andb.players) do
+			andb_highlightName( person.name, person.city )
+		end
+	end
+
+	collectgarbage()
+end
+
+function andb_addHighlight(_, name)
+
+	if not andb.highlightNames then return end	
+	if not name then return end
+	if not andb.players[name] then return end
+
+	andb_highlightName( andb.players[name].name, andb.players[name].city)
+end
+
+
+function andb_updateHighlights(city, colour)
+
+	andb.highlighting[city] = colour
+	
+  	local killTrigger = killTrigger
+  	for name, trig in pairs(andb.highlightTriggers) do
+		if andb.players[name].city == city then
+    			killTrigger(trig)
+			if andb.highlightNames then
+				andb_highlightName( andb.players[name].name, andb.players[name].city )
+			end
+		elseif city == "Rogues" or city == "(hidden)" then
+			if andb_getCitizenship(name) == "None" then
+				killTrigger(trig)
+				if andb.highlightNames then
+					andb_highlightName( andb.players[name].name, andb.players[name].city )
+				end
+			end
+		end
+  	end
+
+end
+
+
+function andb_highlightName(who, city)
+	--If any highlight available, then clear it.
+	if andb.highlightTriggers and andb.highlightTriggers[who] then
+		killTrigger(andb.highlightTriggers[who])
+	end
+
+	local colour = andb.highlighting.Rogues
+
+	--Get the necessary colour.
+		--Check enemy list first
+	if andb.highlightPriority == "enemies" then
+		if table.contains(andb.cityEnemies, who) then
+			colour = andb.highlighting.Enemies
+		else
+			if city == "None" or city == "(hidden)" then
+				colour = andb.highlighting.Rogues
+			else
+				colour = andb.highlighting[city]
+			end
+		end
+	else
+		if city == "None" or city == "(hidden)" then
+			colour = andb.highlighting.Rogues
+		else
+			colour = andb.highlighting[city]
+		end
+	end
+
+	andb.highlightTriggers = andb.highlightTriggers or {}
+	andb.highlightTriggers[who] = tempTrigger(who, ([[andb_highlight("%s", %s)]]):format(who,
+		(colour and '"' .. colour .. '"' or "false")
+	))
+end
+
+function andb_highlight(name, colour)
+	local c, k = 1, 1
+	while k &gt; 0 do
+		k = line:find(name, k)
+		if k == nil then return end
+		c = c + 1
+
+		if k == line:find("%f[%a]"..name.."%f[%A]", k) then
+			if selectString(name, c-1) &gt; -1 then
+				if colour then fg(colour) end
+				if andb.highlightPriority == "enemies" and table.contains(andb.cityEnemies, name) then
+					if andb.enemySettings.bold then setBold(true) end
+					if andb.enemySettings.underline then setUnderline(true) end
+					if andb.enemySettings.italics then setItalics(true) end
+				end
+				resetFormat()
+			else 
+				return 
+			end
+    		end
+		k = k + 1
+	end
+end
+registerAnonymousEventHandler("andb Check Highlight", "andb_addHighlight")</script>
+				<eventHandlerList />
+			</Script>
+			<Script isActive="yes" isFolder="no">
+				<name>andb Display API</name>
+				<packageName></packageName>
+				<script>function andb_displayOnlineClass(players)
+	local classList = {"Alchemist", "Apostate", "Bard", "Blademaster", "Depthswalker", "Druid", "Infernal", "Jester", "Magi", "Monk", "Occultist",
+		"Paladin", "Priest", "Runewarden", "Sentinel", "Serpent", "Shaman", "Sylvan"}
+	local classes = {
+		Alchemist = {}, Apostate = {}, Bard = {}, Blademaster = {}, Depthswalker = {},
+		Druid = {}, Infernal = {}, Jester = {}, Magi = {}, Monk = {}, Occultist = {},
+		Paladin = {}, Priest = {}, Runewarden = {}, Sentinel = {}, Serpent = {},
+		Shaman = {}, Sylvan = {},
+	}
+
+	for _, player in pairs(players) do
+		local class = andb.players[player].class
+		table.insert(classes[class], player)
+	end
+	andb_echo("Data acqusition completed and analysed. Showing class count for online players.")
+
+	for _, class in ipairs(classList) do
+		cecho("\n &lt;DimGrey&gt;[&lt;NavajoWhite&gt;"..class:title().."&lt;DimGrey&gt;]"..string.rep(" ", 13-string.len(class)).."- &lt;NavajoWhite&gt;"..#classes[class].." tracked people are "..class..".")
+	end
+	send(" ")
+	parsingCity = nil
+end
+
+function andb_displayOnlineCity(players)
+	local peopleFound = {}
+
+	andb_echo("Data acqusition completed and analysed. Showing online players from &lt;"..andb.highlighting[parsingCity:title()].."&gt;"..parsingCity:title()..".")
+
+	for _, person in pairs(players) do
+		if andb_isCitizenOf(parsingCity:title(), person) then
+			cecho("\n &lt;"..andb.highlighting[parsingCity:title()].."&gt;"..person..string.rep(" ", 13-string.len(person)).."- &lt;NavajoWhite&gt;"..andb_getClass(person))
+		end
+	end
+	send(" ")
+	parsingCity = nil
+end
+
+function andb_displayOnline(players)
+	local onlinePeople = {
+		Ashtan = {}, Cyrene = {}, Eleusis = {}, Hashan = {}, Mhaldor = {}, Targossas = {}, Rogues = {}, Untracked = {},
+	}
+
+	for _, person in pairs(players) do
+		if not andb_Exists(person) then
+			table.insert(onlinePeople.Untracked, person)
+		elseif andb_getCitizenship(person):lower() == "none" or andb_getCitizenship(person) == "(hidden)"  or andb_getCitizenship(person) == "Unknown" then
+			table.insert(onlinePeople.Rogues, person)
+		else
+			table.insert(onlinePeople[andb_getCitizenship(person)], person)
+		end
+	end
+
+	andb_echo("Data acquisition completed and analysed. List of players online:")
+	echo("\n"..table.concat(apiOnlineFound, ", ")..".\nTotal players visible to us: "..#apiOnlineFound..".\n")
+
+	andb_echo(" City affiliations of currently online people:")
+	cecho(string.format("\n&lt;%s&gt;[Ashtan]     :&lt;white&gt;(&lt;orange&gt;%d&lt;white&gt;)&lt;%s&gt; %s.", andb.highlighting.Ashtan, #onlinePeople.Ashtan, andb.highlighting.Ashtan, table.concat(onlinePeople.Ashtan, ", ")))
+	cecho(string.format("\n&lt;%s&gt;[Cyrene]     :&lt;white&gt;(&lt;orange&gt;%d&lt;white&gt;)&lt;%s&gt; %s.", andb.highlighting.Cyrene, #onlinePeople.Cyrene, andb.highlighting.Cyrene, table.concat(onlinePeople.Cyrene, ", ")))
+	cecho(string.format("\n&lt;%s&gt;[Eleusis]    :&lt;white&gt;(&lt;orange&gt;%d&lt;white&gt;)&lt;%s&gt; %s.", andb.highlighting.Eleusis, #onlinePeople.Eleusis, andb.highlighting.Eleusis, table.concat(onlinePeople.Eleusis, ", ")))
+	cecho(string.format("\n&lt;%s&gt;[Hashan]     :&lt;white&gt;(&lt;orange&gt;%d&lt;white&gt;)&lt;%s&gt; %s.", andb.highlighting.Hashan, #onlinePeople.Hashan, andb.highlighting.Hashan, table.concat(onlinePeople.Hashan, ", ")))
+	cecho(string.format("\n&lt;%s&gt;[Mhaldor]    :&lt;white&gt;(&lt;orange&gt;%d&lt;white&gt;)&lt;%s&gt; %s.", andb.highlighting.Mhaldor, #onlinePeople.Mhaldor, andb.highlighting.Mhaldor, table.concat(onlinePeople.Mhaldor, ", ")))
+	cecho(string.format("\n&lt;%s&gt;[Targossas]  :&lt;white&gt;(&lt;orange&gt;%d&lt;white&gt;)&lt;%s&gt; %s.", andb.highlighting.Targossas, #onlinePeople.Targossas, andb.highlighting.Targossas, table.concat(onlinePeople.Targossas, ", ")))
+	cecho(string.format("\n&lt;%s&gt;[Rogues]     :&lt;white&gt;(&lt;orange&gt;%d&lt;white&gt;)&lt;%s&gt; %s.", andb.highlighting.Rogues, #onlinePeople.Rogues, andb.highlighting.Rogues, table.concat(onlinePeople.Rogues, ", ")))
+	echo("\n ")
+	send(" ")
+
+end</script>
+				<eventHandlerList />
+			</Script>
+		</ScriptGroup>
+	</ScriptPackage>
+	<KeyPackage />
+	<VariablePackage>
+		<HiddenVariables />
+	</VariablePackage>
+</MudletPackage>

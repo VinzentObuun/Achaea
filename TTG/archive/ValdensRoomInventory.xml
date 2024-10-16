@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE MudletPackage>
+<MudletPackage version="1.0">
+    <ScriptPackage>
+        <ScriptGroup isActive="yes" isFolder="yes">
+            <name>Valden Room List</name>
+            <packageName></packageName>
+            <script>-------------------------------------------------
+--        Valden's Room Inventory View         --
+-------------------------------------------------
+--CreateRoomInventoryView--
+--Contains the settings for size and placement of the window
+
+--ItemHighlighting--
+--A slighty more advanced area where you can create custom
+--highlights for each type of item, based on an items 
+--attributes or on its name.</script>
+            <eventHandlerList/>
+            <Script isActive="yes" isFolder="no">
+                <name>CreateRoomInventoryView</name>
+                <packageName></packageName>
+                <script>-------------------------------------------------
+--     Room Inventory display by Valden        --
+--        Last updated: 05/06/2013             --
+-------------------------------------------------
+
+-- Positive numbers will position it in pixels from the top(y) or left(x)
+-- Negitive numbers will position it in pixels from the bottom(y) or right(x)
+local roomInvX = -420
+local roomInvY = -320
+local roomInvWidth = 400
+local roomInvHeight = 300
+
+------------------------------------------------------------------------
+--No need to edit anything below this line unless you're feeling fancy--
+------------------------------------------------------------------------
+local labelHeight = calcFontSize(13) + 5
+
+roomInvTable = {}
+
+local roomListContainer = Geyser.Container:new({
+	name = &quot;roomListContainer&quot;,
+	x = roomInvX, y = roomInvY,
+	width = roomInvWidth, height = roomInvHeight
+})
+
+local roomInvConsole = Geyser.MiniConsole:new({
+	name = &quot;roomInv&quot;,
+	x = 0, y = labelHeight + 5,
+	height = roomInvHeight - (labelHeight + 5), width = &quot;100%&quot;
+}, roomListContainer)
+
+local roomNameLabel = Geyser.Label:new({
+	name = &quot;roomNameLabel&quot;,
+	x = 0, y = 0,
+	width = &quot;100%&quot;, height = labelHeight
+}, roomListContainer)
+
+roomNameLabel:setStyleSheet([[
+	color: #808000;
+	font-weight: bold;
+	background-color: black;
+	font-size: 13px;
+]])
+
+echo(&quot;roomNameLabel&quot;, &quot;Room Name - QL to update&quot;)
+
+setBackgroundColor(&quot;roomInv&quot;,0,0,0,0)
+setMiniConsoleFontSize(&quot;roomInv&quot;, 9)
+
+setFgColor(&quot;roomInv&quot;, 192,192,192)
+setBgColor(&quot;roomInv&quot;, 0, 0, 0)
+
+function updateRoomInv()
+	clearUserWindow(&quot;roomInv&quot;)
+	for key,value in pairs(roomInvTable) do 
+		
+		echoLink(&quot;roomInv&quot;, &quot;+&quot;, [[send(&quot;get ]] .. key .. [[&quot;)]], &quot;Get&quot;, false)
+		echo(&quot;roomInv&quot;, &quot; (&quot;)
+		echoLink(&quot;roomInv&quot;, &quot;P&quot;, [[send(&quot;p ]] .. key .. [[&quot;)]], &quot;Probe&quot;, false)
+		cecho(&quot;roomInv&quot;, &quot;) &quot; .. value .. &quot;\n&quot;)
+
+	end
+end</script>
+                <eventHandlerList/>
+            </Script>
+            <Script isActive="yes" isFolder="no">
+                <name>ItemHighlighting</name>
+                <packageName></packageName>
+                <script>--------------------------------------------------------------
+--                     Item Highlighting                    --
+--This section allows you to prefix each item with a colour.--
+--You can match the strings or search for a pattern and     --
+--then return a colour tag or prefix you want for that item.--
+--                                                          --
+--see: wiki.mudlet.org/w/Manual:Lua_Functions#string.find   --
+--for examples of using find() and findPattern().           --
+--------------------------------------------------------------
+function getItemHighlight(value)
+
+	if value.attrib == &quot;m&quot; then return &quot;&lt;green&gt;&quot; end
+	if value.name:find(&quot;sovereign&quot;) ~= nil then return &quot;&lt;gold&gt;&quot; end
+
+end</script>
+                <eventHandlerList/>
+            </Script>
+            <Script isActive="yes" isFolder="no">
+                <name>updateRoomItems</name>
+                <packageName></packageName>
+                <script>function updateRoomItems()
+	if gmcp.Char.Items.List.location == &quot;room&quot; then
+		roomInvTable = {}
+		for key,value in pairs(gmcp.Char.Items.List.items) do 
+		local highlight = getItemHighlight(value) or &quot;&quot;
+		roomInvTable[value.id] = highlight .. value.name;
+		end
+		updateRoomInv()
+	end
+end</script>
+                <eventHandlerList>
+                    <string>gmcp.Char.Items.List</string>
+                </eventHandlerList>
+            </Script>
+            <Script isActive="yes" isFolder="no">
+                <name>addRoomItems</name>
+                <packageName></packageName>
+                <script>function addRoomItems()
+	if gmcp.Char.Items.Add.location == &quot;room&quot; then
+		local value = gmcp.Char.Items.Add.item
+		local highlight = getItemHighlight(value) or &quot;&quot;
+		roomInvTable[value.id] = highlight .. value.name;
+		updateRoomInv()
+	end
+end</script>
+                <eventHandlerList>
+                    <string>gmcp.Char.Items.Add</string>
+                </eventHandlerList>
+            </Script>
+            <Script isActive="yes" isFolder="no">
+                <name>removeRoomItems</name>
+                <packageName></packageName>
+                <script>function removeRoomItems()
+	if gmcp.Char.Items.Remove.location == &quot;room&quot; then
+		itemKey = gmcp.Char.Items.Remove.item.id
+		roomInvTable[&quot;&quot; .. itemKey] = nil
+		updateRoomInv()
+	end
+end</script>
+                <eventHandlerList>
+                    <string>gmcp.Char.Items.Remove</string>
+                </eventHandlerList>
+            </Script>
+            <Script isActive="yes" isFolder="no">
+                <name>updateRoomName</name>
+                <packageName></packageName>
+                <script>function updateRoomName()
+	clearUserWindow(&quot;roomNameLabel&quot;)
+	echo(&quot;roomNameLabel&quot;, gmcp.Room.Info.name)
+end</script>
+                <eventHandlerList>
+                    <string>gmcp.Room.Info</string>
+                </eventHandlerList>
+            </Script>
+        </ScriptGroup>
+    </ScriptPackage>
+</MudletPackage>

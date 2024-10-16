@@ -1,0 +1,347 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE MudletPackage>
+<MudletPackage version="1.0">
+    <ScriptPackage>
+        <ScriptGroup isActive="yes" isFolder="yes">
+            <name>Slain</name>
+            <script>-------------------------------------------------
+--         Put your Lua functions here.        --
+--                                             --
+-- Note that you can also use external Scripts --
+-------------------------------------------------
+</script>
+            <eventHandlerList/>
+            <Script isActive="yes" isFolder="no">
+                <name>Slain</name>
+                <script>--[[ Original Script by Trevize Moonflair, adapted for Mudlet by Sohl Vallah.
+
+Slain Tracking version 2.0
+
+SLAIN - Display what you've bagged so far!
+SLAIN [DENIZENS/PLAYERS] - Specify which list of kills to see.
+SLAIN SEARCH [TERM] - Search your kills for specific things.
+SLAIN ADD [DENIZENS/PLAYERS] [#] [THING] - Add kills to the denizen or player lists.
+SLAIN REMOVE [DENIZENS/PLAYERS/BY] [#] [THING] - Remove the specified number and type of kills from the lists.
+SLAIN RESET - Reset your kill counters
+SLAIN RESET [DENIZENS/PLAYERS] - Speicify which list of kills to reset.
+SLAIN HELP - View the help for this script.
+Note - search, add, and remove are case sensitive.
+
+--]]
+
+
+--------
+--SLAIN
+--------
+
+
+slain = {
+
+ things = {
+
+  denizens = {},
+
+  players = {},
+
+  by = {},
+
+ },
+
+
+ add = function (name, type, num)
+  slain.things[type][name] = (slain.things[type][name] or 0) + (num or 1)
+  if num then
+   cecho(&quot;\n&lt;red&gt;[&lt;white&gt;SLAIN&lt;red&gt;]&lt;white&gt; Added &quot; .. num .. &quot; &quot; .. name .. &quot; to the &quot; .. type .. &quot; kill list.&quot;)
+  end -- if
+  slain.save()
+ end, -- func
+
+
+ find = function (string)
+  slain.search = string
+  slain.display ()
+ end, -- fun
+
+
+ remove = function (item, num, group)
+  if slain.things[group][item] then
+   slain.things[group][item] = slain.things[group][item] - num or nil
+   cecho(&quot;\n&lt;red&gt;[&lt;white&gt;SLAIN&lt;red&gt;]&lt;white&gt; Removed &quot; .. num .. &quot; \&quot;&quot; .. item .. &quot;\&quot; from the slain tracker.&quot;)
+    if slain.things[group][item] == 0 then
+     slain.things[group][item] = nil 
+    end -- if
+   slain.save()
+  else
+   if group == &quot;by&quot; then
+    cecho(&quot;\n&lt;red&gt;[&lt;white&gt;SLAIN&lt;red&gt;]&lt;white&gt; You have not been slain by anything of that name.&quot;)
+   else
+    cecho(&quot;\n&lt;red&gt;[&lt;white&gt;SLAIN&lt;red&gt;]&lt;white&gt; You have not slain anything by that name.&quot;)
+   end -- if
+  end -- if
+ end, -- func
+
+
+ reset = function (group)
+  if not group then
+   slain.things.denizens = {}
+   slain.things.players = {}
+   slain.things.by = {}
+   cecho(&quot;\n&lt;red&gt;[&lt;white&gt;SLAIN&lt;red&gt;]&lt;white&gt; Reset all slain counters.&quot;)
+  else
+   slain.things[group] = {}
+   cecho(&quot;\n&lt;red&gt;[&lt;white&gt;SLAIN&lt;red&gt;]&lt;white&gt; Reset &quot; .. group .. &quot; counter.&quot;)
+  end -- if
+  slain.save()
+ end, -- func
+
+
+ display = function (group)
+  local ntotal
+  if group then 
+   group = string.lower (group) 
+  end -- if
+  cecho(&quot;\n&lt;green&gt;You have slain:&quot;)
+  if slain.search then
+   cecho(&quot;&lt;white&gt; &quot; .. slain.search)
+  end -- if
+  for k, v in pairs (slain.things) do
+   ntotal = 0
+   if group == k or not group then
+    cecho(&quot;&lt;red&gt;\n &quot; .. string.title(k))
+    for k,v in pairs (slain.things[k]) do
+     if not slain.search or string.find(tostring(k),slain.search,1,true) then
+      ntotal = ntotal + v
+     end -- if
+    end -- for
+    cecho(&quot;&lt;red&gt;:&lt;white&gt; &quot; .. ntotal .. &quot;\n&quot;)
+    slain.displaygroup (k)
+   end -- if
+  end -- for
+  slain.search = nil
+ end, -- func
+
+
+ displaygroup = function (group)
+  if next (slain.things[group]) == nil and slain.search == nil then
+   cecho(&quot;&lt;white&gt; None!&quot;)
+  else
+   local last = {}
+   for k, v in pairs (slain.things[group]) do
+    if not slain.search or string.find(tostring(k),slain.search,1,true) then
+     if string.len (k) &gt; 31 or string.len (k) + string.len (tostring(v)) &gt; 37 then
+      cecho(&quot;  &lt;blue&gt;[&lt;white&gt;&quot; .. string.format (&quot;%6s&quot;, v))
+      cecho(&quot;&lt;blue&gt;]&lt;white&gt; &quot; .. k .. &quot;\n&quot;)
+     elseif last[1] then
+      cecho(&quot;  &lt;blue&gt;[&lt;white&gt;&quot; .. string.format (&quot;%6s&quot;, last[2]))
+      cecho(&quot;&lt;blue&gt;]&lt;white&gt; &quot; .. string.format (&quot;%-31s&quot;, last[1]))
+      cecho(&quot; &lt;blue&gt;[&lt;white&gt;&quot; .. string.format (&quot;%6s&quot;, v))
+      cecho(&quot;&lt;blue&gt;]&lt;white&gt; &quot; .. k .. &quot;\n&quot;)
+      last = {}
+     else
+      last = {k, v}
+     end -- if
+    end -- if
+   end -- for
+   if last[1] then
+    cecho(&quot;  &lt;blue&gt;[&lt;white&gt;&quot; .. string.format (&quot;%6s&quot;, last[2]))
+    cecho(&quot;&lt;blue&gt;]&lt;white&gt; &quot; .. last[1] .. &quot;\n&quot;)
+   end -- if
+  end -- if
+ end, -- func
+
+
+ help = function ()
+  cecho(&quot;\n&lt;red&gt;[&lt;white&gt;SLAIN TRACKER&lt;red&gt;]&quot;)
+  cecho(&quot;\n&lt;white&gt;-------------&quot;)
+  cecho(&quot;\n&lt;white&gt;SLAIN - Display what you've bagged so far!&quot;)
+  cecho(&quot;\n&lt;white&gt;SLAIN [DENIZENS/PLAYERS/BY] - Specify which list of kills to see.&quot;)
+  cecho(&quot;\n&lt;white&gt;SLAIN SEARCH [TERM] - Search your kills for specific things.&quot;)
+  cecho(&quot;\n&lt;white&gt;SLAIN ADD [DENIZENS/PLAYERS/BY] [#] [THING] - Add kills to the denizen or player lists.&quot;)
+  cecho(&quot;\n&lt;white&gt;SLAIN REMOVE [DENIZENS/PLAYERS/BY] [#] [THING] - Remove the specified number and type of kills from the lists.&quot;)
+  cecho(&quot;\n&lt;white&gt;SLAIN RESET - Reset your kill counters.&quot;)
+  cecho(&quot;\n&lt;white&gt;SLAIN RESET [DENIZENS/PLAYERS/BY] - Speicify which list of kills to reset.&quot;)
+  cecho(&quot;\n&lt;white&gt;SLAIN HELP - View the help for this script.&quot;)
+  cecho(&quot;\n&lt;white&gt;Note - Search, add, and remove are case sensitive.&quot;)
+ end, -- func
+
+
+ save = function ()
+  if string.char(getMudletHomeDir():byte()) == &quot;/&quot; 
+ 	 then _sep = &quot;/&quot; 
+  	  else _sep = &quot;\\&quot; 
+     	   end -- if
+  local slain_things = getMudletHomeDir() .. _sep .. &quot;slain_things.lua&quot;
+  table.save(slain_things, slain.things)
+
+ end, -- func
+
+ load = function ()
+  if string.char(getMudletHomeDir():byte()) == &quot;/&quot; 
+   then _sep = &quot;/&quot; 
+    else _sep = &quot;\\&quot; 
+     end -- if
+  local slain_things = getMudletHomeDir() .. _sep .. &quot;slain_things.lua&quot;
+  if (io.exists(slain_things)) then
+   table.load(slain_things, slain.things)
+  end -- if
+
+ end, -- func
+
+}
+
+slain.load()</script>
+                <eventHandlerList/>
+            </Script>
+        </ScriptGroup>
+    </ScriptPackage>
+    <TriggerPackage>
+        <TriggerGroup isActive="yes" isFolder="yes" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+            <name>Slain</name>
+            <script></script>
+            <triggerType>0</triggerType>
+            <conditonLineDelta>0</conditonLineDelta>
+            <mStayOpen>0</mStayOpen>
+            <mCommand></mCommand>
+            <mFgColor>#ff0000</mFgColor>
+            <mBgColor>#ffff00</mBgColor>
+            <mSoundFile></mSoundFile>
+            <colorTriggerFgColor>#000000</colorTriggerFgColor>
+            <colorTriggerBgColor>#000000</colorTriggerBgColor>
+            <regexCodeList/>
+            <regexCodePropertyList/>
+            <Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+                <name>Slain Denizen</name>
+                <script>slain.add(matches[2], &quot;denizens&quot;)</script>
+                <triggerType>0</triggerType>
+                <conditonLineDelta>0</conditonLineDelta>
+                <mStayOpen>0</mStayOpen>
+                <mCommand></mCommand>
+                <mFgColor>#ff0000</mFgColor>
+                <mBgColor>#ffff00</mBgColor>
+                <mSoundFile></mSoundFile>
+                <colorTriggerFgColor>#000000</colorTriggerFgColor>
+                <colorTriggerBgColor>#000000</colorTriggerBgColor>
+                <regexCodeList>
+                    <string>^You have slain(?: an?)? (.*?), retrieving the corpse\.$</string>
+                </regexCodeList>
+                <regexCodePropertyList>
+                    <integer>1</integer>
+                </regexCodePropertyList>
+            </Trigger>
+            <Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+                <name>Slain Player</name>
+                <script>slain.add(matches[2], &quot;players&quot;)
+cecho(&quot;\n&lt;red&gt;[&lt;white&gt;SLAIN&lt;red&gt;] &lt;white&gt;&quot; .. matches[2])</script>
+                <triggerType>0</triggerType>
+                <conditonLineDelta>0</conditonLineDelta>
+                <mStayOpen>0</mStayOpen>
+                <mCommand></mCommand>
+                <mFgColor>#ff0000</mFgColor>
+                <mBgColor>#ffff00</mBgColor>
+                <mSoundFile></mSoundFile>
+                <colorTriggerFgColor>#000000</colorTriggerFgColor>
+                <colorTriggerBgColor>#000000</colorTriggerBgColor>
+                <regexCodeList>
+                    <string>^You have slain (\w+)\.$</string>
+                </regexCodeList>
+                <regexCodePropertyList>
+                    <integer>1</integer>
+                </regexCodePropertyList>
+            </Trigger>
+            <Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+                <name>Slain By</name>
+                <script>slain.add(matches[2], &quot;by&quot;)</script>
+                <triggerType>0</triggerType>
+                <conditonLineDelta>0</conditonLineDelta>
+                <mStayOpen>0</mStayOpen>
+                <mCommand></mCommand>
+                <mFgColor>#ff0000</mFgColor>
+                <mBgColor>#ffff00</mBgColor>
+                <mSoundFile></mSoundFile>
+                <colorTriggerFgColor>#000000</colorTriggerFgColor>
+                <colorTriggerBgColor>#000000</colorTriggerBgColor>
+                <regexCodeList>
+                    <string>^You have been slain by(?: an?)? (.*?)\.$</string>
+                </regexCodeList>
+                <regexCodePropertyList>
+                    <integer>1</integer>
+                </regexCodePropertyList>
+            </Trigger>
+            <Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+                <name>Exanguination</name>
+                <script>slain.add(&quot;exsanguination&quot;, &quot;by&quot;)</script>
+                <triggerType>0</triggerType>
+                <conditonLineDelta>0</conditonLineDelta>
+                <mStayOpen>0</mStayOpen>
+                <mCommand></mCommand>
+                <mFgColor>#ff0000</mFgColor>
+                <mBgColor>#ffff00</mBgColor>
+                <mSoundFile></mSoundFile>
+                <colorTriggerFgColor>#000000</colorTriggerFgColor>
+                <colorTriggerBgColor>#000000</colorTriggerBgColor>
+                <regexCodeList>
+                    <string>You fall to the ground as the last drops of life-giving blood drain out of your body.</string>
+                </regexCodeList>
+                <regexCodePropertyList>
+                    <integer>3</integer>
+                </regexCodePropertyList>
+            </Trigger>
+        </TriggerGroup>
+    </TriggerPackage>
+    <AliasPackage>
+        <AliasGroup isActive="yes" isFolder="yes">
+            <name>Slain</name>
+            <script></script>
+            <command></command>
+            <regex></regex>
+            <Alias isActive="yes" isFolder="no">
+                <name>slain display</name>
+                <script>slain.display()</script>
+                <command></command>
+                <regex>^\s*slain\s*$</regex>
+            </Alias>
+            <Alias isActive="yes" isFolder="no">
+                <name>slain display group</name>
+                <script>slain.display(matches[2])</script>
+                <command></command>
+                <regex>^\s*slain\s+(players|denizens|by)\s*$</regex>
+            </Alias>
+            <Alias isActive="yes" isFolder="no">
+                <name>slain search</name>
+                <script>slain.find(matches[2])</script>
+                <command></command>
+                <regex>^\s*slain\s*search\s*(.*?)$</regex>
+            </Alias>
+            <Alias isActive="yes" isFolder="no">
+                <name>slain reset</name>
+                <script>slain.reset()</script>
+                <command></command>
+                <regex>^\s*slain\s*reset$</regex>
+            </Alias>
+            <Alias isActive="yes" isFolder="no">
+                <name>slain reset group</name>
+                <script>slain.reset(matches[2])</script>
+                <command></command>
+                <regex>^\s*slain\s*reset\s*(denizens|players|by)$</regex>
+            </Alias>
+            <Alias isActive="yes" isFolder="no">
+                <name>slain help</name>
+                <script>slain.help()</script>
+                <command></command>
+                <regex>^\s*slain\s*help$</regex>
+            </Alias>
+            <Alias isActive="yes" isFolder="no">
+                <name>slain remove</name>
+                <script>slain.remove (matches[4], matches[3], matches[2])</script>
+                <command></command>
+                <regex>^\s*slain\s*remove\s*(players|denizens|by)\s*(\d+)\s*(.*?)$</regex>
+            </Alias>
+            <Alias isActive="yes" isFolder="no">
+                <name>slain add</name>
+                <script>slain.add (matches[4], matches[2], matches[3])</script>
+                <command></command>
+                <regex>^\s*slain\s*add\s*(players|denizens|by)\s*(\d+)\s*(.*?)$</regex>
+            </Alias>
+        </AliasGroup>
+    </AliasPackage>
+</MudletPackage>

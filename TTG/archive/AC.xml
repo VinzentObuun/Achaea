@@ -1,0 +1,245 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE MudletPackage>
+<MudletPackage version="1.001">
+	<TriggerPackage>
+		<TriggerGroup isActive="yes" isFolder="yes" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+			<name>Achaea Crafting</name>
+			<script></script>
+			<triggerType>0</triggerType>
+			<conditonLineDelta>0</conditonLineDelta>
+			<mStayOpen>0</mStayOpen>
+			<mCommand></mCommand>
+			<packageName></packageName>
+			<mFgColor>#ff0000</mFgColor>
+			<mBgColor>#ffff00</mBgColor>
+			<mSoundFile></mSoundFile>
+			<colorTriggerFgColor>#000000</colorTriggerFgColor>
+			<colorTriggerBgColor>#000000</colorTriggerBgColor>
+			<regexCodeList />
+			<regexCodePropertyList />
+			<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+				<name>Queueing Stuff</name>
+				<script>if acraft.augmentation.crafting then
+	acraft.augmentation.stepnum = acraft.augmentation.stepnum + 1
+	if acraft.augmentation.stepnum == acraft.augmentation.stepsreq + 2 then
+		acraft_echo("Going to grab the item from the ouroboros.")
+		send("queue addclear eqbal get "..acraft.augmentation.crafting.." from "..acraft.augmentation.ouroborostwo,false)
+		acraft.augmentation.crafting = false
+	elseif acraft.augmentation.stepnum == acraft.augmentation.stepsreq + 1 then
+		acraft_echo("Time to end the ritual!")
+		send("queue addclear eqbal end ritual",false)
+	else
+		acraft_augmentAction()
+	end
+end</script>
+				<triggerType>0</triggerType>
+				<conditonLineDelta>0</conditonLineDelta>
+				<mStayOpen>0</mStayOpen>
+				<mCommand></mCommand>
+				<packageName></packageName>
+				<mFgColor>#ff0000</mFgColor>
+				<mBgColor>#ffff00</mBgColor>
+				<mSoundFile></mSoundFile>
+				<colorTriggerFgColor>#000000</colorTriggerFgColor>
+				<colorTriggerBgColor>#000000</colorTriggerBgColor>
+				<regexCodeList>
+					<string>^\[System\]\: Running queued \w+ command: (.+)</string>
+				</regexCodeList>
+				<regexCodePropertyList>
+					<integer>1</integer>
+				</regexCodePropertyList>
+			</Trigger>
+		</TriggerGroup>
+	</TriggerPackage>
+	<TimerPackage />
+	<AliasPackage>
+		<AliasGroup isActive="yes" isFolder="yes">
+			<name>Achaea Crafting</name>
+			<script></script>
+			<command></command>
+			<packageName></packageName>
+			<regex></regex>
+			<Alias isActive="yes" isFolder="no">
+				<name>Ouroboros Set</name>
+				<script>acraft.augmentation.ouroborosone = tonumber(matches[2])
+acraft.augmentation.ouroborostwo = tonumber(matches[3])
+acraft_echo("Ouroboros ids set to: "..acraft.augmentation.ouroborosone.." and "..acraft.augmentation.ouroborostwo)</script>
+				<command></command>
+				<packageName></packageName>
+				<regex>^ouro (\d+) (\d+)$</regex>
+			</Alias>
+			<Alias isActive="yes" isFolder="no">
+				<name>Augmentation Crafting</name>
+				<script>local item = matches[2]
+local tar = "none"
+if matches[3] then
+	tar = matches[3]
+end
+
+if not acraft.augmentation.ouroborosone or not acraft.augmentation.ouroborostwo then
+	acraft_echo("Ouroboros id is not set! Use 'ouro &lt;num&gt;' to fix!")
+elseif not acraft.augmentation.items[item] then
+	acraft_echo("That is not a valid augmentation item.")
+elseif tar ~= "none" and acraft.augmentation.items[item].reqitem ~= true then
+	acraft_echo("That augmentation does not require an item to be used!")
+elseif tar == "none" and acraft.augmentation.items[item].reqitem == true then
+	acraft_echo("That augmentation requires an item target to be used!")
+else
+	acraft_echo("Beginning augmentation of "..item..(tar ~= "none" and " on "..tar.."." or "."))
+	acraft.augmentation.augment = item 
+	acraft_augmentItem(item, tar)
+end
+
+</script>
+				<command></command>
+				<packageName></packageName>
+				<regex>^aug (\w+)(?: (.+)|)$</regex>
+			</Alias>
+		</AliasGroup>
+	</AliasPackage>
+	<ActionPackage />
+	<ScriptPackage>
+		<ScriptGroup isActive="yes" isFolder="yes">
+			<name>Crafting Scripts</name>
+			<packageName></packageName>
+			<script>acraft = acraft or {}
+
+function acraft_echo(text)
+	cecho("\n&lt;orange&gt;&lt;&lt;tomato&gt;CRAFT&lt;orange&gt;&gt;: &lt;DimGrey&gt;"..text)
+end</script>
+			<eventHandlerList />
+			<Script isActive="yes" isFolder="no">
+				<name>Augmentation</name>
+				<packageName></packageName>
+				<script>acraft.augmentation = {
+	ouroborosone = false,
+	ouroborostwo = false,
+	stepnum = 0,
+	stepsreq = 0,
+	crafting = false,
+	augment = false,
+	actions = {
+		"ring bell",
+		"chant something",
+		"bang drum",
+		"spin around thrice",
+		"light candle",
+		"clap hands",
+		"burn the polygon",
+		"point sword",
+		"burn incense",
+		"play horn",
+		"strum lute",
+		"flipcoin",
+		"roll dice",
+		"wave arms",
+		"crush kola",
+		"wave feather",
+		"square the circle",
+	},
+	
+	items = {
+		firelash = {
+			actions = {3, 6, 9, 8, 5, "chant fo icti re eschle lok ast suh hrat", 1, 4, 7, 13, 13, 13},
+			reagents = {goldbar = 1, silverbar = 1, diamonddust = 2},
+			reqitem = true,
+		},
+		
+		hearing = {
+			actions = {3, 6, 10, 11, 6, 10, 3, 11, 11, 10, 6, 3, 3, 15, 1},
+			reagents = {silverbar = 3, staghorn = 4},
+			reqitem = "earring",
+		},
+		
+		cold = {
+			actions = {3, 3, 7, 7, 12, 12, 7, 7, 5, 5, 8, 8, 13, 13, 8, 8, 5, 5, 7, 7},
+			reagents = {goldbar = 2, staghorn = 2, diamonddust = 2},
+			reqitem = true,
+		},
+		
+		waterwalk = {
+			actions = {17, 14, 14, 14, 8, 8, 11, 3, 3, 3, 3, 13, 15},
+			reagents = {ice = 1, goldbar = 2, silverbar = 1},
+			reqitem = true,
+		},
+		
+		electric = {
+			actions = {5, 5, 9, 9, 12, 12, 9 , 9, 7, 7, 10, 10, 15, 15, 10, 10, 7, 7, 7, 7},
+			reagents = {goldbar = 5},
+			reqitem = true,
+		},
+		
+		firewall = {
+			actions = {"chant firth ilith rhedo een", 7, 4, 8, 17, 3, 3, 10, 10, 10},
+			reagents = {staghorn = 3, diamonddust = 1, silverbar = 3},
+			reqitem = true,
+		},
+		
+		meteor = {
+			actions = {14, 16, "chant minlo ecta tu ecta oloth rhedo", 3},
+			reagents = {diamonddust = 1, arrow = 1},
+			reqitem = "meteor",
+		},
+		
+		magic = {
+			actions = {7, 7, 11, 11, 16, 16, 11, 11, 9, 9, 12, 12, 17, 17, 12, 12, 9, 9, 11, 11},
+			reagents = {staghorn = 5, goldbar = 1, silverbar = 2},
+			reqitem = true,
+		},
+		
+		icewall = {
+			actions = {"chant incula cela ecta", 10, 10, 10, 3, 3, 17, 8, 4, 7},
+			reagents = {ice = 1, diamonddust = 1},
+			reqitem = true,
+		},
+		
+		fire = {
+			actions = {1, 1, 5, 5, 10, 10, 5, 5, 3, 3, 6, 6, 11, 11, 6, 6, 3, 3, 5, 5},
+			reagents = {ice = 1, silverbar = 2},
+			reqitem = true,
+		}
+	}
+}
+
+function acraft_augmentItem(what, where)
+		acraft.augmentation.stepnum = 1
+		acraft.augmentation.stepsreq = #acraft.augmentation.items[what].actions
+		acraft_echo("Steps required to complete: "..acraft.augmentation.stepsreq)
+		sendAll("g 1 gold from pack", "outr 10 kola",false)
+		for reagent, count in pairs(acraft.augmentation.items[what].reagents) do
+			send("outr "..count.." "..reagent,false)
+			for i = 1, count do
+				send("put "..reagent.." in "..acraft.augmentation.ouroborosone,false)
+			end
+		end
+		if where ~= "none" then
+			acraft.augmentation.crafting = where
+			sendAll("remove "..where, "put "..where.." in "..acraft.augmentation.ouroborostwo, "begin enchantment of "..where.." with "..what, false)
+		else
+			send("begin enchantment of "..acraft.augmentation.items[what].reqitem.." with "..what,false)
+			acraft.augmentation.crafting = acraft.augmentation.items[what].reqitem
+		end
+		acraft_augmentAction()
+end
+
+function acraft_augmentAction()
+	local actionlist = acraft.augmentation.actions
+	local needed = acraft.augmentation.items[acraft.augmentation.augment].actions
+	local num = acraft.augmentation.stepnum
+	acraft_echo("Step "..num.."/"..acraft.augmentation.stepsreq)
+	if type(needed[num]) == "string" then
+		send("queue addclear eqbal "..needed[num],false)
+	else
+		local tosend = needed[num]
+		send("queue addclear eqbal "..actionlist[tosend],false)
+	end
+end</script>
+				<eventHandlerList />
+			</Script>
+		</ScriptGroup>
+	</ScriptPackage>
+	<KeyPackage />
+	<VariablePackage>
+		<HiddenVariables />
+	</VariablePackage>
+</MudletPackage>
