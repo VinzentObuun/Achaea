@@ -2,4 +2,4 @@ remote_theme: "dracula/gh-pages"
 title: Scriptalicious!
 tagline: Test
 description: Test
-show_header = false
+show_header: false
