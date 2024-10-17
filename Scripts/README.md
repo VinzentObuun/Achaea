@@ -4,7 +4,7 @@
 
 * 'System' is, principly, the basic outline of what I use or interact with on a regular basis, directly or indirectly.
 
-* 'Tradeskills' separates each out individually for easier distribution and modification.
+* 'Tradeskills' separates each trade out individually for easier distribution and modification.
 
 <!--'MDK', or Murder Death Kill (!) is for hunting.-->
     Some scripts rely on reflexes such as triggers, separate timers, or aliases that are not included at this time.
