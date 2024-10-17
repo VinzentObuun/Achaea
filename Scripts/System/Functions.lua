@@ -40,15 +40,13 @@ end
 
 cmdPre = { "clot", "compose", "concentrate", "g body", "stand" } -- Ideal to add a better body grabber, based on present item IDs.
 
-wpnWeave = "disruption"
-
 cmdClass = {
   ["Black Dragon"] = { "summon acid" },
   ["Blue Dragon"] = { "summon ice" },
   ["Dual Blunt"] = { "falcon slay" },
   ["Green Dragon"] = { "summon venom" },
   ["Gold Dragon"] = { "summon psi" },
-  ["Psion"] = { "weave prepare "..wpnWeave },
+  ["Psion"] = { "weave prepare "..wpnWeave or "disruption" },
   [ "Red Dragon"] = { "summon dragonfire" },
   ["Two Handed"] = { "order 174658 kill &tar" },
   ["Silver Dragon"] = { "summon lightning" },
