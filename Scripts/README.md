@@ -7,4 +7,6 @@
 * 'Tradeskills' separates each out individually for easier distribution and modification.
 
 <!--'MDK', or Murder Death Kill (!) is for hunting.-->
-    Some scripts rely on reflexes such as triggers, separate timers, or aliases that are not included at this time. As I come across them and have time I will integrate with inline solutions as appropriate, otherwise I must find a way to add a separate integration for the regex/lua aspects of triggers.
+    Some scripts rely on reflexes such as triggers, separate timers, or aliases that are not included at this time.
+    As I come across them and have time I will integrate with inline solutions as appropriate.
+    Otherwise, I must find a way to add a separate integration for the regex/lua aspects of triggers.
